@@ -1,16 +1,31 @@
 {
+  "name": "culturecrunch-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "latest",
     "lucide-react": "^0.454.0",
+    "next": "^15.1.3",
     "next-themes": "latest",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "postcss": "^8.5",
     "typescript": "^5"
   }
