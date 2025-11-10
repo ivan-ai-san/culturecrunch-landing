@@ -9,35 +9,35 @@ export default function CircularLoop() {
       title: "Weekly Brief",
       description: "Monday 7 a.m. - Align priorities",
       color: "purple",
-      angle: 270 // top
+      angle: 270 // top (12 o'clock)
     },
     {
       icon: MessageSquare,
       title: "Team Check-In",
       description: "20-minute pulse - clarity & trust",
       color: "indigo",
-      angle: 18 // top right
+      angle: 342 // top right (2 o'clock) - 270° + 72°
     },
     {
       icon: Target,
       title: "Choose Micro-Action",
       description: "One simple change this week",
       color: "blue",
-      angle: 108 // bottom right
+      angle: 54 // bottom right (4 o'clock) - 342° + 72° = 414° - 360°
     },
     {
       icon: Activity,
       title: "System Tracks",
       description: "Background monitoring - no extra work",
       color: "violet",
-      angle: 180 // bottom
+      angle: 126 // bottom left (8 o'clock) - 54° + 72°
     },
     {
       icon: TrendingUp,
       title: "Evidence Visible",
       description: "Real-time dashboard shows impact",
       color: "purple",
-      angle: 234 // left
+      angle: 198 // top left (10 o'clock) - 126° + 72°
     }
   ]
 
