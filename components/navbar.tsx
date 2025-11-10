@@ -13,6 +13,9 @@ export default function Navbar() {
   const navItems = [
     { label: "The Problem", href: "#problem" },
     { label: "The Opportunity", href: "#opportunity" },
+    { label: "Solution", href: "#solution" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Methodology", href: "#methodology" },
     { label: "Why Now", href: "#why-now" },
     { label: "Contact", href: "#contact" },
   ]
