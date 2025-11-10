@@ -108,7 +108,7 @@ export default function CircularLoop() {
               alt="AI Assistant"
               width={200}
               height={200}
-              className="object-contain"
+              className="object-contain mix-blend-multiply dark:mix-blend-screen"
               priority
             />
           </div>
