@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb } from "lucide-react"
+import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -224,21 +224,182 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder: Solution */}
-        <section className="py-24 bg-muted/30 dark:bg-muted/5" id="solution" aria-labelledby="solution-heading">
+        {/* Solution Section */}
+        <section className="py-24 bg-gradient-to-b from-muted/30 via-background to-background dark:from-muted/5 dark:via-background dark:to-background" id="solution" aria-labelledby="solution-heading">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-3xl mx-auto">
-              <div className="inline-block rounded-lg bg-muted px-4 py-2 text-sm font-medium border">
-                Coming Soon
-              </div>
-              <h2 id="solution-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                The Solution
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto">
+              <h2 id="solution-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                A 6-Week Program That Installs The Accountable Leadership Operating System
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Discover how Culture Crunch helps organizations install a high‑performance Leadership and Culture Operating System — a living framework that connects people, rhythm, and insight.
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
+                Transform CPB teams with accountable conversations, clear decisions, and repeatable leadership habits that lift performance, reduce turnover, and protect project margin.
               </p>
-              <div className="h-64 w-full rounded-2xl border-2 border-dashed border-muted-foreground/20 flex items-center justify-center bg-muted/20">
-                <Lightbulb className="h-16 w-16 text-muted-foreground/40" />
+            </div>
+
+            {/* Impact Stats */}
+            <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-20">
+              {/* 25% Card */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent">25%</div>
+                  <h3 className="text-xl font-bold text-foreground">Turnover Reduction</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Achieve up to 25% lower staff turnover by building leadership routines that identify pressure early, sustain recognition, and keep high performers engaged on site.
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-purple-600 dark:text-purple-400">
+                      Impact: Retention = stability = delivery continuity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 30% Card */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/30 to-blue-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-indigo-50/90 to-blue-50/90 dark:from-indigo-950/30 dark:to-blue-950/30 backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-indigo-600 to-blue-600 bg-clip-text text-transparent">30%</div>
+                  <h3 className="text-xl font-bold text-foreground">Engagement Lift</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Drive a 30% increase in engagement scores through consistent clarity, feedback, and recognition cycles that strengthen trust and performance ownership.
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400">
+                      Impact: More energy, better collaboration, faster execution.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 40% Card */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-blue-50/90 to-violet-50/90 dark:from-blue-950/30 dark:to-violet-950/30 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-blue-600 to-violet-600 bg-clip-text text-transparent">40%</div>
+                  <h3 className="text-xl font-bold text-foreground">Claims Reduction</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Reduce total workplace claims—both physical and psychological—by up to 40% through clear decision pathways, accountability loops, and proactive communication.
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                      Impact: Fewer incidents, fewer disputes, lower insurance cost.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto mb-20">
+              {/* Accountable Conversations */}
+              <div className="bg-background border rounded-2xl p-8 space-y-6 hover:border-primary/40 transition-colors">
+                <div className="h-12 w-12 rounded-xl bg-purple-100 dark:bg-purple-950/30 flex items-center justify-center">
+                  <MessageSquare className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Accountable Conversations</h3>
+                  <p className="text-sm text-muted-foreground italic">Where leadership talk turns into results.</p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-purple-600 dark:bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Clear decisions, finished actions, visible accountability</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-purple-600 dark:bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Structured dialogue for clarity and speed</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-purple-600 dark:bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Action tracking for follow-through</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-purple-600 dark:bg-purple-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Team routines for ownership and results</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Improved Team Rhythm */}
+              <div className="bg-background border rounded-2xl p-8 space-y-6 hover:border-primary/40 transition-colors">
+                <div className="h-12 w-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/30 flex items-center justify-center">
+                  <RefreshCw className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Improved Team Rhythm</h3>
+                  <p className="text-sm text-muted-foreground italic">Micro-practices remove friction and build momentum.</p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">60-second weekly pulse for real-time insight</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Monday brief to align and prioritise</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Recognition routines that sustain energy and accountability</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Dashboard Visibility */}
+              <div className="bg-background border rounded-2xl p-8 space-y-6 hover:border-primary/40 transition-colors">
+                <div className="h-12 w-12 rounded-xl bg-blue-100 dark:bg-blue-950/30 flex items-center justify-center">
+                  <LineChart className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Dashboard Visibility</h3>
+                  <p className="text-sm text-muted-foreground italic">See what drives performance in real time.</p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Live team health metrics at a glance</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">6-week trend insights on trust, workload, and recognition</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <div className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <span className="text-muted-foreground">Audit-ready trail for compliance and leadership reporting</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* From Low to High Accountability */}
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">From Low to High Accountability in 6 Weeks</h3>
+                <p className="text-muted-foreground">What makes us different:</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-purple-50/50 to-indigo-50/50 dark:from-purple-950/20 dark:to-indigo-950/20 border border-purple-200/30 dark:border-purple-800/30">
+                  <div className="h-2 w-2 rounded-full bg-purple-600 dark:bg-purple-400 mt-2 flex-shrink-0"></div>
+                  <p className="text-foreground">Only 30 minutes per week from the leader / leadership team</p>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-indigo-50/50 to-blue-50/50 dark:from-indigo-950/20 dark:to-blue-950/20 border border-indigo-200/30 dark:border-indigo-800/30">
+                  <div className="h-2 w-2 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-2 flex-shrink-0"></div>
+                  <p className="text-foreground">Tier One Construction Firm regulatory compliance alignment</p>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50/50 to-violet-50/50 dark:from-blue-950/20 dark:to-violet-950/20 border border-blue-200/30 dark:border-blue-800/30">
+                  <div className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400 mt-2 flex-shrink-0"></div>
+                  <p className="text-foreground">Privacy by minimalism – team level data only</p>
+                </div>
+
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-violet-50/50 to-purple-50/50 dark:from-violet-950/20 dark:to-purple-950/20 border border-violet-200/30 dark:border-violet-800/30">
+                  <div className="h-2 w-2 rounded-full bg-violet-600 dark:bg-violet-400 mt-2 flex-shrink-0"></div>
+                  <p className="text-foreground">Proven 6-week transformation program</p>
+                </div>
               </div>
             </div>
           </div>
