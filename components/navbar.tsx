@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Zap } from "lucide-react"
@@ -23,9 +24,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center space-x-2" aria-label="Culture Crunch Homepage">
-            <span className="text-2xl font-bold">Culture Crunch</span>
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3" aria-label="Culture Crunch Homepage">
+            <Image
+              src="/culturecrunch-logo.png"
+              alt="CultureCrunch Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+              priority
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold leading-tight">CultureCrunch</span>
+              <span className="text-[10px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
+            </div>
           </Link>
         </div>
 
@@ -61,7 +73,21 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <nav className="flex flex-col gap-4 mt-8" aria-label="Mobile Navigation">
+              {/* Mobile Logo */}
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="/culturecrunch-logo.png"
+                  alt="CultureCrunch Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
+                />
+                <div className="flex flex-col">
+                  <span className="text-lg font-bold leading-tight">CultureCrunch</span>
+                  <span className="text-[9px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
+                </div>
+              </div>
+              <nav className="flex flex-col gap-4 mt-4" aria-label="Mobile Navigation">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
