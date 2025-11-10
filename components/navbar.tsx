@@ -19,15 +19,6 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const navItems = [
-    { label: "The Problem", href: "#problem" },
-    { label: "The Opportunity", href: "#opportunity" },
-    { label: "Solution", href: "#solution" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Methodology", href: "#methodology" },
-    { label: "Contact", href: "#contact" },
-  ]
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -49,13 +40,71 @@ export default function Navbar() {
         </div>
 
         <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">
-          {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
-              {item.label}
-            </Link>
-          ))}
-          <NavigationMenu viewport={false}>
+          <NavigationMenu>
             <NavigationMenuList>
+              {/* Home Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                  Home
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-48">
+                    <NavigationMenuLink asChild>
+                      <Link href="#problem" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">The Problem</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          Understanding the leadership challenge
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="#opportunity" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">The Opportunity</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          The potential for transformation
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Offering Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                  Offering
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-48">
+                    <NavigationMenuLink asChild>
+                      <Link href="#solution" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Solution</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          Our approach to leadership development
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="#how-it-works" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">How It Works</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          The implementation process
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="#methodology" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Methodology</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          Research-backed framework
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Why Now Dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Why Now
@@ -83,6 +132,11 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+
+          {/* Contact Link */}
+          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+            Contact
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -124,32 +178,79 @@ export default function Navbar() {
                 </div>
               </div>
               <nav className="flex flex-col gap-4 mt-4" aria-label="Mobile Navigation">
-                {navItems.map((item, index) => (
+                {/* Home Section */}
+                <div className="flex flex-col gap-2">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Home</div>
                   <Link
-                    key={index}
-                    href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
+                    href="#problem"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.label}
+                    The Problem
                   </Link>
-                ))}
-                <div className="flex flex-col gap-2 pl-4 border-l-2 border-purple-200 dark:border-purple-800">
+                  <Link
+                    href="#opportunity"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    The Opportunity
+                  </Link>
+                </div>
+
+                {/* Offering Section */}
+                <div className="flex flex-col gap-2">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Offering</div>
+                  <Link
+                    href="#solution"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Solution
+                  </Link>
+                  <Link
+                    href="#how-it-works"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    How It Works
+                  </Link>
+                  <Link
+                    href="#methodology"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Methodology
+                  </Link>
+                </div>
+
+                {/* Why Now Section */}
+                <div className="flex flex-col gap-2">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Why Now</div>
                   <Link
                     href="#why-now"
-                    className="text-base font-medium transition-colors hover:text-primary"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     Why Now
                   </Link>
                   <Link
                     href="/roi-calculator"
-                    className="text-base font-medium transition-colors hover:text-primary"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     ROI Calculator
                   </Link>
                 </div>
+
+                {/* Contact */}
+                <Link
+                  href="#contact"
+                  className="text-lg font-medium transition-colors hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact
+                </Link>
+
                 <div className="flex items-center gap-4 mt-4">
                   <ThemeToggle />
                   <Button

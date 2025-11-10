@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">AI Enterprise</h3>
+            <h3 className="text-lg font-bold">CultureCrunch</h3>
             <p className="text-sm text-muted-foreground">
-              Enterprise-grade AI solutions for organizations that demand security, customization, and control.
+              The Leadership and Culture Operating System that embeds accountable leadership at scale
             </p>
           </div>
           <div className="space-y-4">
@@ -18,23 +18,23 @@ export default function Footer() {
             <nav aria-label="Product Navigation">
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#features" className="text-muted-foreground hover:text-foreground">
-                    Features
+                  <Link href="#problem" className="text-muted-foreground hover:text-foreground">
+                    The Problem
                   </Link>
                 </li>
                 <li>
-                  <Link href="#security" className="text-muted-foreground hover:text-foreground">
-                    Security
+                  <Link href="#opportunity" className="text-muted-foreground hover:text-foreground">
+                    The Opportunity
                   </Link>
                 </li>
                 <li>
-                  <Link href="#enterprise" className="text-muted-foreground hover:text-foreground">
-                    Enterprise
+                  <Link href="#solution" className="text-muted-foreground hover:text-foreground">
+                    Solution
                   </Link>
                 </li>
                 <li>
-                  <Link href="#government" className="text-muted-foreground hover:text-foreground">
-                    Government
+                  <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground">
+                    How it Works
                   </Link>
                 </li>
               </ul>
@@ -45,13 +45,13 @@ export default function Footer() {
             <nav aria-label="Resources Navigation">
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/documentation" className="text-muted-foreground hover:text-foreground">
-                    Documentation
+                  <Link href="/roi-calculator" className="text-muted-foreground hover:text-foreground">
+                    ROI Calculator
                   </Link>
                 </li>
                 <li>
-                  <Link href="/case-studies" className="text-muted-foreground hover:text-foreground">
-                    Case Studies
+                  <Link href="/research-paper" className="text-muted-foreground hover:text-foreground">
+                    Research Paper
                   </Link>
                 </li>
                 <li>
@@ -82,7 +82,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-foreground">
+                  <Link href="#contact" className="text-muted-foreground hover:text-foreground">
                     Contact
                   </Link>
                 </li>
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {currentYear} AI Enterprise. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {currentYear} CultureCrunch. All rights reserved.</p>
           <div className="flex gap-4">
             <Link
               href="https://linkedin.com"

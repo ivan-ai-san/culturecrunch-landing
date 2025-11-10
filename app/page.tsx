@@ -13,6 +13,7 @@ import CircularLoop from "@/components/circular-loop"
 import WeekByWeekTimeline from "@/components/week-by-week-timeline"
 import AccountableConversations from "@/components/accountable-conversations"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function Home() {
   const [showWeekly, setShowWeekly] = useState(false)
@@ -45,17 +46,21 @@ export default function Home() {
               <TypingPromptInput />
 
               <div className="flex flex-wrap justify-center gap-4 mt-16">
-                <Button className="flex items-center gap-3 px-6 py-7 h-auto text-base bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_15px_rgba(36,101,237,0.5)] relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 dark:opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%]"></div>
-                  <Zap className="h-5 w-5 text-white relative z-10" />
-                  <div className="flex flex-col items-start relative z-10">
-                    <span className="text-base font-semibold">Install Your OS</span>
-                    <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Get started today</span>
-                  </div>
+                <Button asChild className="flex items-center gap-3 px-6 py-7 h-auto text-base bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_15px_rgba(36,101,237,0.5)] relative overflow-hidden group">
+                  <Link href="#contact">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 dark:opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%]"></div>
+                    <Zap className="h-5 w-5 text-white relative z-10" />
+                    <div className="flex flex-col items-start relative z-10">
+                      <span className="text-base font-semibold">Install Your OS</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Get started today</span>
+                    </div>
+                  </Link>
                 </Button>
-                <Button className="px-6 py-7 h-auto rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-base font-semibold text-foreground">
-                  Learn More
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button asChild className="px-6 py-7 h-auto rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-base font-semibold text-foreground">
+                  <Link href="#problem">
+                    Learn More
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </div>
             </div>
