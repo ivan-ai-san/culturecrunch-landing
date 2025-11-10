@@ -106,8 +106,8 @@ export default function CircularLoop() {
             <Image
               src="/ai-brain.png"
               alt="AI Assistant"
-              width={200}
-              height={200}
+              width={160}
+              height={160}
               className="object-contain"
               priority
             />
