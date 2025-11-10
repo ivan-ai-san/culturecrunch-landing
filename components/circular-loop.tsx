@@ -101,7 +101,7 @@ export default function CircularLoop() {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 opacity-30 animate-spin" style={{ animationDuration: "8s" }}></div>
 
           {/* Inner circle with overflow clipping */}
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex items-center justify-center p-4 shadow-lg overflow-hidden">
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex items-center justify-center p-1 shadow-lg overflow-hidden">
             {/* AI Brain Image - clipped to circle */}
             <Image
               src="/ai-brain-tras.png"
