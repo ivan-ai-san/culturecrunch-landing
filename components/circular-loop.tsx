@@ -104,7 +104,7 @@ export default function CircularLoop() {
           <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex items-center justify-center p-4 shadow-lg overflow-hidden">
             {/* AI Brain Image - clipped to circle */}
             <Image
-              src="/ai-brain-nobg.png"
+              src="/ai-brain-nbg.png"
               alt="AI Assistant"
               width={200}
               height={200}
