@@ -1,6 +1,7 @@
 "use client"
 
-import { Sparkles, MessageSquare, Target, Activity, TrendingUp, Bot } from "lucide-react"
+import { Sparkles, MessageSquare, Target, Activity, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export default function CircularLoop() {
   const loopSteps = [
@@ -101,12 +102,16 @@ export default function CircularLoop() {
 
           {/* Inner circle */}
           <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex flex-col items-center justify-center p-6 shadow-lg">
-            {/* Bot Icon */}
-            <div className="mb-3 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl blur-xl opacity-40"></div>
-              <div className="relative h-20 w-20 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center shadow-lg">
-                <Bot className="h-12 w-12 text-white" strokeWidth={2} />
-              </div>
+            {/* AI Brain Image */}
+            <div className="mb-4 relative">
+              <Image
+                src="/ai-brain.png"
+                alt="AI Assistant"
+                width={140}
+                height={140}
+                className="relative z-10"
+                priority
+              />
             </div>
 
             {/* Text */}

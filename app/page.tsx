@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp, Bot } from "lucide-react"
+import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
