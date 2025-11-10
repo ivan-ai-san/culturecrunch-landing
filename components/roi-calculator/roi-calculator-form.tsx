@@ -95,7 +95,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label htmlFor="numLeaders">Number of leaders/managers</Label>
-                <span className="font-mono text-lg text-purple-600 dark:text-purple-400">{formData.numLeaders}</span>
+                <span className="font-mono text-4xl font-bold text-purple-600 dark:text-purple-400 tabular-nums">{formData.numLeaders}</span>
               </div>
               <input
                 id="numLeaders"
@@ -117,7 +117,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label htmlFor="reportsPerLeader">Average employees per leader</Label>
-                <span className="font-mono text-lg text-purple-600 dark:text-purple-400">{formData.reportsPerLeader}</span>
+                <span className="font-mono text-4xl font-bold text-purple-600 dark:text-purple-400 tabular-nums">{formData.reportsPerLeader}</span>
               </div>
               <input
                 id="reportsPerLeader"
@@ -134,7 +134,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
                 <span>20</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Total employees: <span className="font-mono text-foreground font-medium">{totalEmployees.toLocaleString()}</span>
+                Total employees: <span className="font-mono text-foreground font-medium tabular-nums text-lg">{totalEmployees.toLocaleString()}</span>
               </p>
             </div>
 
@@ -155,7 +155,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
                 />
               </div>
               <p className="text-sm text-muted-foreground">
-                Total annual compensation: <span className="font-mono text-foreground font-medium">${totalCompensation.toLocaleString()}</span>
+                Total annual compensation: <span className="font-mono text-foreground font-medium tabular-nums text-lg">${totalCompensation.toLocaleString()}</span>
               </p>
             </div>
 
@@ -199,7 +199,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label htmlFor="turnoverRate">Annual turnover rate</Label>
-                <span className="font-mono text-lg text-purple-600 dark:text-purple-400">{formData.turnoverRate}%</span>
+                <span className="font-mono text-4xl font-bold text-purple-600 dark:text-purple-400 tabular-nums">{formData.turnoverRate}%</span>
               </div>
               <input
                 id="turnoverRate"
@@ -216,7 +216,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
                 <span>30%</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Estimated annual departures: <span className="font-mono text-foreground font-medium">{estimatedDepartures}</span> employees
+                Estimated annual departures: <span className="font-mono text-foreground font-medium tabular-nums text-lg">{estimatedDepartures}</span> employees
               </p>
             </div>
 
@@ -300,7 +300,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <Label htmlFor="investmentAmount">Annual investment amount</Label>
-                <span className="font-mono text-lg text-purple-600 dark:text-purple-400">${formData.investmentAmount.toLocaleString()}</span>
+                <span className="font-mono text-4xl font-bold text-purple-600 dark:text-purple-400 tabular-nums">${formData.investmentAmount.toLocaleString()}</span>
               </div>
               <input
                 id="investmentAmount"
@@ -317,7 +317,7 @@ export default function ROICalculatorForm({ onCalculate }: ROICalculatorFormProp
                 <span>$200k</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Per leader: <span className="font-mono text-foreground font-medium">${perLeaderCost.toLocaleString()}</span>
+                Per leader: <span className="font-mono text-foreground font-medium tabular-nums text-lg">${perLeaderCost.toLocaleString()}</span>
               </p>
             </div>
 

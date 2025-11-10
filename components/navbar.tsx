@@ -5,6 +5,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 import { Menu, Zap } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -17,7 +25,6 @@ export default function Navbar() {
     { label: "Solution", href: "#solution" },
     { label: "How It Works", href: "#how-it-works" },
     { label: "Methodology", href: "#methodology" },
-    { label: "Why Now", href: "#why-now" },
     { label: "Contact", href: "#contact" },
   ]
 
@@ -41,12 +48,41 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex gap-6" aria-label="Main Navigation">
+        <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">
           {navItems.map((item, index) => (
             <Link key={index} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
               {item.label}
             </Link>
           ))}
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                  Why Now
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-48">
+                    <NavigationMenuLink asChild>
+                      <Link href="#why-now" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Why Now</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          The urgency of leadership development
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="/roi-calculator" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">ROI Calculator</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          Calculate your leadership investment returns
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -98,6 +134,22 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ))}
+                <div className="flex flex-col gap-2 pl-4 border-l-2 border-purple-200 dark:border-purple-800">
+                  <Link
+                    href="#why-now"
+                    className="text-base font-medium transition-colors hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Why Now
+                  </Link>
+                  <Link
+                    href="/roi-calculator"
+                    className="text-base font-medium transition-colors hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    ROI Calculator
+                  </Link>
+                </div>
                 <div className="flex items-center gap-4 mt-4">
                   <ThemeToggle />
                   <Button

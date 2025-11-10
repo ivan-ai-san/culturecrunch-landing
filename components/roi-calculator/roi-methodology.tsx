@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ChevronDown, CheckCircle, FileText, Users, TrendingUp, Target, Clock } from "lucide-react"
+import MethodologyViewer from "./methodology-viewer"
 
 const researchBasis = [
   {
@@ -57,6 +58,7 @@ const faqs = [
 
 export default function ROIMethodology() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
+  const [methodologyViewerOpen, setMethodologyViewerOpen] = useState(false)
 
   return (
     <section className="py-16 bg-background border-t border-border">
@@ -232,22 +234,31 @@ export default function ROIMethodology() {
             ))}
           </div>
 
-          {/* Download CTA */}
+          {/* View Methodology CTA */}
           <Card className="mt-8 p-6 bg-muted/50">
             <div className="flex items-start gap-4">
               <FileText className="h-6 w-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-foreground mb-2">Want more details?</h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Download our comprehensive methodology document with complete research citations, detailed calculations, and validation studies.
+                  View our comprehensive methodology document with complete research citations, detailed calculations, and validation studies.
                 </p>
-                <button className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline">
-                  Download Full Methodology PDF →
+                <button
+                  onClick={() => setMethodologyViewerOpen(true)}
+                  className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
+                >
+                  View Methodology →
                 </button>
               </div>
             </div>
           </Card>
         </div>
+
+        {/* Methodology Viewer Modal */}
+        <MethodologyViewer
+          open={methodologyViewerOpen}
+          onOpenChange={setMethodologyViewerOpen}
+        />
 
       </div>
     </section>

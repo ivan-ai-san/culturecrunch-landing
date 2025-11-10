@@ -192,7 +192,7 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               </div>
               <div className="text-sm font-medium text-muted-foreground">Year 1 ROI</div>
             </div>
-            <div className="text-3xl md:text-4xl font-bold font-mono text-purple-600 dark:text-purple-400 mb-1">
+            <div className="text-4xl md:text-5xl font-bold font-mono tabular-nums text-purple-600 dark:text-purple-400 mb-1">
               {formatCurrency(results.year1NetROI)}
             </div>
             <div className="text-xs text-muted-foreground">Net benefit after costs</div>
@@ -205,7 +205,7 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               </div>
               <div className="text-sm font-medium text-muted-foreground">ROI Multiple</div>
             </div>
-            <div className="text-3xl md:text-4xl font-bold font-mono text-indigo-600 dark:text-indigo-400 mb-1">
+            <div className="text-4xl md:text-5xl font-bold font-mono tabular-nums text-indigo-600 dark:text-indigo-400 mb-1">
               {results.year1Multiple.toFixed(1)}x
             </div>
             <div className="text-xs text-muted-foreground">Return on investment</div>
@@ -218,7 +218,7 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               </div>
               <div className="text-sm font-medium text-muted-foreground">Break-Even</div>
             </div>
-            <div className="text-3xl md:text-4xl font-bold font-mono text-blue-600 dark:text-blue-400 mb-1">
+            <div className="text-4xl md:text-5xl font-bold font-mono tabular-nums text-blue-600 dark:text-blue-400 mb-1">
               {results.breakEvenMonths.toFixed(1)}
             </div>
             <div className="text-xs text-muted-foreground">Months to payback</div>
@@ -231,7 +231,7 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               </div>
               <div className="text-sm font-medium text-muted-foreground">3-Year Value</div>
             </div>
-            <div className="text-3xl md:text-4xl font-bold font-mono text-violet-600 dark:text-violet-400 mb-1">
+            <div className="text-4xl md:text-5xl font-bold font-mono tabular-nums text-violet-600 dark:text-violet-400 mb-1">
               {formatCurrency(results.year3NetROI)}
             </div>
             <div className="text-xs text-muted-foreground">Cumulative benefit</div>
@@ -275,82 +275,82 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-3 px-2 text-foreground">Turnover Reduction</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.benefits.turnover)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.benefits.turnover)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.benefits.turnover)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-semibold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.benefits.turnover)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.benefits.turnover)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.benefits.turnover)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-semibold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.benefits.turnover + results.year2Breakdown.benefits.turnover + results.year3Breakdown.benefits.turnover)}
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3 px-2 text-foreground">Productivity Gains</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.benefits.productivity)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.benefits.productivity)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.benefits.productivity)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-semibold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.benefits.productivity)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.benefits.productivity)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.benefits.productivity)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-semibold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.benefits.productivity + results.year2Breakdown.benefits.productivity + results.year3Breakdown.benefits.productivity)}
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3 px-2 text-foreground">Engagement Improvement</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.benefits.engagement)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.benefits.engagement)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.benefits.engagement)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-semibold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.benefits.engagement)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.benefits.engagement)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.benefits.engagement)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-semibold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.benefits.engagement + results.year2Breakdown.benefits.engagement + results.year3Breakdown.benefits.engagement)}
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3 px-2 text-foreground">Error Reduction</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.benefits.errorReduction)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.benefits.errorReduction)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.benefits.errorReduction)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-semibold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.benefits.errorReduction)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.benefits.errorReduction)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.benefits.errorReduction)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-semibold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.benefits.errorReduction + results.year2Breakdown.benefits.errorReduction + results.year3Breakdown.benefits.errorReduction)}
                   </td>
                 </tr>
                 <tr>
                   <td className="py-3 px-2 text-foreground">Time Savings</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.benefits.timeSavings)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.benefits.timeSavings)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.benefits.timeSavings)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-semibold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.benefits.timeSavings)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.benefits.timeSavings)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.benefits.timeSavings)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-semibold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.benefits.timeSavings + results.year2Breakdown.benefits.timeSavings + results.year3Breakdown.benefits.timeSavings)}
                   </td>
                 </tr>
                 <tr className="border-t-2 border-border font-semibold">
                   <td className="py-3 px-2 text-foreground">Total Benefits</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year1Breakdown.totalBenefits)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year2Breakdown.totalBenefits)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-foreground">{formatCurrency(results.year3Breakdown.totalBenefits)}</td>
-                  <td className="py-3 px-2 text-right font-mono font-bold text-purple-600 dark:text-purple-400">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year1Breakdown.totalBenefits)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year2Breakdown.totalBenefits)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-foreground">{formatCurrency(results.year3Breakdown.totalBenefits)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums font-bold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.year1Breakdown.totalBenefits + results.year2Breakdown.totalBenefits + results.year3Breakdown.totalBenefits)}
                   </td>
                 </tr>
                 <tr className="bg-muted/50">
                   <td className="py-3 px-2 text-muted-foreground">Program Investment</td>
-                  <td className="py-3 px-2 text-right font-mono text-muted-foreground">{formatCurrency(results.year1Breakdown.costs)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-muted-foreground">{formatCurrency(results.year2Breakdown.costs)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-muted-foreground">{formatCurrency(results.year3Breakdown.costs)}</td>
-                  <td className="py-3 px-2 text-right font-mono text-muted-foreground">
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-muted-foreground">{formatCurrency(results.year1Breakdown.costs)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-muted-foreground">{formatCurrency(results.year2Breakdown.costs)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-muted-foreground">{formatCurrency(results.year3Breakdown.costs)}</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-muted-foreground">
                     {formatCurrency(results.year1Breakdown.costs + results.year2Breakdown.costs + results.year3Breakdown.costs)}
                   </td>
                 </tr>
                 <tr className="border-t-2 border-border font-bold text-lg">
                   <td className="py-4 px-2 text-foreground">Net ROI</td>
-                  <td className="py-4 px-2 text-right font-mono text-green-600 dark:text-green-400">{formatCurrency(results.year1Breakdown.netROI)}</td>
-                  <td className="py-4 px-2 text-right font-mono text-green-600 dark:text-green-400">{formatCurrency(results.year2Breakdown.netROI)}</td>
-                  <td className="py-4 px-2 text-right font-mono text-green-600 dark:text-green-400">{formatCurrency(results.year3Breakdown.netROI)}</td>
-                  <td className="py-4 px-2 text-right font-mono text-green-600 dark:text-green-400">
+                  <td className="py-4 px-2 text-right font-mono tabular-nums text-green-600 dark:text-green-400">{formatCurrency(results.year1Breakdown.netROI)}</td>
+                  <td className="py-4 px-2 text-right font-mono tabular-nums text-green-600 dark:text-green-400">{formatCurrency(results.year2Breakdown.netROI)}</td>
+                  <td className="py-4 px-2 text-right font-mono tabular-nums text-green-600 dark:text-green-400">{formatCurrency(results.year3Breakdown.netROI)}</td>
+                  <td className="py-4 px-2 text-right font-mono tabular-nums text-green-600 dark:text-green-400">
                     {formatCurrency(results.year3NetROI)}
                   </td>
                 </tr>
                 <tr className="bg-muted/30">
                   <td className="py-3 px-2 text-foreground font-semibold">ROI Multiple</td>
-                  <td className="py-3 px-2 text-right font-mono text-purple-600 dark:text-purple-400 font-semibold">{results.year1Breakdown.roiMultiple.toFixed(1)}x</td>
-                  <td className="py-3 px-2 text-right font-mono text-purple-600 dark:text-purple-400 font-semibold">{results.year2Breakdown.roiMultiple.toFixed(1)}x</td>
-                  <td className="py-3 px-2 text-right font-mono text-purple-600 dark:text-purple-400 font-semibold">{results.year3Breakdown.roiMultiple.toFixed(1)}x</td>
-                  <td className="py-3 px-2 text-right font-mono text-purple-600 dark:text-purple-400 font-bold text-lg">{results.year3Multiple.toFixed(1)}x</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-purple-600 dark:text-purple-400 font-semibold">{results.year1Breakdown.roiMultiple.toFixed(1)}x</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-purple-600 dark:text-purple-400 font-semibold">{results.year2Breakdown.roiMultiple.toFixed(1)}x</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-purple-600 dark:text-purple-400 font-semibold">{results.year3Breakdown.roiMultiple.toFixed(1)}x</td>
+                  <td className="py-3 px-2 text-right font-mono tabular-nums text-purple-600 dark:text-purple-400 font-bold text-lg">{results.year3Multiple.toFixed(1)}x</td>
                 </tr>
               </tbody>
             </table>
@@ -367,8 +367,8 @@ export default function ROIResultsComponent({ results }: ROIResultsProps) {
               Schedule a consultation to discuss how we can help your organization build a leadership operating system that delivers measurable ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700">
-                Schedule ROI Discussion
+              <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700">
+                <a href="#contact">Schedule ROI Discussion</a>
               </Button>
               <Button size="lg" variant="outline">
                 Download Full Methodology
