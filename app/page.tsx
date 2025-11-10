@@ -1,5 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart } from "lucide-react"
+import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -7,8 +9,13 @@ import TypingPromptInput from "@/components/typing-prompt-input"
 import FramerSpotlight from "@/components/framer-spotlight"
 import CssGridBackground from "@/components/css-grid-background"
 import StructuredData from "@/components/structured-data"
+import CircularLoop from "@/components/circular-loop"
+import WeekByWeekTimeline from "@/components/week-by-week-timeline"
+import { useState } from "react"
 
 export default function Home() {
+  const [showWeekly, setShowWeekly] = useState(false)
+
   return (
     <>
       <StructuredData />
@@ -405,21 +412,82 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder: How It Works */}
-        <section className="py-24" id="how-it-works" aria-labelledby="how-it-works-heading">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-3xl mx-auto">
-              <div className="inline-block rounded-lg bg-muted px-4 py-2 text-sm font-medium border">
-                Coming Soon
-              </div>
-              <h2 id="how-it-works-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        {/* How It Works Section */}
+        <section className="py-24 bg-muted/30 dark:bg-muted/5 relative overflow-hidden" id="how-it-works" aria-labelledby="how-it-works-heading">
+          {/* Decorative gradient backgrounds */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto">
+              <h2 id="how-it-works-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
                 How It Works
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Learn about the proven process for installing and scaling your Leadership Operating System across your organization.
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
+                A simple weekly rhythm that transforms leadership from theory into embedded practice.
               </p>
-              <div className="h-64 w-full rounded-2xl border-2 border-dashed border-muted-foreground/20 flex items-center justify-center bg-muted/20">
-                <Target className="h-16 w-16 text-muted-foreground/40" />
+              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                <Clock className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium text-primary">30 minutes per week</span>
+              </div>
+            </div>
+
+            {/* The Loop at a Glance */}
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3">The Loop at a Glance</h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Five simple steps that run every week, building accountability and visibility into your team's natural flow of work.
+                </p>
+              </div>
+              <CircularLoop />
+            </div>
+
+            {/* Toggle Button for Week-by-Week */}
+            <div className="flex justify-center mb-12">
+              <Button
+                variant="outline"
+                onClick={() => setShowWeekly(!showWeekly)}
+                className="flex items-center gap-2 px-6 py-6 h-auto text-base rounded-xl"
+              >
+                {showWeekly ? (
+                  <>
+                    <ChevronUp className="h-5 w-5" />
+                    Hide Week-by-Week Breakdown
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="h-5 w-5" />
+                    Show Week-by-Week Breakdown
+                  </>
+                )}
+              </Button>
+            </div>
+
+            {/* Week-by-Week Timeline (Collapsible) */}
+            {showWeekly && (
+              <div className="mb-20">
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3">Week-by-Week Install</h3>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Six weeks to go from zero to a fully embedded Leadership Operating System.
+                  </p>
+                </div>
+                <WeekByWeekTimeline />
+              </div>
+            )}
+
+            {/* Bottom CTA Card */}
+            <div className="max-w-4xl mx-auto">
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 md:p-12 text-center space-y-4">
+                  <h3 className="text-2xl md:text-3xl font-bold">Simple. Sustainable. Measurable.</h3>
+                  <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+                    No complex software. No extensive training. Just a proven rhythm that fits into the way your teams already work—with AI quietly tracking what matters so you can lead with confidence.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
