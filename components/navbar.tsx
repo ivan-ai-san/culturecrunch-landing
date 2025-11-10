@@ -11,9 +11,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { label: "Features", href: "#features" },
-    { label: "Use Cases", href: "#use-cases" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "The Problem", href: "#problem" },
+    { label: "The Opportunity", href: "#opportunity" },
+    { label: "Why Now", href: "#why-now" },
     { label: "Contact", href: "#contact" },
   ]
 
@@ -21,8 +21,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center space-x-2" aria-label="Enterprise AI Homepage">
-            <span className="text-2xl font-bold">AI Enterprise</span>
+          <Link href="/" className="flex items-center space-x-2" aria-label="Culture Crunch Homepage">
+            <span className="text-2xl font-bold">Culture Crunch</span>
           </Link>
         </div>
 
@@ -44,8 +44,8 @@ export default function Navbar() {
             <Link href="#contact">
               <Zap className="h-4 w-4 text-white" />
               <div className="flex flex-col items-start">
-                <span className="text-sm font-medium">Request Demo</span>
-                <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">v1.0.0</span>
+                <span className="text-sm font-medium">Get Started</span>
+                <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install your OS</span>
               </div>
             </Link>
           </Button>
@@ -78,8 +78,8 @@ export default function Navbar() {
                     <Link href="#contact" onClick={() => setIsOpen(false)}>
                       <Zap className="h-4 w-4 text-white" />
                       <div className="flex flex-col items-start">
-                        <span className="text-sm font-medium">Request Demo</span>
-                        <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">v1.0.0</span>
+                        <span className="text-sm font-medium">Get Started</span>
+                        <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install your OS</span>
                       </div>
                     </Link>
                   </Button>
