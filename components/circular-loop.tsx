@@ -73,13 +73,13 @@ export default function CircularLoop() {
   return (
     <div className="w-full">
       {/* Desktop: Circular Layout */}
-      <div className="hidden lg:block relative h-[700px] max-w-5xl mx-auto">
+      <div className="hidden lg:block relative h-[750px] max-w-6xl mx-auto">
         {/* Dashed circle guide */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
           <circle
             cx="50%"
             cy="50%"
-            r="240"
+            r="280"
             fill="none"
             stroke="url(#gradient)"
             strokeWidth="2"
@@ -95,38 +95,29 @@ export default function CircularLoop() {
           </defs>
         </svg>
 
-        {/* Center Circle with Bot */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 z-10">
+        {/* Center Circle with AI Brain */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 z-10">
           {/* Rotating gradient border */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 opacity-30 animate-spin" style={{ animationDuration: "8s" }}></div>
 
           {/* Inner circle */}
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex flex-col items-center justify-center p-6 shadow-lg">
-            {/* AI Brain Image */}
-            <div className="mb-4 relative">
-              <Image
-                src="/ai-brain.png"
-                alt="AI Assistant"
-                width={140}
-                height={140}
-                className="relative z-10"
-                priority
-              />
-            </div>
-
-            {/* Text */}
-            <div className="text-center space-y-1">
-              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">The Weekly Loop</div>
-              <div className="text-2xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent">Culture Crunch</div>
-              <div className="text-xs text-muted-foreground">Accountable Leadership OS</div>
-            </div>
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex items-center justify-center p-4 shadow-lg">
+            {/* AI Brain Image - fits within circle */}
+            <Image
+              src="/ai-brain.png"
+              alt="AI Assistant"
+              width={200}
+              height={200}
+              className="relative z-10 object-contain"
+              priority
+            />
           </div>
         </div>
 
         {/* Loop Steps positioned in circle */}
         {loopSteps.map((step, index) => {
           const Icon = step.icon
-          const position = getCardPosition(step.angle, 240)
+          const position = getCardPosition(step.angle, 280)
 
           return (
             <div
