@@ -11,6 +11,7 @@ import CssGridBackground from "@/components/css-grid-background"
 import StructuredData from "@/components/structured-data"
 import CircularLoop from "@/components/circular-loop"
 import WeekByWeekTimeline from "@/components/week-by-week-timeline"
+import AccountableConversations from "@/components/accountable-conversations"
 import { useState } from "react"
 
 export default function Home() {
@@ -493,23 +494,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder: Methodology */}
-        <section className="py-24 bg-muted/30 dark:bg-muted/5" id="methodology" aria-labelledby="methodology-heading">
+        {/* Methodology Section */}
+        <section className="py-24 bg-gradient-to-b from-background via-muted/30 to-background dark:from-background dark:via-muted/5 dark:to-background" id="methodology">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center max-w-3xl mx-auto">
-              <div className="inline-block rounded-lg bg-muted px-4 py-2 text-sm font-medium border">
-                Coming Soon
-              </div>
-              <h2 id="methodology-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Methodology
-              </h2>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Explore the behavioral science and practical frameworks that power Culture Crunch's approach to embedded leadership.
-              </p>
-              <div className="h-64 w-full rounded-2xl border-2 border-dashed border-muted-foreground/20 flex items-center justify-center bg-muted/20">
-                <Brain className="h-16 w-16 text-muted-foreground/40" />
-              </div>
-            </div>
+            <AccountableConversations />
           </div>
         </section>
 
