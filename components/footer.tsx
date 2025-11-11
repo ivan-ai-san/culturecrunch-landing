@@ -50,8 +50,8 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/research-paper" className="text-muted-foreground hover:text-foreground">
-                    Research Paper
+                  <Link href="/white-paper" className="text-muted-foreground hover:text-foreground">
+                    White Paper
                   </Link>
                 </li>
                 <li>
