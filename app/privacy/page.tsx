@@ -1,55 +1,101 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
-import PrivacyPolicyTemplate from "@/components/privacy-policy-template"
+"use client"
+
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { Badge } from "@/components/ui/badge"
+import { Construction, ArrowLeft, Mail } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Enterprise AI Platform",
-  description: "Our commitment to protecting your privacy and securing your data.",
-}
-
-export default function PrivacyPolicy() {
-  const currentDate = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
-
+export default function PrivacyPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <main className="flex-grow">
-        <section className="py-12 md:py-16">
-          <div className="container max-w-4xl">
-            <div className="mb-8">
-              <Button variant="ghost" size="sm" asChild className="mb-6">
-                <Link href="/" className="flex items-center gap-2">
-                  <ArrowLeft className="h-4 w-4" />
+      {/* Coming Soon Section */}
+      <section className="flex-1 flex items-center justify-center py-20 bg-gradient-to-b from-background via-muted/30 to-background">
+        <div className="container px-4 md:px-6 max-w-3xl mx-auto">
+          <div className="text-center space-y-8">
+            {/* Icon */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-2xl"></div>
+                <div className="relative h-24 w-24 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 flex items-center justify-center">
+                  <Construction className="h-12 w-12 text-primary" />
+                </div>
+              </div>
+            </div>
+
+            {/* Badge */}
+            <Badge variant="outline" className="text-sm">
+              Coming Soon
+            </Badge>
+
+            {/* Heading */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+                Privacy Policy
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                We're finalising our comprehensive privacy policy to ensure transparency about how we protect your data.
+              </p>
+            </div>
+
+            {/* Description */}
+            <div className="max-w-xl mx-auto space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                Your privacy and data security are our top priorities. We're committed to being transparent about our data practices and protecting your information.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                For any privacy-related questions or concerns, please don't hesitate to contact us directly.
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <Button asChild size="lg" className="text-base">
+                <Link href="/">
+                  <ArrowLeft className="mr-2 h-5 w-5" />
                   Back to Home
                 </Link>
               </Button>
-              <h1 className="text-4xl font-bold tracking-tight mb-4">Privacy Policy</h1>
+              <Button asChild variant="outline" size="lg" className="text-base">
+                <Link href="/#contact">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Contact Us
+                </Link>
+              </Button>
             </div>
 
-            <PrivacyPolicyTemplate
-              companyName="AI Enterprise"
-              websiteUrl="https://aienterprise.com"
-              contactEmail="privacy@aienterprise.com"
-              contactAddress={`AI Enterprise, Inc.\n123 AI Boulevard\nTech City, CA 94000\nUnited States`}
-              lastUpdated={currentDate}
-              includeGDPR={true}
-              includeCCPA={true}
-              includeCookies={true}
-              includeAnalytics={true}
-              includeThirdPartyServices={["OpenAI", "Google Analytics", "AWS", "Microsoft Azure"]}
-            />
+            {/* Quick Links */}
+            <div className="pt-12 border-t border-border max-w-xl mx-auto">
+              <p className="text-sm font-medium text-muted-foreground mb-4">Learn more about CultureCrunch:</p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <Link
+                  href="/white-paper"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  White Paper
+                </Link>
+                <span className="text-muted-foreground">•</span>
+                <Link
+                  href="/roi-calculator"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  ROI Calculator
+                </Link>
+                <span className="text-muted-foreground">•</span>
+                <Link
+                  href="/#how-it-works"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  How It Works
+                </Link>
+              </div>
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       <Footer />
     </div>
