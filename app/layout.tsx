@@ -7,38 +7,38 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Enterprise AI Platform | Secure AI Solutions for Business & Government",
+  title: "The Culture & Leadership OS",
   description:
-    "Enterprise-grade AI platform with LLM conversations, customizable agents, secure knowledge base, and MCP server support for businesses and government agencies.",
-  keywords: "enterprise AI, secure AI, government AI solutions, LLM, knowledge base, AI agents, MCP server",
+    "Transform workplace culture with embedded leadership rhythms. 6-week program for accountable conversations and measurable performance lift.",
+  keywords: "leadership operating system, workplace culture, accountable conversations, team engagement, leadership development",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
-    title: "Enterprise AI Platform | Secure AI Solutions",
+    url: "https://culturecrunch.io",
+    title: "CultureCrunch | Leadership Operating System",
     description:
-      "Enterprise-grade AI platform with advanced security, customization, and control for businesses and government agencies.",
-    siteName: "Enterprise AI Platform",
+      "Transform workplace culture with embedded leadership rhythms.",
+    siteName: "CultureCrunch",
     images: [
       {
-        url: "https://your-domain.com/og-image.jpg",
+        url: "https://culturecrunch.io/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Enterprise AI Platform",
+        alt: "CultureCrunch",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise AI Platform | Secure AI Solutions",
-    description: "Enterprise-grade AI platform with advanced security, customization, and control.",
-    images: ["https://your-domain.com/twitter-image.jpg"],
+    title: "CultureCrunch | Leadership Operating System",
+    description: "Transform workplace culture with embedded leadership rhythms. 6-week program for accountable conversations.",
+    images: ["https://culturecrunch.io/twitter-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({

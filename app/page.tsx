@@ -641,6 +641,44 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Industry Selector Section */}
+        <section className="py-24 bg-muted/30">
+          <div className="container px-4 md:px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Industry-Specific Solutions</h2>
+              <p className="text-muted-foreground text-lg">
+                Explore how CultureCrunch works for your industry
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+              <Link href="https://agedcare.culturecrunch.io" className="group">
+                <div className="p-8 border rounded-2xl hover:border-primary transition-all duration-300 hover:shadow-lg bg-background h-full">
+                  <h3 className="text-xl font-bold mb-2 text-foreground">Aged Care</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Reduce turnover by 25%, mental health claims by 40%
+                  </p>
+                  <div className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="https://cpb.culturecrunch.io" className="group">
+                <div className="p-8 border rounded-2xl hover:border-primary transition-all duration-300 hover:shadow-lg bg-background h-full">
+                  <h3 className="text-xl font-bold mb-2 text-foreground">Construction</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Build high-performance teams with embedded leadership
+                  </p>
+                  <div className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </div>
     </>
