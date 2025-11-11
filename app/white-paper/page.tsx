@@ -138,7 +138,7 @@ export default function WhitePaperPage() {
                 <span className="font-semibold text-primary">6.</span>
                 <div>
                   <p className="font-medium group-hover:text-primary transition-colors">The O.O.R.A. Methodology</p>
-                  <p className="text-sm text-muted-foreground">Observation • Ownership • Request • Agreement</p>
+                  <p className="text-sm text-muted-foreground">Ownership • Observation • Request • Agreement</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 group">
@@ -265,18 +265,18 @@ export default function WhitePaperPage() {
                     <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/40 flex items-center justify-center">
                       <span className="text-purple-600 dark:text-purple-400 font-bold">O</span>
                     </div>
-                    <h4 className="font-semibold text-foreground">Observation</h4>
+                    <h4 className="font-semibold text-foreground">Ownership</h4>
                   </div>
-                  <p className="text-sm text-muted-foreground ml-10">Separating facts from interpretations to create shared reality</p>
+                  <p className="text-sm text-muted-foreground ml-10">Taking responsibility through "What's My Part?" thinking</p>
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/40 flex items-center justify-center">
                       <span className="text-indigo-600 dark:text-indigo-400 font-bold">O</span>
                     </div>
-                    <h4 className="font-semibold text-foreground">Ownership</h4>
+                    <h4 className="font-semibold text-foreground">Observation</h4>
                   </div>
-                  <p className="text-sm text-muted-foreground ml-10">Taking responsibility through "What's My Part?" thinking</p>
+                  <p className="text-sm text-muted-foreground ml-10">Separating facts from interpretations to create shared reality</p>
                 </div>
               </div>
               <div className="space-y-4">

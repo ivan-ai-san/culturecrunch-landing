@@ -26,7 +26,7 @@ export default function WeekByWeekTimeline() {
       icon: Rocket,
       title: "Skillset Installation + First Sprint",
       subtitle: "Turn talk into action",
-      description: "Introduce the O.O.R.A. framework (Observation, Opinion, Request, Agreement) for clear decision-making. Teams choose their first micro-action and track follow-through accountability.",
+      description: "Introduce the O.O.R.A. framework (Ownership, Observation, Request, Agreement) for clear decision-making. Teams choose their first micro-action and track follow-through accountability.",
       color: "blue"
     },
     {
