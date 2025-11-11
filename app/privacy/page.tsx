@@ -272,9 +272,9 @@ export default function PrivacyPage() {
               <div className="p-5 bg-background rounded-xl border">
                 <h4 className="font-semibold text-foreground mb-2">Account Closure</h4>
                 <ul className="space-y-1 text-sm text-muted-foreground ml-4">
-                  <li>• Within 30 days: Anonymize or delete personal identifiers</li>
+                  <li>• Within 30 days: Anonymise or delete personal identifiers</li>
                   <li>• Within 90 days: Remove all team-level data (unless legally required)</li>
-                  <li>• Aggregate, anonymized insights may be retained indefinitely for research</li>
+                  <li>• Aggregate, anonymised insights may be retained indefinitely for research</li>
                 </ul>
               </div>
             </div>
