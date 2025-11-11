@@ -495,17 +495,6 @@ export default function PrivacyPage() {
                 </div>
               </div>
 
-              <div>
-                <p className="text-sm font-semibold text-foreground mb-2">Mail:</p>
-                <div className="text-muted-foreground">
-                  <p>CultureCrunch</p>
-                  <p>Attn: Privacy Officer</p>
-                  <p>[Your Street Address]</p>
-                  <p>[Suburb], NSW [Postcode]</p>
-                  <p>Australia</p>
-                </div>
-              </div>
-
               <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
                   <strong className="text-foreground">Response Time:</strong> We aim to respond to all privacy inquiries within 5 business days, with full resolution within 30 days (or as required by applicable law).
