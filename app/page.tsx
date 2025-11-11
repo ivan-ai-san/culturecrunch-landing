@@ -75,7 +75,7 @@ export default function Home() {
                 The Problem
               </div>
               <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                Despite Billions Spent, Most Culture Transformation Fail
+                Despite Billions Spent, Most Culture Transformation Programs Fail
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
                 The result is a costly cycle of disengagement and underperformance that drains organisational energy and resources.
