@@ -71,11 +71,12 @@ export default function CircularLoop() {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full min-h-[750px]">
       {/* Desktop: Circular Layout */}
-      <div className="hidden lg:block relative h-[750px] max-w-6xl mx-auto">
+      {/* IMPORTANT: Inline styles below ensure proper rendering and prevent CSS conflicts. Do not remove. */}
+      <div className="hidden lg:block relative h-[750px] max-w-6xl mx-auto" style={{ minHeight: '750px', position: 'relative' }}>
         {/* Dashed circle guide */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1, position: 'absolute' }}>
           <circle
             cx="50%"
             cy="50%"
@@ -84,7 +85,7 @@ export default function CircularLoop() {
             stroke="url(#gradient)"
             strokeWidth="2"
             strokeDasharray="8 8"
-            opacity="0.2"
+            opacity="0.3"
           />
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -96,7 +97,7 @@ export default function CircularLoop() {
         </svg>
 
         {/* Center Circle with CultureCrunch Logo */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64" style={{ zIndex: 10, position: 'absolute' }}>
           {/* Rotating gradient border */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 opacity-30 animate-spin" style={{ animationDuration: "8s" }}></div>
 
@@ -130,7 +131,9 @@ export default function CircularLoop() {
               style={{
                 left: '50%',
                 top: '50%',
-                transform: `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`
+                transform: `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`,
+                zIndex: 20,
+                position: 'absolute'
               }}
             >
               <div className="relative group">
