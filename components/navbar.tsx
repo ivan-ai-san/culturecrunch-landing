@@ -130,33 +130,6 @@ export default function Navbar() {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-
-              {/* Markets Dropdown */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
-                  Markets
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-48">
-                    <NavigationMenuLink asChild>
-                      <Link href="https://agedcare.culturecrunch.io" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Aged Care</div>
-                        <p className="text-xs leading-snug text-muted-foreground mt-1">
-                          Solutions for aged care providers
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link href="https://cpb.culturecrunch.io" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Construction</div>
-                        <p className="text-xs leading-snug text-muted-foreground mt-1">
-                          Solutions for construction teams
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -266,25 +239,6 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     ROI Calculator
-                  </Link>
-                </div>
-
-                {/* Markets Section */}
-                <div className="flex flex-col gap-2">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Markets</div>
-                  <Link
-                    href="https://agedcare.culturecrunch.io"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Aged Care
-                  </Link>
-                  <Link
-                    href="https://cpb.culturecrunch.io"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Construction
                   </Link>
                 </div>
 

@@ -641,67 +641,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Industry Selector Section */}
-        <section className="py-24 bg-muted/30">
-          <div className="container px-4 md:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Industry-Specific Solutions</h2>
-              <p className="text-muted-foreground text-lg">
-                Explore how CultureCrunch works for your industry
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-              <Link href="https://agedcare.culturecrunch.io" className="group">
-                <div className="p-8 border rounded-2xl hover:border-primary transition-all duration-300 hover:shadow-lg bg-background h-full">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-rose-100 to-pink-100 dark:from-rose-950/40 dark:to-pink-950/40 flex items-center justify-center border border-rose-200 dark:border-rose-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-rose-600 dark:text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                        <path d="M12 5v13"/>
-                        <path d="M9 8h6"/>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 text-foreground">Aged Care</h3>
-                      <p className="text-muted-foreground mb-4">
-                        Reduce turnover by 25%, mental health claims by 40%
-                      </p>
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-
-              <Link href="https://cpb.culturecrunch.io" className="group">
-                <div className="p-8 border rounded-2xl hover:border-primary transition-all duration-300 hover:shadow-lg bg-background h-full">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-950/40 dark:to-orange-950/40 flex items-center justify-center border border-amber-200 dark:border-amber-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-amber-600 dark:text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
-                        <path d="M7 10h.01"/>
-                        <path d="M12 10h.01"/>
-                        <path d="M17 10h.01"/>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 text-foreground">Construction</h3>
-                      <p className="text-muted-foreground mb-4">
-                        Build high-performance teams with embedded leadership
-                      </p>
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <Footer />
       </div>
     </>
