@@ -40,7 +40,7 @@ export default function Home() {
                 In a world of increasing complexity, volatility, and change, leadership can no longer rely on charisma, intuition, or ad‑hoc communication.
               </p>
               <p className="text-base text-muted-foreground md:text-lg lg:text-xl/relaxed max-w-3xl mb-12 font-medium">
-                Leaders run the operating system — they set the rhythm for clarity, trust, and performance, translating culture from words into action every day.
+                Leaders run the operating system - they set the rhythm for clarity, trust, and performance, translating culture from words into action every day.
               </p>
 
               <TypingPromptInput />
@@ -78,7 +78,7 @@ export default function Home() {
                 Despite Billions Spent, Most Leadership Initiatives Fail to Stick
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                The result is a costly cycle of disengagement, rework, and underperformance that drains organizational energy and resources.
+                The result is a costly cycle of disengagement, rework, and underperformance that drains organisational energy and resources.
               </p>
             </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="relative bg-background border border-red-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-red-500/40 transition-colors">
                   <Clock className="h-10 w-10 text-red-500" />
                   <div className="text-5xl font-bold text-red-500">50-70%</div>
-                  <div className="text-sm font-semibold text-foreground">Behavior Change Reversal</div>
+                  <div className="text-sm font-semibold text-foreground">Behaviour Change Reversal</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Without reinforcement, learning decays rapidly within a week (Ebbinghaus, 1913).
                   </p>
@@ -198,7 +198,7 @@ export default function Home() {
                     </div>
                     <h4 className="text-lg font-semibold">Culture is now a performance system</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      The old HR view — culture as values on the wall — has shifted. Boards and investors now link leadership behaviour directly to business results.
+                      The old HR view - culture as values on the wall - has shifted. Boards and investors now link leadership behaviour directly to business results.
                     </p>
                   </div>
 
@@ -218,7 +218,7 @@ export default function Home() {
                     </div>
                     <h4 className="text-lg font-semibold">AI makes culture measurable</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      With simple weekly signals, teams can now see what was once invisible — how clarity, trust, and energy shift week to week.
+                      With simple weekly signals, teams can now see what was once invisible - how clarity, trust, and energy shift week to week.
                     </p>
                   </div>
 
@@ -293,7 +293,7 @@ export default function Home() {
                   <div className="text-7xl font-bold bg-gradient-to-br from-blue-600 to-violet-600 bg-clip-text text-transparent">40%</div>
                   <h3 className="text-xl font-bold text-foreground">Claims Reduction</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Reduce total workplace claims—both physical and psychological—by up to 40% through clear decision pathways, accountability loops, and proactive communication.
+                    Reduce total workplace claims - both physical and psychological - by up to 40% through clear decision pathways, accountability loops, and proactive communication.
                   </p>
                   <div className="pt-2">
                     <p className="text-xs font-medium text-blue-600 dark:text-blue-400">
@@ -491,7 +491,7 @@ export default function Home() {
                 <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 md:p-12 text-center space-y-4">
                   <h3 className="text-2xl md:text-3xl font-bold">Simple. Sustainable. Measurable.</h3>
                   <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-                    No complex software. No extensive training. Just a proven rhythm that fits into the way your teams already work—with AI quietly tracking what matters so you can lead with confidence.
+                    No complex software. No extensive training. Just a proven rhythm that fits into the way your teams already work - with AI quietly tracking what matters so you can lead with confidence.
                   </p>
                 </div>
               </div>
@@ -524,7 +524,7 @@ export default function Home() {
             <div className="max-w-5xl mx-auto mb-12">
               <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-3xl p-8 md:p-12 border border-primary/20">
                 <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 font-medium text-center">
-                  Organizations that move first to install embedded leadership operating systems will lead on three fronts:
+                  Organisations that move first to install embedded leadership operating systems will lead on three fronts:
                 </p>
               </div>
             </div>
@@ -540,7 +540,7 @@ export default function Home() {
                   <div className="text-center space-y-3">
                     <h3 className="text-2xl font-bold">Performance</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Faster decisions, less rework, more value delivered consistently across the organization.
+                      Faster decisions, less rework, more value delivered consistently across the organisation.
                     </p>
                   </div>
                 </div>
@@ -592,7 +592,7 @@ export default function Home() {
                     Install Your Leadership Operating System
                   </h2>
                   <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                    Culture Crunch turns leadership into an operating system — one that continuously powers clarity, trust, and performance in an increasingly complex world.
+                    Culture Crunch turns leadership into an operating system - one that continuously powers clarity, trust, and performance in an increasingly complex world.
                   </p>
                 </div>
                 <div className="space-y-4 pt-4">

@@ -18,7 +18,7 @@ export default function UseCases() {
       icon: <BuildingIcon />,
       title: "Enterprise Knowledge Management",
       description:
-        "Centralize organizational knowledge and enable AI-powered search and retrieval across all your data sources.",
+        "Centralise organisational knowledge and enable AI-powered search and retrieval across all your data sources.",
       accentColor: "rgba(59, 130, 246, 0.5)",
     },
     {

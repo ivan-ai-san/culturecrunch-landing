@@ -47,7 +47,7 @@ export default function ContactForm() {
       <CardHeader>
         <CardTitle>Contact Our Enterprise Team</CardTitle>
         <CardDescription>
-          Fill out the form below to discuss your organization's needs and receive a custom quote.
+          Fill out the form below to discuss your organisation's needs and receive a custom quote.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -67,7 +67,7 @@ export default function ContactForm() {
             <Input id="email" type="email" placeholder="john.doe@company.com" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="company">Company/Organization</Label>
+            <Label htmlFor="company">Company/Organisation</Label>
             <Input id="company" placeholder="Acme Inc." required />
           </div>
           <div className="space-y-2">
@@ -75,10 +75,10 @@ export default function ContactForm() {
             <Input id="role" placeholder="CTO, IT Director, etc." required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="size">Organization Size</Label>
+            <Label htmlFor="size">Organisation Size</Label>
             <Select>
               <SelectTrigger id="size">
-                <SelectValue placeholder="Select organization size" />
+                <SelectValue placeholder="Select organisation size" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="1-50">1-50 employees</SelectItem>

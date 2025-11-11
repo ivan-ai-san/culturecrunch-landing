@@ -40,7 +40,7 @@ export default function FeaturesSection() {
     {
       icon: <FileTextIcon />,
       title: "Prompt Templates",
-      description: "Access our extensive library of prompt templates or create custom ones for your organization.",
+      description: "Access our extensive library of prompt templates or create custom ones for your organisation.",
       accentColor: "rgba(249, 115, 22, 0.5)",
     },
     {
@@ -76,7 +76,7 @@ export default function FeaturesSection() {
               Enterprise-Grade AI Platform
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Designed specifically for organizations that demand security, customization, and control.
+              Designed specifically for organisations that demand security, customisation, and control.
             </p>
           </div>
         </div>

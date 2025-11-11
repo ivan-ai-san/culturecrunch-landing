@@ -11,7 +11,7 @@ const sections = [
     id: "mindset",
     icon: Brain,
     title: "The Mindset: Installing the Right Mindset for Accountable Conversations",
-    intro: "Every accountable conversation begins with intention—not correction. Leaders pause to self-regulate, check their motives, and centre on values before they speak.",
+    intro: "Every accountable conversation begins with intention - not correction. Leaders pause to self-regulate, check their motives, and centre on values before they speak.",
     content: [
       {
         label: "Intention setting",
@@ -30,7 +30,7 @@ const sections = [
         text: "Listening beneath behaviour to what truly matters."
       }
     ],
-    footer: "This is the shift from Red Zone (reactivity, approval, control, or security seeking) to Green Zone—where clarity, courage, and care can coexist.",
+    footer: "This is the shift from Red Zone (reactivity, approval, control, or security seeking) to Green Zone - where clarity, courage, and care can coexist.",
     color: "purple"
   },
   {
@@ -56,7 +56,7 @@ const sections = [
         text: "Align on clear next steps, outcomes, and shared responsibility."
       }
     ],
-    footer: "It's not a script—it's a backbone for honest, human dialogue.",
+    footer: "It's not a script - it's a backbone for honest, human dialogue.",
     color: "indigo"
   },
   {
@@ -101,14 +101,14 @@ const sections = [
       },
       {
         label: "Staying connected to purpose",
-        text: "Keeping teams aligned with the Triple Goal—great performance, great learning, and a great workplace."
+        text: "Keeping teams aligned with the Triple Goal - great performance, great learning, and a great workplace."
       },
       {
         label: "Growth moments",
         text: "Transforming difficult conversations into opportunities for both individual and cultural development."
       }
     ],
-    footer: "They turn difficult moments into growth moments—for both people and culture.",
+    footer: "They turn difficult moments into growth moments - for both people and culture.",
     color: "indigo"
   }
 ];
