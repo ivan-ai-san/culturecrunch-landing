@@ -54,16 +54,6 @@ export default function Footer() {
                     White Paper
                   </Link>
                 </li>
-                <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/support" className="text-muted-foreground hover:text-foreground">
-                    Support
-                  </Link>
-                </li>
               </ul>
             </nav>
           </div>
@@ -74,11 +64,6 @@ export default function Footer() {
                 <li>
                   <Link href="/about" className="text-muted-foreground hover:text-foreground">
                     About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-muted-foreground hover:text-foreground">
-                    Careers
                   </Link>
                 </li>
                 <li>
