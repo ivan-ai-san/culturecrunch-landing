@@ -95,26 +95,26 @@ export default function CircularLoop() {
           </defs>
         </svg>
 
-        {/* Center Circle with AI Brain */}
+        {/* Center Circle with CultureCrunch Logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 z-10">
           {/* Rotating gradient border */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 opacity-30 animate-spin" style={{ animationDuration: "8s" }}></div>
 
-          {/* Inner circle with overflow clipping */}
-          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex items-center justify-center p-1 shadow-lg overflow-hidden">
-            {/* AI Brain Image - clipped to circle */}
+          {/* Inner circle with logo and text */}
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex flex-col items-center justify-center p-4 shadow-lg">
+            {/* CultureCrunch Logo */}
             <Image
-              src="/ai-brain-tras.png"
-              alt="AI Assistant"
-              width={200}
-              height={200}
-              className="object-contain"
-              style={{
-                maskImage: 'radial-gradient(circle, black 60%, transparent 70%)',
-                WebkitMaskImage: 'radial-gradient(circle, black 60%, transparent 70%)'
-              }}
+              src="/culturecrunch-logo.png"
+              alt="CultureCrunch"
+              width={80}
+              height={80}
+              className="object-contain mb-2"
               priority
             />
+            {/* CultureCrunch Text */}
+            <h3 className="text-lg font-bold text-foreground mb-1">CultureCrunch</h3>
+            {/* AI Coach Companion Text */}
+            <p className="text-xs font-medium text-muted-foreground">AI Coach Companion</p>
           </div>
         </div>
 

@@ -50,7 +50,7 @@ export default function Navbar() {
                 <NavigationMenuContent>
                   <div className="w-48">
                     <NavigationMenuLink asChild>
-                      <Link href="#problem" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#problem" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">The Problem</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           Understanding the leadership challenge
@@ -58,7 +58,7 @@ export default function Navbar() {
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="#opportunity" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#opportunity" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">The Opportunity</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           The potential for transformation
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <NavigationMenuContent>
                   <div className="w-48">
                     <NavigationMenuLink asChild>
-                      <Link href="#solution" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#solution" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Solution</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           Our approach to leadership development
@@ -85,7 +85,7 @@ export default function Navbar() {
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="#how-it-works" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#how-it-works" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">How It Works</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           The implementation process
@@ -93,7 +93,7 @@ export default function Navbar() {
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="#methodology" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#methodology" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Methodology</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           Research-backed framework
@@ -112,7 +112,7 @@ export default function Navbar() {
                 <NavigationMenuContent>
                   <div className="w-48">
                     <NavigationMenuLink asChild>
-                      <Link href="#why-now" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#why-now" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Why Now</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           The urgency of leadership development
@@ -134,7 +134,7 @@ export default function Navbar() {
           </NavigationMenu>
 
           {/* Contact Link */}
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link href="/#contact" className="text-sm font-medium transition-colors hover:text-primary">
             Contact
           </Link>
         </nav>
@@ -146,7 +146,7 @@ export default function Navbar() {
             asChild
             className="hidden md:flex items-center gap-3 px-4 py-2 bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 h-auto dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_10px_rgba(36,101,237,0.4)]"
           >
-            <Link href="#contact">
+            <Link href="/#contact">
               <Zap className="h-4 w-4 text-white" />
               <div className="flex flex-col items-start">
                 <span className="text-sm font-medium">Get Started</span>
@@ -182,14 +182,14 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2">
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Home</div>
                   <Link
-                    href="#problem"
+                    href="/#problem"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     The Problem
                   </Link>
                   <Link
-                    href="#opportunity"
+                    href="/#opportunity"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
@@ -201,21 +201,21 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2">
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Offering</div>
                   <Link
-                    href="#solution"
+                    href="/#solution"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     Solution
                   </Link>
                   <Link
-                    href="#how-it-works"
+                    href="/#how-it-works"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     How It Works
                   </Link>
                   <Link
-                    href="#methodology"
+                    href="/#methodology"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
@@ -227,7 +227,7 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2">
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Why Now</div>
                   <Link
-                    href="#why-now"
+                    href="/#why-now"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
@@ -244,7 +244,7 @@ export default function Navbar() {
 
                 {/* Contact */}
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="text-lg font-medium transition-colors hover:text-primary"
                   onClick={() => setIsOpen(false)}
                 >
@@ -257,7 +257,7 @@ export default function Navbar() {
                     asChild
                     className="w-full flex items-center gap-3 px-4 py-2 bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 h-auto dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_10px_rgba(36,101,237,0.4)]"
                   >
-                    <Link href="#contact" onClick={() => setIsOpen(false)}>
+                    <Link href="/#contact" onClick={() => setIsOpen(false)}>
                       <Zap className="h-4 w-4 text-white" />
                       <div className="flex flex-col items-start">
                         <span className="text-sm font-medium">Get Started</span>

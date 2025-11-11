@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership Development ROI Calculator | LeadershipOS</title>
+  <meta name="description" content="Calculate the financial return of implementing systematic leadership development. Based on 100+ peer-reviewed studies. Average 7x ROI.">
+  
+  <!-- Import your existing globals.css which includes Tailwind -->
+  <link rel="stylesheet" href="/globals.css">
+  
+  <!-- Chart.js for visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
+  <style>
+    /* Custom slider styling to match your design system */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+    }
+    
+    input[type="range"]::-webkit-slider-track {
+      background: oklch(var(--muted));
+      height: 0.5rem;
+      border-radius: var(--radius-md);
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: oklch(var(--chart-1));
+      cursor: pointer;
+      margin-top: -0.375rem;
+      border: 2px solid oklch(var(--background));
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    input[type="range"]::-moz-range-track {
+      background: oklch(var(--muted));
+      height: 0.5rem;
+      border-radius: var(--radius-md);
+    }
+    
+    input[type="range"]::-moz-range-thumb {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: oklch(var(--chart-1));
+      cursor: pointer;
+      border: 2px solid oklch(var(--background));
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    /* Smooth scrolling for navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Fade-in animation for results */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  
+  <!-- Hero Section -->
+  <section class="min-h-[60vh] flex items-center justify-center bg-background border-b border-border">
+    <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-6">
+        Calculate Your Leadership Development ROI
+      </h1>
+      <p class="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed">
+        See the real financial impact of building leadership as an operating system, not an event
+      </p>
+      <div class="inline-flex items-center gap-2 text-sm text-muted-foreground">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Based on peer-reviewed research across 100+ studies</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Form Section -->
+  <section id="calculator" class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Progress Indicator -->
+      <div class="mb-12">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium">
+              1
+            </div>
+            <span class="text-sm font-medium text-foreground">Organization Basics</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-40">
+            <div class="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center text-sm font-medium">
+              2
+            </div>
+            <span class="text-sm font-medium text-muted-foreground">Current State</span>
+          </div>
+          <div class="flex items-center gap-3 opacity-40">
+            <div class="w-10 h-10 rounded-full bg-muted text-muted-foreground flex items-center justify-center text-sm font-medium">
+              3
+            </div>
+            <span class="text-sm font-medium text-muted-foreground">Investment</span>
+          </div>
+        </div>
+        <div class="h-2 bg-muted rounded-full overflow-hidden">
+          <div class="h-full bg-chart-1 transition-all duration-300" style="width: 33%"></div>
+        </div>
+      </div>
+
+      <!-- Step 1: Organization Basics -->
+      <div id="step1" class="space-y-8">
+        <div class="bg-card border border-border rounded-lg p-8">
+          <h2 class="text-2xl font-semibold text-foreground mb-6">Tell us about your organization</h2>
+          
+          <!-- Number of Leaders -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 flex items-center justify-between">
+              <span>Number of leaders/managers</span>
+              <span class="font-mono text-chart-1" id="numLeadersValue">50</span>
+            </label>
+            <input 
+              type="range" 
+              id="numLeaders" 
+              min="10" 
+              max="500" 
+              value="50" 
+              step="5"
+              class="w-full"
+            >
+            <div class="flex justify-between text-xs text-muted-foreground mt-2">
+              <span>10</span>
+              <span>500</span>
+            </div>
+          </div>
+
+          <!-- Employees per Leader -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 flex items-center justify-between">
+              <span>Average employees per leader</span>
+              <span class="font-mono text-chart-1" id="reportsValue">10</span>
+            </label>
+            <input 
+              type="range" 
+              id="reportsPerLeader" 
+              min="5" 
+              max="20" 
+              value="10" 
+              step="1"
+              class="w-full"
+            >
+            <div class="flex justify-between text-xs text-muted-foreground mt-2">
+              <span>5</span>
+              <span>20</span>
+            </div>
+            <p class="text-xs text-muted-foreground mt-2">
+              Total employees: <span class="font-mono text-foreground" id="totalEmployees">500</span>
+            </p>
+          </div>
+
+          <!-- Average Salary -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Average annual salary
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+              <input 
+                type="number" 
+                id="avgSalary" 
+                value="75000" 
+                min="40000"
+                max="200000"
+                step="5000"
+                class="w-full bg-input border border-border rounded-md pl-8 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none font-mono"
+                placeholder="75000"
+              >
+            </div>
+            <p class="text-xs text-muted-foreground mt-2">
+              Total annual compensation: <span class="font-mono text-foreground" id="totalCompensation">$37,500,000</span>
+            </p>
+          </div>
+
+          <!-- Industry -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Industry
+            </label>
+            <select 
+              id="industry"
+              class="w-full bg-input border border-border rounded-md px-4 py-3 text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <option value="tech">Technology</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="professional_services">Professional Services</option>
+              <option value="finance">Finance</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-end pt-6 border-t border-border">
+            <button 
+              onclick="goToStep(2)"
+              class="bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
+            >
+              Next: Current State
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Current State (hidden initially) -->
+      <div id="step2" class="space-y-8 hidden">
+        <div class="bg-card border border-border rounded-lg p-8">
+          <h2 class="text-2xl font-semibold text-foreground mb-6">Your current state</h2>
+          
+          <!-- Turnover Rate -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 flex items-center justify-between">
+              <span>Annual turnover rate</span>
+              <span class="font-mono text-chart-1" id="turnoverValue">15%</span>
+            </label>
+            <input 
+              type="range" 
+              id="turnoverRate" 
+              min="5" 
+              max="30" 
+              value="15" 
+              step="1"
+              class="w-full"
+            >
+            <div class="flex justify-between text-xs text-muted-foreground mt-2">
+              <span>5%</span>
+              <span>30%</span>
+            </div>
+            <p class="text-xs text-muted-foreground mt-2">
+              Estimated annual departures: <span class="font-mono text-foreground" id="currentDepartures">75</span> employees
+            </p>
+          </div>
+
+          <!-- Current Investment -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Current annual investment in leadership development
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+              <input 
+                type="number" 
+                id="currentInvestment" 
+                value="0" 
+                min="0"
+                max="500000"
+                step="10000"
+                class="w-full bg-input border border-border rounded-md pl-8 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none font-mono"
+                placeholder="0"
+              >
+            </div>
+            <p class="text-xs text-muted-foreground mt-2">
+              Enter 0 if you don't currently have a structured program
+            </p>
+          </div>
+
+          <!-- Engagement Score (Optional) -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Average engagement score (optional)
+            </label>
+            <select 
+              id="engagementScore"
+              class="w-full bg-input border border-border rounded-md px-4 py-3 text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <option value="">Not measured</option>
+              <option value="1">1 - Very Low</option>
+              <option value="2">2 - Low</option>
+              <option value="3" selected>3 - Average</option>
+              <option value="4">4 - Good</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between pt-6 border-t border-border">
+            <button 
+              onclick="goToStep(1)"
+              class="border border-border text-foreground px-8 py-3 rounded-md font-medium hover:bg-accent transition-colors"
+            >
+              Back
+            </button>
+            <button 
+              onclick="goToStep(3)"
+              class="bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
+            >
+              Next: Investment
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Investment Parameters (hidden initially) -->
+      <div id="step3" class="space-y-8 hidden">
+        <div class="bg-card border border-border rounded-lg p-8">
+          <h2 class="text-2xl font-semibold text-foreground mb-6">Investment parameters</h2>
+          
+          <!-- Program Duration -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Program duration
+            </label>
+            <select 
+              id="programDuration"
+              class="w-full bg-input border border-border rounded-md px-4 py-3 text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            >
+              <option value="6">6 months</option>
+              <option value="12" selected>12 months (recommended)</option>
+              <option value="18">18 months</option>
+            </select>
+          </div>
+
+          <!-- Investment Amount -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 flex items-center justify-between">
+              <span>Annual investment amount</span>
+              <span class="font-mono text-chart-1" id="investmentValue">$150,000</span>
+            </label>
+            <input 
+              type="range" 
+              id="investmentAmount" 
+              min="100000" 
+              max="200000" 
+              value="150000" 
+              step="10000"
+              class="w-full"
+            >
+            <div class="flex justify-between text-xs text-muted-foreground mt-2">
+              <span>$100k</span>
+              <span>$200k</span>
+            </div>
+            <p class="text-xs text-muted-foreground mt-2">
+              Per leader: <span class="font-mono text-foreground" id="perLeaderCost">$3,000</span>
+            </p>
+          </div>
+
+          <!-- Implementation Approach -->
+          <div class="mb-8">
+            <label class="text-sm font-medium text-foreground mb-3 block">
+              Implementation approach
+            </label>
+            <div class="space-y-3">
+              <label class="flex items-start gap-3 cursor-pointer p-4 rounded-md border border-border hover:bg-accent/50 transition-colors">
+                <input type="radio" name="implementation" value="full" checked class="mt-1">
+                <div class="flex-1">
+                  <div class="font-medium text-foreground">Full rollout</div>
+                  <div class="text-sm text-muted-foreground">All leaders participate from the start</div>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer p-4 rounded-md border border-border hover:bg-accent/50 transition-colors">
+                <input type="radio" name="implementation" value="pilot">
+                <div class="flex-1">
+                  <div class="font-medium text-foreground">Pilot program</div>
+                  <div class="text-sm text-muted-foreground">Start with a subset, scale based on results</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between pt-6 border-t border-border">
+            <button 
+              onclick="goToStep(2)"
+              class="border border-border text-foreground px-8 py-3 rounded-md font-medium hover:bg-accent transition-colors"
+            >
+              Back
+            </button>
+            <button 
+              onclick="calculateROI()"
+              class="bg-chart-1 text-primary-foreground px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity"
+            >
+              Calculate ROI
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Results Section (hidden until calculation) -->
+  <section id="results" class="py-16 bg-muted/20 hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <div class="bg-card border border-border rounded-lg p-6">
+          <div class="text-sm text-muted-foreground mb-2">Total ROI (Year 1)</div>
+          <div class="text-4xl font-bold font-mono text-chart-1" id="totalROI">$1.05M</div>
+          <div class="text-xs text-muted-foreground mt-2">Net benefit after costs</div>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+          <div class="text-sm text-muted-foreground mb-2">ROI Multiple</div>
+          <div class="text-4xl font-bold font-mono text-chart-2" id="roiMultiple">7.8x</div>
+          <div class="text-xs text-muted-foreground mt-2">Return on investment</div>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+          <div class="text-sm text-muted-foreground mb-2">Break-Even</div>
+          <div class="text-4xl font-bold font-mono text-chart-3" id="breakEven">4.2</div>
+          <div class="text-xs text-muted-foreground mt-2">Months to payback</div>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+          <div class="text-sm text-muted-foreground mb-2">3-Year Value</div>
+          <div class="text-4xl font-bold font-mono text-chart-4" id="threeYearROI">$5.2M</div>
+          <div class="text-xs text-muted-foreground mt-2">Cumulative benefit</div>
+        </div>
+
+      </div>
+
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <div class="bg-card border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-foreground mb-4">Benefit Breakdown</h3>
+          <canvas id="benefitChart"></canvas>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-foreground mb-4">ROI Timeline</h3>
+          <canvas id="timelineChart"></canvas>
+        </div>
+
+      </div>
+
+      <!-- Detailed Breakdown Table -->
+      <div class="bg-card border border-border rounded-lg p-6 mb-8">
+        <h3 class="text-lg font-semibold text-foreground mb-4">Detailed Breakdown</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="border-b border-border">
+              <tr class="text-left">
+                <th class="py-3 text-sm font-medium text-muted-foreground">Benefit Category</th>
+                <th class="py-3 text-sm font-medium text-muted-foreground text-right">Year 1</th>
+                <th class="py-3 text-sm font-medium text-muted-foreground text-right">Year 2</th>
+                <th class="py-3 text-sm font-medium text-muted-foreground text-right">3-Year Total</th>
+                <th class="py-3 text-sm font-medium text-muted-foreground">Research Basis</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border" id="breakdownTable">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-chart-1/10 border border-chart-1/20 rounded-lg p-8 text-center">
+        <h3 class="text-2xl font-semibold text-foreground mb-4">
+          Ready to achieve these results?
+        </h3>
+        <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          Schedule a consultation to discuss how we can help your organization build a leadership operating system that delivers measurable ROI.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:opacity-90 transition-opacity">
+            Schedule ROI Discussion
+          </button>
+          <button class="border border-border text-foreground px-8 py-3 rounded-md font-medium hover:bg-accent transition-colors">
+            Download Full Methodology
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-foreground mb-8">How We Calculate ROI</h2>
+      
+      <div class="bg-card border border-border rounded-lg p-8 mb-6">
+        <h3 class="text-xl font-medium text-foreground mb-4">Research-Backed Methodology</h3>
+        <p class="text-muted-foreground mb-4 leading-relaxed">
+          This calculator uses conservative estimates from peer-reviewed research across 100+ studies. All calculations are based on:
+        </p>
+        <ul class="space-y-2 text-muted-foreground">
+          <li class="flex items-start gap-2">
+            <span class="text-chart-1 mt-1">•</span>
+            <span>BetterManager's 2023 study of 752 managers (average 7:1 ROI)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-chart-1 mt-1">•</span>
+            <span>Turnover reduction research (25-40% improvement with good leadership)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-chart-1 mt-1">•</span>
+            <span>Habit formation timelines (66-day median from Lally et al.)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-chart-1 mt-1">•</span>
+            <span>Implementation science frameworks for realistic ramp-up periods</span>
+          </li>
+        </ul>
+      </div>
+
+      <details class="bg-card border border-border rounded-lg p-6 cursor-pointer hover:bg-accent/5 transition-colors">
+        <summary class="font-medium text-foreground">View full calculation methodology →</summary>
+        <div class="mt-4 text-sm text-muted-foreground space-y-2">
+          <p>Detailed explanations of each benefit category, research citations, and assumptions are available in our comprehensive methodology document.</p>
+          <button class="text-chart-1 underline">Download Methodology PDF</button>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <script>
+    // Form state management
+    let currentStep = 1;
+    let formData = {
+      numLeaders: 50,
+      reportsPerLeader: 10,
+      avgSalary: 75000,
+      industry: 'tech',
+      turnoverRate: 15,
+      currentInvestment: 0,
+      engagementScore: 3,
+      programDuration: 12,
+      investmentAmount: 150000,
+      implementationType: 'full'
+    };
+
+    // Navigation functions
+    function goToStep(step) {
+      // Hide all steps
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('step3').classList.add('hidden');
+      
+      // Show target step
+      document.getElementById(`step${step}`).classList.remove('hidden');
+      currentStep = step;
+      
+      // Update progress indicator
+      updateProgress(step);
+      
+      // Scroll to calculator section
+      document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateProgress(step) {
+      const percentage = (step / 3) * 100;
+      document.querySelector('.h-2 > div').style.width = percentage + '%';
+      
+      // Update step indicators (simplified for demo)
+      // In production, update all step circle states
+    }
+
+    // Real-time input updates
+    document.getElementById('numLeaders').addEventListener('input', (e) => {
+      const value = e.target.value;
+      document.getElementById('numLeadersValue').textContent = value;
+      formData.numLeaders = parseInt(value);
+      updateDerivedValues();
+    });
+
+    document.getElementById('reportsPerLeader').addEventListener('input', (e) => {
+      const value = e.target.value;
+      document.getElementById('reportsValue').textContent = value;
+      formData.reportsPerLeader = parseInt(value);
+      updateDerivedValues();
+    });
+
+    document.getElementById('avgSalary').addEventListener('input', (e) => {
+      const value = e.target.value;
+      formData.avgSalary = parseInt(value);
+      updateDerivedValues();
+    });
+
+    document.getElementById('turnoverRate').addEventListener('input', (e) => {
+      const value = e.target.value;
+      document.getElementById('turnoverValue').textContent = value + '%';
+      formData.turnoverRate = parseInt(value);
+      updateDerivedValues();
+    });
+
+    document.getElementById('investmentAmount').addEventListener('input', (e) => {
+      const value = e.target.value;
+      document.getElementById('investmentValue').textContent = '$' + parseInt(value).toLocaleString();
+      formData.investmentAmount = parseInt(value);
+      updateDerivedValues();
+    });
+
+    function updateDerivedValues() {
+      const totalEmployees = formData.numLeaders * formData.reportsPerLeader;
+      const totalComp = totalEmployees * formData.avgSalary;
+      const departures = Math.round(totalEmployees * (formData.turnoverRate / 100));
+      const perLeader = Math.round(formData.investmentAmount / formData.numLeaders);
+      
+      document.getElementById('totalEmployees').textContent = totalEmployees.toLocaleString();
+      document.getElementById('totalCompensation').textContent = '$' + totalComp.toLocaleString();
+      document.getElementById('currentDepartures').textContent = departures;
+      document.getElementById('perLeaderCost').textContent = '$' + perLeader.toLocaleString();
+    }
+
+    // ROI Calculation (simplified for demo - full logic from methodology document)
+    function calculateROI() {
+      // Hide calculator, show results with animation
+      document.getElementById('calculator').style.display = 'none';
+      const resultsSection = document.getElementById('results');
+      resultsSection.classList.remove('hidden');
+      resultsSection.classList.add('fade-in');
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // Perform actual calculations (import from full calculation logic)
+      const results = performCalculations(formData);
+      
+      // Update UI with results
+      displayResults(results);
+      
+      // Generate charts
+      createCharts(results);
+    }
+
+    function performCalculations(data) {
+      // This would import the full calculation logic from the methodology
+      // For demo purposes, using simplified example values
+      const totalEmployees = data.numLeaders * data.reportsPerLeader;
+      const totalComp = totalEmployees * data.avgSalary;
+      
+      // Simplified calculation (actual would follow methodology document exactly)
+      const year1Benefits = totalComp * 0.028; // ~2.8% improvement Year 1 with ramp-up
+      const year1Costs = data.investmentAmount * 1.1;
+      const year1Net = year1Benefits - year1Costs;
+      const roiMultiple = year1Benefits / year1Costs;
+      
+      return {
+        totalROI: year1Net,
+        roiMultiple: roiMultiple,
+        breakEven: 4.2,
+        threeYearROI: year1Net * 5.5, // Simplified
+        benefits: {
+          turnover: year1Benefits * 0.36,
+          productivity: year1Benefits * 0.40,
+          engagement: year1Benefits * 0.15,
+          errorReduction: year1Benefits * 0.05,
+          timeSavings: year1Benefits * 0.04
+        }
+      };
+    }
+
+    function displayResults(results) {
+      document.getElementById('totalROI').textContent = '$' + (results.totalROI / 1000000).toFixed(2) + 'M';
+      document.getElementById('roiMultiple').textContent = results.roiMultiple.toFixed(1) + 'x';
+      document.getElementById('breakEven').textContent = results.breakEven.toFixed(1);
+      document.getElementById('threeYearROI').textContent = '$' + (results.threeYearROI / 1000000).toFixed(1) + 'M';
+      
+      // Populate table
+      const tableBody = document.getElementById('breakdownTable');
+      const categories = [
+        { name: 'Turnover Reduction', value: results.benefits.turnover, research: '25-40% reduction' },
+        { name: 'Productivity Gains', value: results.benefits.productivity, research: '10% increase' },
+        { name: 'Engagement Improvement', value: results.benefits.engagement, research: '7-23% improvement' },
+        { name: 'Error Reduction', value: results.benefits.errorReduction, research: 'Industry-specific' },
+        { name: 'Time Savings', value: results.benefits.timeSavings, research: '30% communication efficiency' }
+      ];
+      
+      tableBody.innerHTML = categories.map(cat => `
+        <tr>
+          <td class="py-3 text-foreground">${cat.name}</td>
+          <td class="py-3 text-right font-mono text-foreground">$${Math.round(cat.value / 1000)}k</td>
+          <td class="py-3 text-right font-mono text-foreground">$${Math.round(cat.value * 2.5 / 1000)}k</td>
+          <td class="py-3 text-right font-mono text-foreground">$${Math.round(cat.value * 5.5 / 1000)}k</td>
+          <td class="py-3 text-sm text-muted-foreground">${cat.research}</td>
+        </tr>
+      `).join('');
+    }
+
+    function createCharts(results) {
+      // Benefit breakdown pie chart
+      const benefitCtx = document.getElementById('benefitChart').getContext('2d');
+      new Chart(benefitCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Turnover', 'Productivity', 'Engagement', 'Error Reduction', 'Time Savings'],
+          datasets: [{
+            data: [
+              results.benefits.turnover,
+              results.benefits.productivity,
+              results.benefits.engagement,
+              results.benefits.errorReduction,
+              results.benefits.timeSavings
+            ],
+            backgroundColor: [
+              'oklch(0.646 0.222 41.116)',
+              'oklch(0.6 0.118 184.704)',
+              'oklch(0.398 0.07 227.392)',
+              'oklch(0.828 0.189 84.429)',
+              'oklch(0.769 0.188 70.08)'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+      
+      // Timeline line chart (simplified)
+      const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+      new Chart(timelineCtx, {
+        type: 'line',
+        data: {
+          labels: ['Month 0', '3', '6', '9', '12'],
+          datasets: [
+            {
+              label: 'Cumulative Benefits',
+              data: [0, 200000, 450000, 750000, results.totalROI + formData.investmentAmount],
+              borderColor: 'oklch(0.646 0.222 41.116)',
+              backgroundColor: 'oklch(0.646 0.222 41.116 / 0.1)',
+              fill: true
+            },
+            {
+              label: 'Cumulative Investment',
+              data: [formData.investmentAmount, formData.investmentAmount * 1.02, formData.investmentAmount * 1.05, formData.investmentAmount * 1.08, formData.investmentAmount * 1.1],
+              borderColor: 'oklch(0.205 0 0)',
+              backgroundColor: 'oklch(0.205 0 0 / 0.1)',
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(value) {
+                  return '$' + (value / 1000) + 'k';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Initialize with default values
+    updateDerivedValues();
+  </script>
+
+</body>
+</html>

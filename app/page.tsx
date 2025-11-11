@@ -75,10 +75,10 @@ export default function Home() {
                 The Problem
               </div>
               <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                Despite Billions Spent, Most Leadership Initiatives Fail to Stick
+                Despite Billions Spent, Most Culture Transformation Fail
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                The result is a costly cycle of disengagement, rework, and underperformance that drains organisational energy and resources.
+                The result is a costly cycle of disengagement and underperformance that drains organisational energy and resources.
               </p>
             </div>
 
@@ -243,10 +243,10 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto">
               <h2 id="solution-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                A 6-Week Program That Installs The Accountable Leadership Operating System
+                A 6-Week Program That Installs The Leadership & Culture Operating System
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
-                Transform CPB teams with accountable conversations, clear decisions, and repeatable leadership habits that lift performance, reduce turnover, and protect project margin.
+                Transform teams with accountable conversations, clear decisions, and repeatable leadership habits that lift performance and embed culture.
               </p>
             </div>
 
