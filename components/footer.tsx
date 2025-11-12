@@ -18,22 +18,22 @@ export default function Footer() {
             <nav aria-label="Product Navigation">
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#problem" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#problem" className="text-muted-foreground hover:text-foreground">
                     The Problem
                   </Link>
                 </li>
                 <li>
-                  <Link href="#opportunity" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#opportunity" className="text-muted-foreground hover:text-foreground">
                     The Opportunity
                   </Link>
                 </li>
                 <li>
-                  <Link href="#solution" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#solution" className="text-muted-foreground hover:text-foreground">
                     Solution
                   </Link>
                 </li>
                 <li>
-                  <Link href="#how-it-works" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#how-it-works" className="text-muted-foreground hover:text-foreground">
                     How it Works
                   </Link>
                 </li>
@@ -67,7 +67,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
                     Contact
                   </Link>
                 </li>
