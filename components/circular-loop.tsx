@@ -74,7 +74,7 @@ export default function CircularLoop() {
     <div className="w-full min-h-[750px]">
       {/* Desktop: Circular Layout */}
       {/* IMPORTANT: Inline styles below ensure proper rendering and prevent CSS conflicts. Do not remove. */}
-      <div className="hidden lg:block relative h-[750px] max-w-6xl mx-auto" style={{ minHeight: '750px', position: 'relative' }}>
+      <div className="hidden md:block relative h-[750px] max-w-6xl mx-auto" style={{ minHeight: '750px', position: 'relative' }}>
         {/* Dashed circle guide */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1, position: 'absolute' }}>
           <circle
@@ -156,7 +156,7 @@ export default function CircularLoop() {
       </div>
 
       {/* Mobile & Tablet: Vertical Stack */}
-      <div className="lg:hidden space-y-4 max-w-md mx-auto">
+      <div className="md:hidden space-y-4 max-w-md mx-auto">
         {loopSteps.map((step, index) => {
           const Icon = step.icon
           return (
