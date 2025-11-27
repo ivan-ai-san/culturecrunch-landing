@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Linkedin, Mail, Twitter, Coffee, Users, Flame, Rocket } from "lucide-react"
+import { ArrowRight, Linkedin, Mail, Coffee, Users, Flame, Rocket } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import CssGridBackground from "@/components/css-grid-background"
@@ -23,7 +23,6 @@ Starting his career as an Australian Army officer, Campbell learned early that l
 
 Campbell's unique perspective? He's tired of watching organisations spend millions on training events that produce temporary enthusiasm but zero lasting behaviour change. At CultureCrunch, he's building what he wished existed in every boardroom conversation about culture: an operating system that makes leadership development inseparable from how work actually gets done.`,
     linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://twitter.com/yourhandle",
     email: "campbell@culturecrunch.com"
   },
   {
@@ -32,11 +31,10 @@ Campbell's unique perspective? He's tired of watching organisations spend millio
     image: "/placeholder-avatar.jpg", // Replace with actual image path
     bio: `Ivan brings 16+ years at the intersection of enterprise technology and strategic growth. From scaling Salesforce implementations at Cloudwerx to driving AI-led digital innovation at Thoughtworks, he's watched countless organisations buy transformation tools that measure everything but change nothing. His career spans territory sales at Oracle, business development across Asia-Pacific, and founding Digicity for Kids - a startup teaching him the hard lessons about product-market fit.
 
-With an MBA from UNSW and graduation from both Founder Institute and WSU Launch Pad, Ivan combines enterprise sales discipline with startup velocity. He's that rare technologist who speaks both boardroom strategy and shipping code - someone who's exceeded quotas at Dell and Oracle while also bootstrapping ventures from zero. He knows the difference between software that gets bought and software that gets used.
+With an MBA from UNSW and graduation from both Founder Institute and WSU Launch Pad, Ivan combines enterprise sales discipline with startup velocity. He's that rare technologist who speaks both boardroom strategy and shipping code - someone who's consistently exceeded quotas while also bootstrapping ventures from zero. He knows the difference between software that gets bought and software that gets used.
 
 Ivan's unique perspective? He's seen billion-dollar companies drown in engagement surveys while their culture rots from lack of execution. He understands that culture transformation isn't a data problem - it's a behaviour change problem disguised as an analytics opportunity. At CultureCrunch, he's building the infrastructure that turns research into repeatable systems, making evidence-based leadership as accessible as checking email.`,
     linkedin: "https://linkedin.com/in/theirprofile",
-    twitter: "https://twitter.com/theirhandle",
     email: "ivan@culturecrunch.com"
   }
 ]
@@ -360,16 +358,6 @@ export default function AboutPage() {
                         className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
                       >
                         <Linkedin className="h-5 w-5 text-primary" />
-                      </a>
-                    )}
-                    {founder.twitter && (
-                      <a
-                        href={founder.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      >
-                        <Twitter className="h-5 w-5 text-primary" />
                       </a>
                     )}
                     {founder.email && (
