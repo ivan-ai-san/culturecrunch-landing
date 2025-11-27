@@ -31,16 +31,16 @@ export default function Home() {
           <div className="container px-4 md:px-6 py-16 md:py-20">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
               <div className="inline-block rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-2 text-sm font-medium mb-6 border border-primary/20">
-                Human + AI = Better Leadership
+                The Fastest-Learning Culture System
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-8 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text">
-                Effective Leadership Needs an Operating System
+                The Culture OS That Learns Faster Than You Do
               </h1>
               <p className="text-lg text-muted-foreground md:text-xl lg:text-2xl/relaxed max-w-3xl mb-8">
-                In a world of increasing complexity, volatility, and change, leadership can no longer rely on charisma, intuition, or ad‑hoc communication.
+                Stop measuring culture. Start building it—30 minutes per week. CultureCrunch installs a 6-week leadership operating system that turns team conversations, micro-actions, and pulse data into AI-driven insights that improve every week.
               </p>
               <p className="text-base text-muted-foreground md:text-lg lg:text-xl/relaxed max-w-3xl mb-12 font-medium">
-                Leaders run the operating system - they set the rhythm for clarity, trust, and performance, translating culture from words into action every day.
+                No complex rollout. No heavy integrations. No extensive training. Just better leadership that compounds.
               </p>
 
               <TypingPromptInput />
@@ -51,14 +51,14 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 dark:opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%]"></div>
                     <Zap className="h-5 w-5 text-white relative z-10" />
                     <div className="flex flex-col items-start relative z-10">
-                      <span className="text-base font-semibold">Install Your OS</span>
-                      <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Get started today</span>
+                      <span className="text-base font-semibold">Start Your 6-Week Transformation</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install the OS that learns</span>
                     </div>
                   </Link>
                 </Button>
                 <Button asChild className="px-6 py-7 h-auto rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-base font-semibold text-foreground">
                   <Link href="#problem">
-                    Learn More
+                    See How It Works
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
