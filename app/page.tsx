@@ -37,7 +37,7 @@ export default function Home() {
                 The Culture OS That Learns Faster Than You Do
               </h1>
               <p className="text-lg text-muted-foreground md:text-xl lg:text-2xl/relaxed max-w-3xl mb-8">
-                Stop measuring culture. Start building it—30 minutes per week. CultureCrunch installs a 6-week leadership operating system that turns team conversations, micro-actions, and pulse data into AI-driven insights that improve every week.
+                Stop measuring culture. Start building it - 30 minutes per week. CultureCrunch installs a 6-week leadership operating system that turns team conversations, micro-actions, and pulse data into AI-driven insights that improve every week.
               </p>
               <p className="text-base text-muted-foreground md:text-lg lg:text-xl/relaxed max-w-3xl mb-12 font-medium">
                 No complex rollout. No heavy integrations. No extensive training. Just better leadership that compounds.
@@ -75,162 +75,245 @@ export default function Home() {
                 The Problem
               </div>
               <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                Despite Billions Spent, Most Culture Transformation Programs Fail
+                The $60 Billion Leadership Development Failure
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                The result is a costly cycle of disengagement and underperformance that drains organisational energy and resources.
+                Organisations spend billions on leadership programs that don't stick. Here's why:
               </p>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              {/* Stat 1 */}
+            <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+              {/* Card 1: Knowledge-Behavior Chasm */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-destructive/20 to-destructive/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative bg-background border border-destructive/20 rounded-2xl p-8 space-y-4 h-full hover:border-destructive/40 transition-colors">
-                  <TrendingDown className="h-10 w-10 text-destructive" />
-                  <div className="text-5xl font-bold text-destructive">$60B</div>
-                  <div className="text-sm font-semibold text-foreground">Wasted Annually</div>
+                  <Brain className="h-10 w-10 text-destructive" />
+                  <div className="text-2xl font-bold text-foreground">Knowledge-Behaviour Chasm</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Global spend on leadership development with limited sustained impact (Beer et al., 2016).
+                    Only 19% of training transfers to workplace behaviour. Leaders know what to do but don't do it.
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 italic">
+                    Source: Blume et al. (2010) meta-analysis
                   </p>
                 </div>
               </div>
 
-              {/* Stat 2 */}
+              {/* Card 2: First-Order Changes */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/20 to-orange-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative bg-background border border-orange-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-orange-500/40 transition-colors">
                   <Target className="h-10 w-10 text-orange-500" />
-                  <div className="text-5xl font-bold text-orange-500">30%</div>
-                  <div className="text-sm font-semibold text-foreground">Transformation Success Rate</div>
+                  <div className="text-2xl font-bold text-foreground">First-Order Changes</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Most programs fade within months without embedded systems (McKinsey, 2021).
+                    70% of initiatives treat symptoms, not systems. They tinker with behaviours without changing underlying structures.
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 italic">
+                    Source: McKinsey (2021) transformation study
                   </p>
                 </div>
               </div>
 
-              {/* Stat 3 */}
+              {/* Card 3: Event-Based Training */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-yellow-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative bg-background border border-yellow-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-yellow-500/40 transition-colors">
-                  <BarChart3 className="h-10 w-10 text-yellow-500" />
-                  <div className="text-5xl font-bold text-yellow-500">19%</div>
-                  <div className="text-sm font-semibold text-foreground">Knowledge Transfer Rate</div>
+                  <Clock className="h-10 w-10 text-yellow-500" />
+                  <div className="text-2xl font-bold text-foreground">Event-Based Training</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    The rest disappears without embedded habits (Blume et al., 2010).
+                    Annual workshops create temporary spikes. Without weekly practice, you forget 70% within 24 hours.
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 italic">
+                    Source: Ebbinghaus forgetting curve
                   </p>
                 </div>
               </div>
 
-              {/* Stat 4 */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/20 to-red-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-red-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-red-500/40 transition-colors">
-                  <Clock className="h-10 w-10 text-red-500" />
-                  <div className="text-5xl font-bold text-red-500">50-70%</div>
-                  <div className="text-sm font-semibold text-foreground">Behaviour Change Reversal</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Without reinforcement, learning decays rapidly within a week (Ebbinghaus, 1913).
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 5 */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-emerald-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-emerald-500/40 transition-colors">
-                  <Users className="h-10 w-10 text-emerald-500" />
-                  <div className="text-5xl font-bold text-emerald-500">25-40%</div>
-                  <div className="text-sm font-semibold text-foreground">Turnover Reduction Potential</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Structured, ongoing leadership systems outperform one-off interventions (Deloitte, 2023).
-                  </p>
-                </div>
-              </div>
-
-              {/* Stat 6 */}
+              {/* Card 4: Top-Down Mandates */}
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-blue-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative bg-background border border-blue-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-blue-500/40 transition-colors">
-                  <TrendingDown className="h-10 w-10 text-blue-500 rotate-180" />
-                  <div className="text-5xl font-bold text-blue-500">7-23%</div>
-                  <div className="text-sm font-semibold text-foreground">Performance Uplift Available</div>
+                  <BarChart3 className="h-10 w-10 text-blue-500" />
+                  <div className="text-2xl font-bold text-foreground">Top-Down Mandates</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Clear link between leadership rhythm, engagement, and measurable results (Gallup, 2020).
+                    Programs imposed without frontline ownership have 70% failure rates vs 21% when staff feel ownership.
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 italic">
+                    Source: McKinsey organisational change research
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Diagram Placeholder */}
+            <div className="max-w-4xl mx-auto mt-16">
+              <div className="bg-muted/50 border-2 border-dashed border-muted-foreground/30 rounded-2xl p-12 text-center space-y-4">
+                <div className="text-lg font-semibold text-muted-foreground">[DIAGRAM: Four Failure Patterns from Research Paper]</div>
+                <p className="text-sm text-muted-foreground">Interactive chart showing why traditional approaches fail</p>
+                <p className="text-sm text-muted-foreground">Click each pattern to see research backing</p>
+              </div>
+            </div>
+
+            {/* Tagline */}
+            <div className="max-w-4xl mx-auto mt-12">
+              <div className="bg-gradient-to-br from-destructive/5 to-destructive/10 dark:from-destructive/10 dark:to-destructive/5 rounded-3xl p-8 md:p-12 border border-destructive/20">
+                <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 font-medium text-center">
+                  The real problem? Leaders are "saturated with frameworks" but lack repeatable practices embedded in their weekly work.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* The Opportunity Section */}
-        <section className="py-24" id="opportunity" aria-labelledby="opportunity-heading">
+        <section className="py-24 bg-gradient-to-b from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950" id="opportunity" aria-labelledby="opportunity-heading">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="inline-block rounded-lg bg-primary/10 px-4 py-2 text-sm font-medium border border-primary/20">
                 The Opportunity
               </div>
-              <h2 id="opportunity-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl">
-                From Programs to Operating Systems
+              <h2 id="opportunity-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl text-foreground">
+                The Breakthrough: Whoever Learns Fastest Wins
               </h2>
-              <p className="mx-auto max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Every organisation wants a high‑performance culture. But the ones that achieve it don't <span className="font-semibold text-foreground">train</span> culture — they <span className="font-semibold text-foreground">install</span> it.
+              <p className="mx-auto max-w-[900px] text-foreground text-lg md:text-xl leading-relaxed font-semibold">
+                What if your culture system learned from what actually works in your environment?
               </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto space-y-12">
-              <div className="bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5 rounded-3xl p-8 md:p-12 border border-primary/20">
-                <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 font-medium">
-                  When leadership rhythms are built into the way work happens, performance, learning, and engagement rise together. It's not about more workshops or surveys; it's about building an <span className="font-bold text-primary">embedded operating system</span> for leadership that runs every day, not once a year.
+              <div className="pt-8 space-y-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  Built on 100+ Peer-Reviewed Studies
+                </h3>
+                <p className="text-muted-foreground text-lg">
+                  Every feature connects to research. Every claim has evidence.
                 </p>
               </div>
+            </div>
 
-              {/* What's Changing */}
-              <div className="space-y-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-center">What's Changing</h3>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="bg-background border rounded-2xl p-6 space-y-3 hover:border-primary/40 transition-colors">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <BarChart3 className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold">Culture is now a performance system</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      The old HR view - culture as values on the wall - has shifted. Boards and investors now link leadership behaviour directly to business results.
+            {/* 3 Stats Row */}
+            <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-16">
+              {/* Stat 1: 66 Days */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent whitespace-nowrap">66 Days</div>
+                  <h3 className="text-xl font-bold text-foreground">Habit Formation Timeline</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Why our programs are 6+ weeks minimum
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-purple-600 dark:text-purple-400">
+                      Lally et al. (2010) - European Journal of Social Psychology
                     </p>
                   </div>
+                </div>
+              </div>
 
-                  <div className="bg-background border rounded-2xl p-6 space-y-3 hover:border-primary/40 transition-colors">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold">Leaders want tools, not theory</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Frontline and senior leaders are tired of frameworks they can't apply. They want micro‑actions that work inside their existing flow of work.
+              {/* Stat 2: 6.8:1 ROI */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/30 to-blue-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-indigo-50/90 to-blue-50/90 dark:from-indigo-950/30 dark:to-blue-950/30 backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-indigo-600 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">6.8:1</div>
+                  <h3 className="text-xl font-bold text-foreground">Average Return on Investment</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Range: $3-$11 per dollar invested
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400">
+                      BetterManager (2023) study of 752 managers
                     </p>
                   </div>
+                </div>
+              </div>
 
-                  <div className="bg-background border rounded-2xl p-6 space-y-3 hover:border-primary/40 transition-colors">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Brain className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold">AI makes culture measurable</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      With simple weekly signals, teams can now see what was once invisible - how clarity, trust, and energy shift week to week.
+              {/* Stat 3: 25-40% */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-blue-50/90 to-violet-50/90 dark:from-blue-950/30 dark:to-violet-950/30 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-3xl p-8 space-y-4 h-full">
+                  <div className="text-7xl font-bold bg-gradient-to-br from-blue-600 to-violet-600 bg-clip-text text-transparent whitespace-nowrap">25-40%</div>
+                  <h3 className="text-xl font-bold text-foreground">Turnover Reduction</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    When leadership development is systematic
+                  </p>
+                  <div className="pt-2">
+                    <p className="text-xs font-medium text-blue-600 dark:text-blue-400">
+                      Deloitte (2023) Global Human Capital Trends
                     </p>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  <div className="bg-background border rounded-2xl p-6 space-y-3 hover:border-primary/40 transition-colors">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Heart className="h-6 w-6 text-primary" />
-                    </div>
-                    <h4 className="text-lg font-semibold">Psychological safety meets performance</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      The strongest teams combine empathy and accountability. They can tell the truth, learn fast, and execute with precision.
-                    </p>
+            {/* Comparison Section */}
+            <div className="max-w-5xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-10">
+                The Shift That Changes Everything
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left Column - Measurement Platforms */}
+                <div className="bg-transparent border rounded-2xl p-8 space-y-6 hover:border-red-500/40 transition-colors">
+                  <div className="h-12 w-12 rounded-xl bg-red-100 dark:bg-red-950/30 flex items-center justify-center">
+                    <span className="text-red-600 dark:text-red-400 text-xl font-bold">✕</span>
                   </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold">Measurement Platforms</h4>
+                    <p className="text-sm text-muted-foreground italic">What most organisations rely on today.</p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Tell you what's broken</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Annual/quarterly surveys</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Static insights</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">HR-focused</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-600 dark:bg-red-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Measure sentiment</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Right Column - CultureCrunch */}
+                <div className="bg-transparent border rounded-2xl p-8 space-y-6 hover:border-green-500/40 transition-colors">
+                  <div className="h-12 w-12 rounded-xl bg-green-100 dark:bg-green-950/30 flex items-center justify-center">
+                    <span className="text-green-600 dark:text-green-400 text-xl font-bold">✓</span>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold">CultureCrunch</h4>
+                    <p className="text-sm text-muted-foreground italic">A system that learns and adapts.</p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Installs what fixes it</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Weekly operating rhythm</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Learning loops</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Leader-focused</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-600 dark:bg-green-400 mt-1.5 flex-shrink-0"></div>
+                      <span className="text-muted-foreground">Change behaviour</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

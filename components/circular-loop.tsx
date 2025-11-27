@@ -62,12 +62,18 @@ export default function CircularLoop() {
     return colors[color as keyof typeof colors] || colors.purple
   }
 
-  // Calculate card position based on angle
-  const getCardPosition = (angle: number, radius: number) => {
-    const radian = (angle * Math.PI) / 180
-    const x = Math.cos(radian) * radius
-    const y = Math.sin(radian) * radius
-    return { x, y }
+  // Pre-calculated positions to avoid SSR hydration mismatch
+  // Calculated from: x = cos(angle * PI/180) * 280, y = sin(angle * PI/180) * 280
+  const cardPositions: Record<number, { x: number; y: number }> = {
+    270: { x: 0, y: -280 },      // top (12 o'clock)
+    342: { x: 266, y: -87 },     // top right (2 o'clock)
+    54: { x: 165, y: 227 },      // bottom right (4 o'clock)
+    126: { x: -165, y: 227 },    // bottom left (8 o'clock)
+    198: { x: -266, y: -87 }     // top left (10 o'clock)
+  }
+
+  const getCardPosition = (angle: number) => {
+    return cardPositions[angle] || { x: 0, y: 0 }
   }
 
   return (
@@ -122,7 +128,7 @@ export default function CircularLoop() {
         {/* Loop Steps positioned in circle */}
         {loopSteps.map((step, index) => {
           const Icon = step.icon
-          const position = getCardPosition(step.angle, 280)
+          const position = getCardPosition(step.angle)
 
           return (
             <div
