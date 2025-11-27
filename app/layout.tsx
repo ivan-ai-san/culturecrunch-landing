@@ -15,22 +15,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://culturecrunch.io",
-    title: "CultureCrunch | Leadership Operating System",
+    title: "Culture Crunch | Leadership Operating System",
     description:
       "Transform workplace culture with embedded leadership rhythms.",
-    siteName: "CultureCrunch",
+    siteName: "Culture Crunch",
     images: [
       {
         url: "https://culturecrunch.io/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "CultureCrunch",
+        alt: "Culture Crunch",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CultureCrunch | Leadership Operating System",
+    title: "Culture Crunch | Leadership Operating System",
     description: "Transform workplace culture with embedded leadership rhythms. 6-week program for accountable conversations.",
     images: ["https://culturecrunch.io/twitter-image.jpg"],
   },

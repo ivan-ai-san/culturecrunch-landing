@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp } from "lucide-react"
+import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp, Mail, Smartphone, Send, ClipboardCheck, Calendar, Globe, LayoutDashboard, Database, TrendingUp, Scale } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -12,6 +12,8 @@ import StructuredData from "@/components/structured-data"
 import CircularLoop from "@/components/circular-loop"
 import WeekByWeekTimeline from "@/components/week-by-week-timeline"
 import AccountableConversations from "@/components/accountable-conversations"
+import ThreeLoops from "@/components/three-loops"
+import NetworkValueChart from "@/components/network-value-chart"
 import { useState } from "react"
 import Link from "next/link"
 
@@ -36,11 +38,8 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-8 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text">
                 The Culture OS That Learns Faster Than You Do
               </h1>
-              <p className="text-lg text-muted-foreground md:text-xl lg:text-2xl/relaxed max-w-3xl mb-8">
-                Stop measuring culture. Start building it - 30 minutes per week. CultureCrunch installs a 6-week leadership operating system that turns team conversations, micro-actions, and pulse data into AI-driven insights that improve every week.
-              </p>
-              <p className="text-base text-muted-foreground md:text-lg lg:text-xl/relaxed max-w-3xl mb-12 font-medium">
-                No complex rollout. No heavy integrations. No extensive training. Just better leadership that compounds.
+              <p className="text-lg text-muted-foreground md:text-xl lg:text-2xl/relaxed max-w-3xl mb-12">
+                Measurement platforms tell organisations what culture feels like. Culture Crunch installs the leadership operating system that changes it.
               </p>
 
               <TypingPromptInput />
@@ -142,15 +141,6 @@ export default function Home() {
                     Source: McKinsey organisational change research
                   </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Diagram Placeholder */}
-            <div className="max-w-4xl mx-auto mt-16">
-              <div className="bg-muted/50 border-2 border-dashed border-muted-foreground/30 rounded-2xl p-12 text-center space-y-4">
-                <div className="text-lg font-semibold text-muted-foreground">[DIAGRAM: Four Failure Patterns from Research Paper]</div>
-                <p className="text-sm text-muted-foreground">Interactive chart showing why traditional approaches fail</p>
-                <p className="text-sm text-muted-foreground">Click each pattern to see research backing</p>
               </div>
             </div>
 
@@ -283,13 +273,13 @@ export default function Home() {
                   </ul>
                 </div>
 
-                {/* Right Column - CultureCrunch */}
+                {/* Right Column - Culture Crunch */}
                 <div className="bg-transparent border rounded-2xl p-8 space-y-6 hover:border-green-500/40 transition-colors">
                   <div className="h-12 w-12 rounded-xl bg-green-100 dark:bg-green-950/30 flex items-center justify-center">
                     <span className="text-green-600 dark:text-green-400 text-xl font-bold">✓</span>
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-xl font-bold">CultureCrunch</h4>
+                    <h4 className="text-xl font-bold">Culture Crunch</h4>
                     <p className="text-sm text-muted-foreground italic">A system that learns and adapts.</p>
                   </div>
                   <ul className="space-y-3">
@@ -469,35 +459,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* From Low to High Accountability */}
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-bold mb-3">From Low to High Accountability in 6 Weeks</h3>
-                <p className="text-muted-foreground">What makes us different:</p>
-              </div>
+          </div>
+        </section>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-purple-50/50 to-indigo-50/50 dark:from-purple-950/20 dark:to-indigo-950/20 border border-purple-200/30 dark:border-purple-800/30">
-                  <div className="h-2 w-2 rounded-full bg-purple-600 dark:bg-purple-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">Only 30 minutes per week from the leader / leadership team</p>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-indigo-50/50 to-blue-50/50 dark:from-indigo-950/20 dark:to-blue-950/20 border border-indigo-200/30 dark:border-indigo-800/30">
-                  <div className="h-2 w-2 rounded-full bg-indigo-600 dark:bg-indigo-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">Tier One Construction Firm regulatory compliance alignment</p>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50/50 to-violet-50/50 dark:from-blue-950/20 dark:to-violet-950/20 border border-blue-200/30 dark:border-blue-800/30">
-                  <div className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">Privacy by minimalism – team level data only</p>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-violet-50/50 to-purple-50/50 dark:from-violet-950/20 dark:to-purple-950/20 border border-violet-200/30 dark:border-violet-800/30">
-                  <div className="h-2 w-2 rounded-full bg-violet-600 dark:bg-violet-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-foreground">Proven 6-week transformation program</p>
-                </div>
-              </div>
-            </div>
+        {/* Three Loops Section - Core Innovation */}
+        <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background dark:from-background dark:via-muted/5 dark:to-background" id="three-loops" aria-labelledby="three-loops-heading">
+          <div className="container px-4 md:px-6">
+            <ThreeLoops />
           </div>
         </section>
 
@@ -579,6 +547,159 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Start Simple. Scale Smart. Section */}
+            <div className="mt-24 max-w-6xl mx-auto">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+                  Start Simple. Scale Smart.
+                </h3>
+                <p className="text-muted-foreground text-lg md:text-xl">
+                  No gatekeeping. No IT queue. No 6-month rollout.
+                </p>
+              </div>
+
+              {/* Three Phases */}
+              <div className="grid gap-8 md:grid-cols-3 mb-10">
+                {/* Phase 1: Launch */}
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                  <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 h-full">
+                    <h4 className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">Phase 1: Launch</h4>
+                    <p className="text-base font-semibold text-foreground mb-6">Week 1</p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/50 flex items-center justify-center flex-shrink-0">
+                          <Smartphone className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="text-muted-foreground">Email + Web/Mobile only</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/50 flex items-center justify-center flex-shrink-0">
+                          <Users className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="text-muted-foreground">3-10 teams pilot</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/50 flex items-center justify-center flex-shrink-0">
+                          <Zap className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="text-muted-foreground">Zero IT dependencies</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/50 flex items-center justify-center flex-shrink-0">
+                          <Send className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="text-muted-foreground">Weekly briefs auto-sent</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-purple-100 dark:bg-purple-950/50 flex items-center justify-center flex-shrink-0">
+                          <ClipboardCheck className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                        </div>
+                        <span className="text-muted-foreground">Leaders log check-ins</span>
+                      </li>
+                    </ul>
+                    <p className="text-base font-semibold text-purple-600 dark:text-purple-400">Goal: Prove the rhythm works</p>
+                  </div>
+                </div>
+
+                {/* Phase 2: Embed */}
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/30 to-blue-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                  <div className="relative bg-gradient-to-br from-indigo-50/90 to-blue-50/90 dark:from-indigo-950/30 dark:to-blue-950/30 backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-800/50 rounded-3xl p-8 h-full">
+                    <h4 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">Phase 2: Embed</h4>
+                    <p className="text-base font-semibold text-foreground mb-6">Weeks 7-12</p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
+                          <Calendar className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-muted-foreground">Calendar integration</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
+                          <MessageSquare className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-muted-foreground">Teams/Slack prompts</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
+                          <Clock className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-muted-foreground">Auto-schedule check-ins</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
+                          <Globe className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-muted-foreground">Roll out to more regions</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
+                          <LayoutDashboard className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-muted-foreground">Dashboard for executives</span>
+                      </li>
+                    </ul>
+                    <p className="text-base font-semibold text-indigo-600 dark:text-indigo-400">Goal: Make it effortless</p>
+                  </div>
+                </div>
+
+                {/* Phase 3: Scale */}
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                  <div className="relative bg-gradient-to-br from-blue-50/90 to-violet-50/90 dark:from-blue-950/30 dark:to-violet-950/30 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-3xl p-8 h-full">
+                    <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">Phase 3: Scale</h4>
+                    <p className="text-base font-semibold text-foreground mb-6">Months 4-6</p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                          <Database className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <span className="text-muted-foreground">HRIS integration</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                          <ClipboardCheck className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <span className="text-muted-foreground">Claims system data</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                          <TrendingUp className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <span className="text-muted-foreground">ROI correlation</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                          <LayoutDashboard className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <span className="text-muted-foreground">Enterprise dashboards</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                          <BarChart3 className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <span className="text-muted-foreground">Cross-org benchmarking</span>
+                      </li>
+                    </ul>
+                    <p className="text-base font-semibold text-blue-600 dark:text-blue-400">Goal: Prove hard ROI</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Promise Section */}
+              <div className="bg-transparent border border-green-500/40 rounded-3xl p-8 text-center hover:border-green-500/60 transition-colors">
+                <p className="text-lg md:text-xl leading-relaxed">
+                  <span className="font-bold text-green-600 dark:text-green-400">Our Promise:</span>{" "}
+                  <span className="text-foreground/90">
+                    If your leaders aren't running the weekly rhythm by Week 3, we refund 100%.
+                    No excuses. No "you didn't integrate properly." The OS either works or it doesn't.
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -590,8 +711,12 @@ export default function Home() {
         </section>
 
         {/* Why Now Section */}
-        <section className="py-24" id="why-now" aria-labelledby="why-now-heading">
-          <div className="container px-4 md:px-6">
+        <section className="py-24 relative overflow-hidden" id="why-now" aria-labelledby="why-now-heading">
+          {/* Decorative gradient backgrounds for depth */}
+          <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-purple-500/8 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
               <div className="inline-block rounded-lg bg-primary/10 px-4 py-2 text-sm font-medium border border-primary/20">
                 Why Now
@@ -659,12 +784,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Network Value Growth Chart */}
+            <NetworkValueChart />
           </div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 bg-muted/50 dark:bg-muted/10" aria-labelledby="contact-heading">
-          <div className="container px-4 md:px-6">
+        <section id="contact" className="py-24 bg-muted/50 dark:bg-muted/10 relative overflow-hidden" aria-labelledby="contact-heading">
+          {/* Decorative gradient backgrounds for depth */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-start max-w-6xl mx-auto">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-4">

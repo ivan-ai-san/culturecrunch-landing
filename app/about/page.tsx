@@ -34,7 +34,7 @@ export default function AboutPage() {
             {/* Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-                About CultureCrunch
+                About Culture Crunch
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 We're crafting something special to share our story, mission, and the team behind the Leadership & Culture Operating System.

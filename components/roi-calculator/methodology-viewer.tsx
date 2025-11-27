@@ -434,7 +434,7 @@ export default function MethodologyViewer({ open, onOpenChange }: MethodologyVie
                   Confidential & Proprietary
                 </p>
                 <p className="text-xs text-red-800 dark:text-red-200">
-                  This methodology is confidential and proprietary to CultureCrunch. It may not be
+                  This methodology is confidential and proprietary to Culture Crunch. It may not be
                   reproduced, distributed, or used outside of authorized consultations without express
                   written permission. All research citations are available upon request.
                 </p>

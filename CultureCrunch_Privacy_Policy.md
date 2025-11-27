@@ -2,7 +2,7 @@
 
 **Last Updated: November 11, 2025**
 
-At CultureCrunch, we believe privacy starts with minimalism. This Privacy Policy explains how we collect, use, and protect your information when you use our leadership development platform at https://culturecrunch.io. We've designed our system around a core principle: collect only what matters, at the team level, to power leadership transformation without compromising individual privacy.
+At Culture Crunch, we believe privacy starts with minimalism. This Privacy Policy explains how we collect, use, and protect your information when you use our leadership development platform at https://culturecrunch.io. We've designed our system around a core principle: collect only what matters, at the team level, to power leadership transformation without compromising individual privacy.
 
 Please read this privacy policy carefully. If you do not agree with these terms, please do not access our platform or use our services.
 
@@ -10,7 +10,7 @@ Please read this privacy policy carefully. If you do not agree with these terms,
 
 ## Our Privacy Philosophy: Minimalism by Design
 
-CultureCrunch operates on **team-level data only**. We don't track individual performance scores, personal assessments, or granular behavioural metrics. Our AI Coach Companion monitors collective team signals (clarity, trust, energy), not individual employee surveillance. This means:
+Culture Crunch operates on **team-level data only**. We don't track individual performance scores, personal assessments, or granular behavioural metrics. Chris AI monitors collective team signals (clarity, trust, energy), not individual employee surveillance. This means:
 
 - **No individual performance tracking** – we measure team dynamics, not personal productivity
 - **Aggregate insights only** – data rolls up to team level, protecting individual privacy
@@ -22,14 +22,14 @@ CultureCrunch operates on **team-level data only**. We don't track individual pe
 ## Information We Collect
 
 ### 1. Account and Organisation Information
-When you register for CultureCrunch, we collect:
+When you register for Culture Crunch, we collect:
 - **Contact details**: Name, email address, phone number, job title
 - **Organisation information**: Company name, industry, team size, organisational structure
 - **Account credentials**: Username and encrypted password
 - **Billing information**: Payment details, billing address (processed securely through third-party payment processors)
 
 ### 2. Team-Level Usage Data
-Our platform collects **aggregated team data** to power our AI Coach Companion and provide leadership insights:
+Our platform collects **aggregated team data** to power Chris AI and provide leadership insights:
 - **Weekly pulse responses**: Team-level ratings on clarity, trust, and energy (not linked to individual employees)
 - **Leadership rhythm completion**: Whether weekly practices (Monday Alignment, Thursday Pulse, Friday Reflection) are completed
 - **Conversation patterns**: Frequency and type of accountable conversations held (themes, not transcripts)
@@ -51,7 +51,7 @@ To ensure platform security and functionality:
 
 ### 4. Communications
 - **Support requests**: When you contact us for help, we retain your inquiry and our response
-- **Feedback and surveys**: Voluntary feedback about your experience with CultureCrunch
+- **Feedback and surveys**: Voluntary feedback about your experience with Culture Crunch
 - **Programme content**: Materials you create or upload within the 6-week transformation programme
 
 ---
@@ -61,8 +61,8 @@ To ensure platform security and functionality:
 We use the information we collect to:
 
 ### Deliver Our Core Service
-- Provide access to the CultureCrunch platform and weekly leadership rhythms
-- Generate team-level insights through our AI Coach Companion
+- Provide access to the Culture Crunch platform and weekly leadership rhythms
+- Generate team-level insights through Chris AI
 - Track programme progress through our 6-week transformation framework
 - Deliver real-time dashboard analytics showing team clarity, trust, and energy trends
 - Send Monday morning alignment prompts and weekly practice reminders
@@ -88,7 +88,7 @@ We use the information we collect to:
 ### Legal and Safety
 - Comply with legal obligations and regulatory requirements (including construction industry compliance frameworks)
 - Detect and prevent fraud, security breaches, and misuse
-- Protect the rights and safety of CultureCrunch, our users, and the public
+- Protect the rights and safety of Culture Crunch, our users, and the public
 - Enforce our Terms of Service and resolve disputes
 
 ---
@@ -136,7 +136,7 @@ We may retain certain data longer when required by law, regulatory obligations, 
 
 ## Sharing Your Information
 
-CultureCrunch does **not sell** your personal information. We share data only in these limited circumstances:
+Culture Crunch does **not sell** your personal information. We share data only in these limited circumstances:
 
 ### Service Providers
 We work with trusted third-party vendors who help us operate our platform:
@@ -149,14 +149,14 @@ We work with trusted third-party vendors who help us operate our platform:
 All service providers are contractually required to protect your data and use it only for specified purposes.
 
 ### Business Transitions
-If CultureCrunch is acquired, merges with another company, or undergoes restructuring, your information may be transferred as part of that transaction. We will notify you of any change in ownership or data control.
+If Culture Crunch is acquired, merges with another company, or undergoes restructuring, your information may be transferred as part of that transaction. We will notify you of any change in ownership or data control.
 
 ### Legal Requirements
 We may disclose information when required to:
 - Comply with court orders, subpoenas, or legal processes
 - Respond to valid government or regulatory requests
 - Enforce our Terms of Service or investigate violations
-- Protect the safety, rights, and property of CultureCrunch, our users, or the public
+- Protect the safety, rights, and property of Culture Crunch, our users, or the public
 
 ### With Your Consent
 We may share information for purposes not listed here if we obtain your explicit consent.
@@ -219,7 +219,7 @@ We'll respond within **30 days** (or as required by applicable law) and may requ
 
 ## Cookies and Tracking Technologies
 
-CultureCrunch uses cookies and similar technologies to deliver and improve our service.
+Culture Crunch uses cookies and similar technologies to deliver and improve our service.
 
 ### What Are Cookies?
 Cookies are small text files stored on your device that help us recognise you and remember preferences.
@@ -245,7 +245,7 @@ Cookies are small text files stored on your device that help us recognise you an
 ### Your Cookie Choices
 You can control cookies through:
 - **Browser settings**: Most browsers let you block or delete cookies
-- **Our cookie preferences**: Adjust settings in your CultureCrunch account dashboard
+- **Our cookie preferences**: Adjust settings in your Culture Crunch account dashboard
 - **Opt-out tools**: Use browser extensions or privacy tools to limit tracking
 
 **Note**: Disabling essential cookies may prevent you from accessing certain platform features.
@@ -257,7 +257,7 @@ We don't allow third-party advertising cookies. Any third-party cookies come fro
 
 ## International Data Transfers
 
-CultureCrunch is based in New South Wales, Australia, and operates globally. Your information may be transferred to and processed in countries outside Australia, including the United States and European Union.
+Culture Crunch is based in New South Wales, Australia, and operates globally. Your information may be transferred to and processed in countries outside Australia, including the United States and European Union.
 
 ### Data Transfer Protections
 When we transfer data internationally, we comply with Australian Privacy Principle 8 (Cross-border disclosure of personal information) and use:
@@ -267,13 +267,13 @@ When we transfer data internationally, we comply with Australian Privacy Princip
 - **Contractual safeguards**: Agreements requiring overseas recipients to handle data in accordance with Australian Privacy Principles
 
 ### Your Consent
-By using CultureCrunch, you consent to international data transfers as described. We take reasonable steps to ensure overseas recipients comply with the APPs or are subject to substantially similar privacy protections.
+By using Culture Crunch, you consent to international data transfers as described. We take reasonable steps to ensure overseas recipients comply with the APPs or are subject to substantially similar privacy protections.
 
 ---
 
 ## Children's Privacy
 
-CultureCrunch is a **business-to-business platform** designed for organisational leadership development. Our service is **not intended for individuals under 16 years of age**.
+Culture Crunch is a **business-to-business platform** designed for organisational leadership development. Our service is **not intended for individuals under 16 years of age**.
 
 We do not knowingly collect personal information from children under 16. If we discover we've inadvertently collected such information, we will delete it immediately.
 
@@ -283,7 +283,7 @@ If you're a parent or guardian and believe your child has provided us with perso
 
 ## Third-Party Links and Integrations
 
-Our platform may contain links to external websites or integrate with third-party tools (e.g., calendar apps, communication platforms). This Privacy Policy applies **only to CultureCrunch**.
+Our platform may contain links to external websites or integrate with third-party tools (e.g., calendar apps, communication platforms). This Privacy Policy applies **only to Culture Crunch**.
 
 We are not responsible for privacy practices of third-party sites or services. We encourage you to review their privacy policies before providing any personal information.
 
@@ -302,7 +302,7 @@ We may update this Privacy Policy periodically to reflect:
 - **Updated date**: The "Last Updated" date at the top of this policy will change
 - **Archive access**: Previous versions available upon request
 
-**Continued use** of CultureCrunch after policy changes indicates your acceptance of the updated terms.
+**Continued use** of Culture Crunch after policy changes indicates your acceptance of the updated terms.
 
 ---
 
@@ -314,7 +314,7 @@ For privacy questions, concerns, or rights requests, contact us:
 **Subject Line**: Please include "Privacy Request" for faster processing
 
 **Mail**:  
-CultureCrunch  
+Culture Crunch  
 Attn: Privacy Officer  
 [Your Street Address]  
 [Suburb], NSW [Postcode]  
@@ -326,7 +326,7 @@ Australia
 
 ## Regulatory and Industry Compliance
 
-CultureCrunch is committed to meeting industry-specific privacy and security requirements:
+Culture Crunch is committed to meeting industry-specific privacy and security requirements:
 
 ### Australian Compliance
 As an organisation based in New South Wales, we comply with:
@@ -352,12 +352,12 @@ Our platform aligns with **Tier One Construction Firm regulatory compliance** fr
 
 ## Your Trust Is Our Foundation
 
-At CultureCrunch, we're building leadership operating systems that transform organisations, and that starts with trust. Our **privacy by minimalism** approach means we collect only what serves your leadership development, at the team level, with full transparency.
+At Culture Crunch, we're building leadership operating systems that transform organisations, and that starts with trust. Our **privacy by minimalism** approach means we collect only what serves your leadership development, at the team level, with full transparency.
 
 If you have questions about how we protect your data or want to learn more about our security practices, we're here to help.
 
-**Thank you for trusting CultureCrunch to power your leadership transformation.**
+**Thank you for trusting Culture Crunch to power your leadership transformation.**
 
 ---
 
-*This Privacy Policy is effective as of November 11, 2025, and applies to all users of the CultureCrunch platform.*
+*This Privacy Policy is effective as of November 11, 2025, and applies to all users of the Culture Crunch platform.*

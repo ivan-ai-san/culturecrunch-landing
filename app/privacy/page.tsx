@@ -82,7 +82,7 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
             <p className="text-muted-foreground leading-relaxed text-justify">
-              At CultureCrunch, we believe privacy starts with minimalism. This Privacy Policy explains how we collect, use, and protect your information when you use our leadership development platform at https://culturecrunch.io. We've designed our system around a core principle: collect only what matters, at the team level, to power leadership transformation without compromising individual privacy.
+              At Culture Crunch, we believe privacy starts with minimalism. This Privacy Policy explains how we collect, use, and protect your information when you use our leadership development platform at https://culturecrunch.io. We've designed our system around a core principle: collect only what matters, at the team level, to power leadership transformation without compromising individual privacy.
             </p>
             <p className="text-muted-foreground leading-relaxed text-justify mt-4">
               Please read this privacy policy carefully. If you do not agree with these terms, please do not access our platform or use our services.
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
           <div className="mb-12 p-8 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl border border-primary/20">
             <h2 className="text-2xl font-bold mb-4 text-foreground">Our Privacy Philosophy: Minimalism by Design</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              CultureCrunch operates on <strong className="text-foreground">team-level data only</strong>. We don't track individual performance scores, personal assessments, or granular behavioural metrics. Our AI Coach Companion monitors collective team signals (clarity, trust, energy), not individual employee surveillance. This means:
+              Culture Crunch operates on <strong className="text-foreground">team-level data only</strong>. We don't track individual performance scores, personal assessments, or granular behavioural metrics. Chris AI monitors collective team signals (clarity, trust, energy), not individual employee surveillance. This means:
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
             <div className="space-y-6">
               <div className="p-6 bg-background rounded-xl border">
                 <h3 className="text-xl font-semibold mb-3 text-foreground">1. Account and Organisation Information</h3>
-                <p className="text-muted-foreground mb-3">When you register for CultureCrunch, we collect:</p>
+                <p className="text-muted-foreground mb-3">When you register for Culture Crunch, we collect:</p>
                 <ul className="space-y-1 text-sm text-muted-foreground ml-4">
                   <li>• <strong className="text-foreground">Contact details</strong>: Name, email address, phone number, job title</li>
                   <li>• <strong className="text-foreground">Organisation information</strong>: Company name, industry, team size, organisational structure</li>
@@ -133,7 +133,7 @@ export default function PrivacyPage() {
 
               <div className="p-6 bg-background rounded-xl border">
                 <h3 className="text-xl font-semibold mb-3 text-foreground">2. Team-Level Usage Data</h3>
-                <p className="text-muted-foreground mb-3">Our platform collects <strong className="text-foreground">aggregated team data</strong> to power our AI Coach Companion and provide leadership insights:</p>
+                <p className="text-muted-foreground mb-3">Our platform collects <strong className="text-foreground">aggregated team data</strong> to power Chris AI and provide leadership insights:</p>
                 <ul className="space-y-1 text-sm text-muted-foreground ml-4 mb-4">
                   <li>• Weekly pulse responses (team-level ratings on clarity, trust, and energy)</li>
                   <li>• Leadership rhythm completion tracking</li>
@@ -286,7 +286,7 @@ export default function PrivacyPage() {
 
             <div className="bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-6">
               <p className="text-lg font-semibold text-green-900 dark:text-green-100">
-                CultureCrunch does NOT sell your personal information.
+                Culture Crunch does NOT sell your personal information.
               </p>
             </div>
 
@@ -369,7 +369,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold mb-6 text-foreground">Cookies and Tracking Technologies</h2>
 
             <p className="text-muted-foreground mb-6">
-              CultureCrunch uses cookies and similar technologies to deliver and improve our service.
+              Culture Crunch uses cookies and similar technologies to deliver and improve our service.
             </p>
 
             <div className="space-y-4">
@@ -397,7 +397,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold mb-6 text-foreground">International Data Transfers</h2>
 
             <p className="text-muted-foreground mb-4">
-              CultureCrunch is based in New South Wales, Australia, and operates globally. Your information may be transferred to and processed in countries outside Australia, including the United States and European Union.
+              Culture Crunch is based in New South Wales, Australia, and operates globally. Your information may be transferred to and processed in countries outside Australia, including the United States and European Union.
             </p>
 
             <div className="p-6 bg-muted/50 rounded-xl">
@@ -452,7 +452,7 @@ export default function PrivacyPage() {
 
             <div className="p-6 bg-muted/50 rounded-xl">
               <p className="text-muted-foreground mb-2">
-                CultureCrunch is a <strong className="text-foreground">business-to-business platform</strong> designed for organisational leadership development. Our service is <strong className="text-foreground">not intended for individuals under 16 years of age</strong>.
+                Culture Crunch is a <strong className="text-foreground">business-to-business platform</strong> designed for organisational leadership development. Our service is <strong className="text-foreground">not intended for individuals under 16 years of age</strong>.
               </p>
               <p className="text-sm text-muted-foreground">
                 We do not knowingly collect personal information from children under 16. If we discover we've inadvertently collected such information, we will delete it immediately.
@@ -477,7 +477,7 @@ export default function PrivacyPage() {
                 <li>• Previous versions available upon request</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4 italic">
-                <strong className="text-foreground">Continued use</strong> of CultureCrunch after policy changes indicates your acceptance of the updated terms.
+                <strong className="text-foreground">Continued use</strong> of Culture Crunch after policy changes indicates your acceptance of the updated terms.
               </p>
             </div>
           </div>
@@ -507,16 +507,16 @@ export default function PrivacyPage() {
           <div className="mt-12 text-center p-8 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20 rounded-2xl border border-purple-200 dark:border-purple-800">
             <h3 className="text-2xl font-bold mb-4 text-foreground">Your Trust Is Our Foundation</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              At CultureCrunch, we're building leadership operating systems that transform organisations, and that starts with trust. Our <strong className="text-foreground">privacy by minimalism</strong> approach means we collect only what serves your leadership development, at the team level, with full transparency.
+              At Culture Crunch, we're building leadership operating systems that transform organisations, and that starts with trust. Our <strong className="text-foreground">privacy by minimalism</strong> approach means we collect only what serves your leadership development, at the team level, with full transparency.
             </p>
             <p className="text-muted-foreground mt-4">
-              <strong className="text-foreground">Thank you for trusting CultureCrunch to power your leadership transformation.</strong>
+              <strong className="text-foreground">Thank you for trusting Culture Crunch to power your leadership transformation.</strong>
             </p>
           </div>
 
           {/* Effective Date */}
           <div className="mt-8 text-center text-sm text-muted-foreground italic">
-            <p>This Privacy Policy is effective as of November 11, 2025, and applies to all users of the CultureCrunch platform.</p>
+            <p>This Privacy Policy is effective as of November 11, 2025, and applies to all users of the Culture Crunch platform.</p>
           </div>
 
         </div>

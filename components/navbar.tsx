@@ -26,14 +26,14 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3" aria-label="Culture Crunch Homepage">
             <Image
               src="/culturecrunch-logo.png"
-              alt="CultureCrunch Logo"
+              alt="Culture Crunch Logo"
               width={48}
               height={48}
               className="w-12 h-12"
               priority
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold leading-tight">CultureCrunch</span>
+              <span className="text-xl font-bold leading-tight">Culture Crunch</span>
               <span className="text-[10px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
             </div>
           </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <NavigationMenuList>
               {/* Home Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Home
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
               {/* Offering Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Offering
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -100,13 +100,21 @@ export default function Navbar() {
                         </p>
                       </Link>
                     </NavigationMenuLink>
+                    <NavigationMenuLink asChild>
+                      <Link href="/differentiation" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        <div className="text-sm font-medium leading-none">Differentiation</div>
+                        <p className="text-xs leading-snug text-muted-foreground mt-1">
+                          What makes us different
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
               {/* Why Now Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto p-0 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Why Now
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -167,13 +175,13 @@ export default function Navbar() {
               <div className="flex items-center gap-3 mb-6">
                 <Image
                   src="/culturecrunch-logo.png"
-                  alt="CultureCrunch Logo"
+                  alt="Culture Crunch Logo"
                   width={40}
                   height={40}
                   className="w-10 h-10"
                 />
                 <div className="flex flex-col">
-                  <span className="text-lg font-bold leading-tight">CultureCrunch</span>
+                  <span className="text-lg font-bold leading-tight">Culture Crunch</span>
                   <span className="text-[9px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
                 </div>
               </div>
@@ -220,6 +228,13 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     Methodology
+                  </Link>
+                  <Link
+                    href="/differentiation"
+                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Differentiation
                   </Link>
                 </div>
 

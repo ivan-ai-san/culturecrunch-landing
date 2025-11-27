@@ -78,11 +78,30 @@ export default function CircularLoop() {
 
   return (
     <div className="w-full min-h-[750px]">
+      <style jsx>{`
+        @keyframes loopFlowAnimation {
+          from {
+            stroke-dashoffset: 1759;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        .loop-flow-line {
+          /* Circumference of circle with r=280: 2 * PI * 280 ≈ 1759 */
+          stroke-dasharray: 100 1659;
+          stroke-dashoffset: 1759;
+          animation: loopFlowAnimation 8s linear infinite;
+        }
+      `}</style>
+
       {/* Desktop: Circular Layout */}
       {/* IMPORTANT: Inline styles below ensure proper rendering and prevent CSS conflicts. Do not remove. */}
       <div className="hidden md:block relative h-[750px] max-w-6xl mx-auto" style={{ minHeight: '750px', position: 'relative' }}>
         {/* Dashed circle guide */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1, position: 'absolute' }}>
+          {/* Background dashed circle */}
           <circle
             cx="50%"
             cy="50%"
@@ -93,35 +112,52 @@ export default function CircularLoop() {
             strokeDasharray="8 8"
             opacity="0.3"
           />
+          {/* Animated flowing line */}
+          <circle
+            cx="50%"
+            cy="50%"
+            r="280"
+            fill="none"
+            stroke="url(#gradient-flow)"
+            strokeWidth="4"
+            strokeLinecap="round"
+            className="loop-flow-line"
+            style={{ filter: 'drop-shadow(0 0 12px rgb(139, 92, 246))' }}
+          />
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="rgb(168, 85, 247)" />
               <stop offset="50%" stopColor="rgb(99, 102, 241)" />
               <stop offset="100%" stopColor="rgb(59, 130, 246)" />
             </linearGradient>
+            <linearGradient id="gradient-flow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="rgb(168, 85, 247)" />
+              <stop offset="50%" stopColor="rgb(139, 92, 246)" />
+              <stop offset="100%" stopColor="rgb(99, 102, 241)" />
+            </linearGradient>
           </defs>
         </svg>
 
-        {/* Center Circle with CultureCrunch Logo */}
+        {/* Center Circle with Culture Crunch Logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64" style={{ zIndex: 10, position: 'absolute' }}>
           {/* Rotating gradient border */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 opacity-30 animate-spin" style={{ animationDuration: "8s" }}></div>
 
           {/* Inner circle with logo and text */}
           <div className="absolute inset-2 rounded-full bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 flex flex-col items-center justify-center p-4 shadow-lg">
-            {/* CultureCrunch Logo */}
+            {/* Culture Crunch Logo */}
             <Image
               src="/culturecrunch-logo.png"
-              alt="CultureCrunch"
+              alt="Culture Crunch"
               width={80}
               height={80}
               className="object-contain mb-2"
               priority
             />
-            {/* CultureCrunch Text */}
-            <h3 className="text-lg font-bold text-foreground mb-1">CultureCrunch</h3>
-            {/* AI Coach Companion Text */}
-            <p className="text-xs font-medium text-muted-foreground">AI Coach Companion</p>
+            {/* Culture Crunch Text */}
+            <h3 className="text-lg font-bold text-foreground mb-1">Culture Crunch</h3>
+            {/* Chris AI Text */}
+            <p className="text-xs font-medium text-muted-foreground">Chris AI</p>
           </div>
         </div>
 
