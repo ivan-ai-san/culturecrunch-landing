@@ -261,17 +261,17 @@ export default function Home() {
             </div>
 
             {/* 3 Stats Row */}
-            <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-16">
+            <div className="grid gap-4 md:gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-12 md:mb-16">
               {/* Stat 1: 66 Days */}
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 space-y-4 h-full">
-                  <div className="text-7xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent whitespace-nowrap">66 Days</div>
-                  <h3 className="text-xl font-bold text-foreground">Habit Formation Timeline</h3>
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/30 to-indigo-500/30 rounded-2xl md:rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border border-purple-200/50 dark:border-purple-800/50 rounded-2xl md:rounded-3xl p-5 md:p-8 space-y-2 md:space-y-4 h-full">
+                  <div className="text-4xl md:text-7xl font-bold bg-gradient-to-br from-purple-600 to-indigo-600 bg-clip-text text-transparent whitespace-nowrap">66 Days</div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground">Habit Formation Timeline</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Why our programs are 6+ weeks minimum
                   </p>
-                  <div className="pt-2">
+                  <div className="pt-1 md:pt-2">
                     <p className="text-xs font-medium text-purple-600 dark:text-purple-400">
                       Lally et al. (2010) - European Journal of Social Psychology
                     </p>
@@ -281,14 +281,14 @@ export default function Home() {
 
               {/* Stat 2: 6.8:1 ROI */}
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/30 to-blue-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-gradient-to-br from-indigo-50/90 to-blue-50/90 dark:from-indigo-950/30 dark:to-blue-950/30 backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-800/50 rounded-3xl p-8 space-y-4 h-full">
-                  <div className="text-7xl font-bold bg-gradient-to-br from-indigo-600 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">6.8:1</div>
-                  <h3 className="text-xl font-bold text-foreground">Average Return on Investment</h3>
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-indigo-500/30 to-blue-500/30 rounded-2xl md:rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-indigo-50/90 to-blue-50/90 dark:from-indigo-950/30 dark:to-blue-950/30 backdrop-blur-sm border border-indigo-200/50 dark:border-indigo-800/50 rounded-2xl md:rounded-3xl p-5 md:p-8 space-y-2 md:space-y-4 h-full">
+                  <div className="text-4xl md:text-7xl font-bold bg-gradient-to-br from-indigo-600 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">6.8:1</div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground">Average Return on Investment</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Range: $3-$11 per dollar invested
                   </p>
-                  <div className="pt-2">
+                  <div className="pt-1 md:pt-2">
                     <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400">
                       BetterManager (2023) study of 752 managers
                     </p>
@@ -298,14 +298,14 @@ export default function Home() {
 
               {/* Stat 3: 25-40% */}
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-gradient-to-br from-blue-50/90 to-violet-50/90 dark:from-blue-950/30 dark:to-violet-950/30 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-3xl p-8 space-y-4 h-full">
-                  <div className="text-7xl font-bold bg-gradient-to-br from-blue-600 to-violet-600 bg-clip-text text-transparent whitespace-nowrap">25-40%</div>
-                  <h3 className="text-xl font-bold text-foreground">Turnover Reduction</h3>
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-2xl md:rounded-3xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-blue-50/90 to-violet-50/90 dark:from-blue-950/30 dark:to-violet-950/30 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-2xl md:rounded-3xl p-5 md:p-8 space-y-2 md:space-y-4 h-full">
+                  <div className="text-4xl md:text-7xl font-bold bg-gradient-to-br from-blue-600 to-violet-600 bg-clip-text text-transparent whitespace-nowrap">25-40%</div>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground">Turnover Reduction</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     When leadership development is systematic
                   </p>
-                  <div className="pt-2">
+                  <div className="pt-1 md:pt-2">
                     <p className="text-xs font-medium text-blue-600 dark:text-blue-400">
                       Deloitte (2023) Global Human Capital Trends
                     </p>
@@ -1130,39 +1130,39 @@ export default function Home() {
             <NetworkValueChart />
 
             {/* Urgency/Scarcity Banner */}
-            <div className="mt-16 max-w-4xl mx-auto">
+            <div className="mt-10 md:mt-16 max-w-4xl mx-auto">
               <div className="relative group">
                 {/* Animated border glow */}
-                <div className="absolute -inset-[2px] bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-3xl opacity-30 group-hover:opacity-50 blur-sm transition-all duration-500 animate-pulse"></div>
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-2xl md:rounded-3xl opacity-30 group-hover:opacity-50 blur-sm transition-all duration-500 animate-pulse"></div>
 
-                <div className="relative bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-500/30 rounded-3xl p-8 md:p-10 overflow-hidden">
+                <div className="relative bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-500/30 rounded-2xl md:rounded-3xl p-5 md:p-10 overflow-hidden">
                   {/* Background pattern */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
 
-                  <div className="relative z-10 text-center space-y-6">
+                  <div className="relative z-10 text-center space-y-4 md:space-y-6">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 bg-amber-500/20 px-4 py-2 rounded-full border border-amber-500/30">
+                    <div className="inline-flex items-center gap-2 bg-amber-500/20 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-amber-500/30">
                       <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                       </span>
-                      <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Limited Availability</span>
+                      <span className="text-xs md:text-sm font-semibold text-amber-700 dark:text-amber-300">Limited Availability</span>
                     </div>
 
                     {/* Headline */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                    <h3 className="text-xl md:text-3xl font-bold text-foreground">
                       Only 5 Pilot Partner Spots Remaining
                     </h3>
 
                     {/* Description */}
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                       We're selecting a small group of founding partners to shape Culture Crunch with us. Pilot partners receive <span className="font-semibold text-foreground">priority pricing locked for life</span> plus direct input into our product roadmap.
                     </p>
 
                     {/* CTA */}
-                    <div className="pt-2">
-                      <Button asChild className="px-8 py-6 h-auto text-base bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl shadow-lg shadow-amber-500/25">
+                    <div className="pt-1 md:pt-2">
+                      <Button asChild className="w-full sm:w-auto px-6 md:px-8 py-4 md:py-6 h-auto text-base bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 active:from-amber-700 active:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 touch-manipulation">
                         <Link href="#contact">
                           <Zap className="h-5 w-5 mr-2" />
                           Claim Your Pilot Partner Spot

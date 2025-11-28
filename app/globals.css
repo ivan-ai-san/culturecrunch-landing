@@ -87,18 +87,28 @@
     scroll-behavior: smooth;
     /* Prevent pull-to-refresh on mobile */
     overscroll-behavior-y: none;
+    /* Prevent horizontal scroll - must be on html AND body */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
     /* Prevent horizontal scroll on mobile */
     overflow-x: hidden;
+    /* Contain layout to prevent overflow from absolute elements */
+    position: relative;
+    width: 100%;
     /* Better font rendering on mobile */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Safe area padding for notched devices */
     padding-left: var(--safe-area-inset-left);
     padding-right: var(--safe-area-inset-right);
+  }
+
+  /* Prevent sections with decorative elements from causing overflow */
+  section {
+    overflow-x: clip;
   }
 
   /* Ensure minimum touch target size (44x44px for iOS) */
