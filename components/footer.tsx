@@ -50,11 +50,11 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t py-12 md:py-16 relative overflow-hidden">
+    <footer className="border-t py-12 md:py-16 relative overflow-hidden safe-area-bottom">
       {/* Decorative gradient backgrounds for depth */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-500/8 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-500/8 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="container px-4 md:px-6 relative z-10">
         {/* Newsletter Section */}
@@ -127,8 +127,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="space-y-4 col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold">Culture Crunch</h3>
             <p className="text-sm text-muted-foreground">
               The Culture Operating System that embeds accountable leadership at scale
@@ -137,29 +137,29 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-bold">Product</h3>
             <nav aria-label="Product Navigation">
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-1 text-sm">
                 <li>
-                  <Link href="/#problem" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#problem" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     The Problem
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#opportunity" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#opportunity" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     The Opportunity
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#solution" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#solution" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Solution
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#how-it-works" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#how-it-works" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     How it Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="/methodology" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/methodology" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Methodology
                   </Link>
                 </li>
@@ -169,25 +169,25 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-bold">Resources</h3>
             <nav aria-label="Resources Navigation">
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-1 text-sm">
                 <li>
-                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Book a Demo
                   </Link>
                 </li>
                 <li>
-                  <Link href="/roi-calculator" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/roi-calculator" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     ROI Calculator
                   </Link>
                 </li>
                 <li>
-                  <Link href="/white-paper" className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 group">
+                  <Link href="/white-paper" className="text-muted-foreground hover:text-foreground active:text-foreground flex items-center gap-1.5 py-2 -my-1">
                     <FileText className="h-3.5 w-3.5 text-purple-500" />
                     <span>White Paper</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/lead-magnet-guide" className="text-muted-foreground hover:text-foreground flex items-center gap-1.5">
+                  <Link href="/lead-magnet-guide" className="text-muted-foreground hover:text-foreground active:text-foreground flex items-center gap-1.5 py-2 -my-1">
                     <FileText className="h-3.5 w-3.5 text-indigo-500" />
                     <span>Free Guide</span>
                   </Link>
@@ -198,24 +198,24 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-bold">Company</h3>
             <nav aria-label="Company Navigation">
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-1 text-sm">
                 <li>
-                  <Link href="/about" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/about" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/privacy" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-muted-foreground hover:text-foreground">
+                  <Link href="/terms" className="text-muted-foreground hover:text-foreground active:text-foreground block py-2 -my-1">
                     Terms of Use
                   </Link>
                 </li>
@@ -224,12 +224,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {currentYear} Culture Crunch Pty Ltd. All rights reserved.</p>
-          <div className="flex gap-4">
+          <p className="text-sm text-muted-foreground text-center md:text-left">© {currentYear} Culture Crunch Pty Ltd. All rights reserved.</p>
+          <div className="flex gap-2">
             <Link
               href="https://linkedin.com"
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground active:text-foreground p-2 -m-2 rounded-lg"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -241,14 +243,20 @@ export default function Footer() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5"
+                className="h-6 w-6 md:h-5 md:w-5"
               >
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect width="4" height="12" x="2" y="9"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </Link>
-            <Link href="https://github.com/ivan-ai-san/DEMO_CultureCrunch" className="text-muted-foreground hover:text-foreground" aria-label="GitHub">
+            <Link
+              href="https://github.com/ivan-ai-san/DEMO_CultureCrunch"
+              className="text-muted-foreground hover:text-foreground active:text-foreground p-2 -m-2 rounded-lg"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -259,7 +267,7 @@ export default function Footer() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5"
+                className="h-6 w-6 md:h-5 md:w-5"
               >
                 <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                 <path d="M9 18c-4.51 2-5-2-7-2"></path>

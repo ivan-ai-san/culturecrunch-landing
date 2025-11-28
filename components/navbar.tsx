@@ -20,21 +20,21 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-3" aria-label="Culture Crunch Homepage">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 safe-area-top">
+      <div className="container flex h-16 md:h-16 items-center justify-between px-4 md:px-6">
+        <div className="flex items-center gap-2 md:gap-3">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 min-h-[44px]" aria-label="Culture Crunch Homepage">
             <Image
               src="/culturecrunch-logo.png"
               alt="Culture Crunch Logo"
               width={48}
               height={48}
-              className="w-12 h-12"
+              className="w-10 h-10 md:w-12 md:h-12"
               priority
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold leading-tight">Culture Crunch</span>
-              <span className="text-[10px] text-muted-foreground leading-tight">The Culture Operating System</span>
+              <span className="text-lg md:text-xl font-bold leading-tight">Culture Crunch</span>
+              <span className="text-[9px] md:text-[10px] text-muted-foreground leading-tight hidden sm:block">The Culture Operating System</span>
             </div>
           </Link>
         </div>
@@ -167,14 +167,14 @@ export default function Navbar() {
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon" aria-label="Open Menu">
-                <Menu className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="h-11 w-11" aria-label="Open Menu">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="w-[85vw] max-w-[350px] safe-area-right overflow-y-auto">
               {/* Mobile Logo */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-6 pt-2">
                 <Image
                   src="/culturecrunch-logo.png"
                   alt="Culture Crunch Logo"
@@ -187,20 +187,20 @@ export default function Navbar() {
                   <span className="text-[9px] text-muted-foreground leading-tight">The Culture Operating System</span>
                 </div>
               </div>
-              <nav className="flex flex-col gap-4 mt-4" aria-label="Mobile Navigation">
+              <nav className="flex flex-col gap-3 mt-4 pb-safe" aria-label="Mobile Navigation">
                 {/* Home Section */}
-                <div className="flex flex-col gap-2">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Home</div>
+                <div className="flex flex-col gap-1">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">Home</div>
                   <Link
                     href="/#problem"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     The Problem
                   </Link>
                   <Link
                     href="/#opportunity"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     The Opportunity
@@ -208,25 +208,25 @@ export default function Navbar() {
                 </div>
 
                 {/* Offering Section */}
-                <div className="flex flex-col gap-2">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Offering</div>
+                <div className="flex flex-col gap-1">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">Offering</div>
                   <Link
                     href="/#solution"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Solution
                   </Link>
                   <Link
                     href="/#how-it-works"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     How It Works
                   </Link>
                   <Link
                     href="/#differentiation"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Differentiation
@@ -236,25 +236,25 @@ export default function Navbar() {
                 {/* Methodology */}
                 <Link
                   href="/methodology"
-                  className="text-lg font-medium transition-colors hover:text-primary"
+                  className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                   onClick={() => setIsOpen(false)}
                 >
                   Methodology
                 </Link>
 
                 {/* Why Now Section */}
-                <div className="flex flex-col gap-2">
-                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Why Now</div>
+                <div className="flex flex-col gap-1">
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">Why Now</div>
                   <Link
                     href="/#why-now"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Why Now
                   </Link>
                   <Link
                     href="/roi-calculator"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
+                    className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     ROI Calculator
@@ -264,22 +264,22 @@ export default function Navbar() {
                 {/* Contact */}
                 <Link
                   href="/#contact"
-                  className="text-lg font-medium transition-colors hover:text-primary"
+                  className="text-base font-medium transition-colors hover:text-primary active:bg-accent px-3 py-3 rounded-lg min-h-[48px] flex items-center"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
                 </Link>
 
-                <div className="flex items-center gap-4 mt-4">
+                <div className="flex items-center gap-3 mt-4 pt-4 border-t">
                   <ThemeToggle />
                   <Button
                     asChild
-                    className="w-full flex items-center gap-3 px-4 py-2 bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 h-auto dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_10px_rgba(36,101,237,0.4)]"
+                    className="flex-1 flex items-center justify-center gap-3 px-4 py-4 bg-[#1a1d21] hover:bg-[#2a2d31] text-white rounded-xl border-0 h-auto min-h-[52px] dark:bg-primary dark:hover:bg-primary/90 dark:shadow-[0_0_10px_rgba(36,101,237,0.4)]"
                   >
                     <Link href="/#contact" onClick={() => setIsOpen(false)}>
-                      <Zap className="h-4 w-4 text-white" />
+                      <Zap className="h-5 w-5 text-white" />
                       <div className="flex flex-col items-start">
-                        <span className="text-sm font-medium">See It in Action</span>
+                        <span className="text-base font-medium">See It in Action</span>
                         <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Book your demo</span>
                       </div>
                     </Link>

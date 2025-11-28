@@ -100,16 +100,17 @@ export default function ContactForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-4">
           {error && (
-            <div className="flex items-center gap-2 p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/30 dark:text-red-400 rounded-lg">
+            <div className="flex items-center gap-2 p-3 md:p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/30 dark:text-red-400 rounded-lg">
               <AlertCircle className="h-4 w-4 flex-shrink-0" />
               {error}
             </div>
           )}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Stack on mobile, side-by-side on tablet+ */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="firstName">First Name</Label>
+              <Label htmlFor="firstName" className="text-sm md:text-sm">First Name</Label>
               <Input
                 id="firstName"
                 placeholder="John"
@@ -117,10 +118,11 @@ export default function ContactForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 disabled={isSubmitting}
+                autoComplete="given-name"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name</Label>
+              <Label htmlFor="lastName" className="text-sm md:text-sm">Last Name</Label>
               <Input
                 id="lastName"
                 placeholder="Doe"
@@ -128,11 +130,12 @@ export default function ContactForm() {
                 value={formData.lastName}
                 onChange={handleChange}
                 disabled={isSubmitting}
+                autoComplete="family-name"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email" className="flex items-center gap-1.5">
+            <Label htmlFor="email" className="flex items-center gap-1.5 text-sm">
               <Building2 className="h-3.5 w-3.5 text-muted-foreground" />
               Work Email
             </Label>
@@ -144,10 +147,12 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               disabled={isSubmitting}
+              autoComplete="email"
+              inputMode="email"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="company">Company/Organisation</Label>
+            <Label htmlFor="company" className="text-sm">Company/Organisation</Label>
             <Input
               id="company"
               placeholder="Acme Inc."
@@ -155,10 +160,11 @@ export default function ContactForm() {
               value={formData.company}
               onChange={handleChange}
               disabled={isSubmitting}
+              autoComplete="organization"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="role">Your Role</Label>
+            <Label htmlFor="role" className="text-sm">Your Role</Label>
             <Input
               id="role"
               placeholder="CTO, IT Director, etc."
@@ -166,6 +172,7 @@ export default function ContactForm() {
               value={formData.role}
               onChange={handleChange}
               disabled={isSubmitting}
+              autoComplete="organization-title"
             />
           </div>
           <div className="space-y-2">
@@ -195,21 +202,22 @@ export default function ContactForm() {
               disabled={isSubmitting}
             />
           </div>
-          <div className="flex items-start space-x-3">
+          <div className="flex items-start gap-3 py-2">
             <Checkbox
               id="terms"
               checked={agreedToTerms}
               onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
               disabled={isSubmitting}
+              className="mt-0.5"
             />
             <label
               htmlFor="terms"
-              className="text-sm text-muted-foreground leading-tight cursor-pointer"
+              className="text-sm text-muted-foreground leading-relaxed cursor-pointer select-none"
             >
-              I agree to the <a href="/terms" className="text-primary hover:underline" target="_blank">Terms of Use</a> and <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a> and consent to receiving communications from Culture Crunch
+              I agree to the <a href="/terms" className="text-primary hover:underline active:underline" target="_blank" rel="noopener noreferrer">Terms of Use</a> and <a href="/privacy" className="text-primary hover:underline active:underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and consent to receiving communications from Culture Crunch
             </label>
           </div>
-          <Button type="submit" className="w-full" disabled={isSubmitting || !agreedToTerms}>
+          <Button type="submit" className="w-full h-12 md:h-11 text-base" disabled={isSubmitting || !agreedToTerms}>
             {isSubmitting ? "Booking Your Demo..." : "Book My Personalised Demo"}
           </Button>
         </form>
