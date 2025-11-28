@@ -5,7 +5,7 @@ import Footer from "@/components/footer"
 import CssGridBackground from "@/components/css-grid-background"
 import AccountableConversations from "@/components/accountable-conversations"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Zap } from "lucide-react"
+import { ArrowRight, ArrowLeft, Zap } from "lucide-react"
 import Link from "next/link"
 
 export default function MethodologyPage() {
@@ -17,6 +17,15 @@ export default function MethodologyPage() {
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
         <CssGridBackground />
         <div className="container px-4 md:px-6 py-24 md:py-32 relative z-10">
+          {/* Back to Home */}
+          <div className="mb-8">
+            <Button variant="ghost" asChild>
+              <Link href="/">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Link>
+            </Button>
+          </div>
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="inline-block rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-2 text-sm font-medium mb-6 border border-primary/20">
               Our Methodology

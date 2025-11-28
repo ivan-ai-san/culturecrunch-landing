@@ -9,21 +9,59 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import { CheckCircle2 } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import { CheckCircle2, AlertCircle, Building2 } from "lucide-react"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    role: "",
+    size: "",
+    message: ""
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }))
+  }
+
+  const handleSizeChange = (value: string) => {
+    setFormData(prev => ({ ...prev, size: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError("")
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'contact',
+          ...formData
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || 'Failed to submit form')
+      }
+
       setIsSubmitted(true)
-    }, 1500)
+    } catch (err) {
+      console.error('Form submission error:', err)
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again or email us directly at hello@culturecrunch.io")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -36,7 +74,18 @@ export default function ContactForm() {
             Your inquiry has been received. Our enterprise team will contact you shortly to discuss your specific
             requirements.
           </p>
-          <Button onClick={() => setIsSubmitted(false)}>Submit Another Inquiry</Button>
+          <Button onClick={() => {
+            setIsSubmitted(false)
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              company: "",
+              role: "",
+              size: "",
+              message: ""
+            })
+          }}>Submit Another Inquiry</Button>
         </CardContent>
       </Card>
     )
@@ -45,38 +94,83 @@ export default function ContactForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Contact Our Enterprise Team</CardTitle>
+        <CardTitle>See Culture Crunch in Action</CardTitle>
         <CardDescription>
-          Fill out the form below to discuss your organisation's needs and receive a custom quote.
+          Book a personalised demo and see how the Culture OS transforms leadership at scale.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <div className="flex items-center gap-2 p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/30 dark:text-red-400 rounded-lg">
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+              {error}
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" placeholder="John" required />
+              <Input
+                id="firstName"
+                placeholder="John"
+                required
+                value={formData.firstName}
+                onChange={handleChange}
+                disabled={isSubmitting}
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" placeholder="Doe" required />
+              <Input
+                id="lastName"
+                placeholder="Doe"
+                required
+                value={formData.lastName}
+                onChange={handleChange}
+                disabled={isSubmitting}
+              />
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Work Email</Label>
-            <Input id="email" type="email" placeholder="john.doe@company.com" required />
+            <Label htmlFor="email" className="flex items-center gap-1.5">
+              <Building2 className="h-3.5 w-3.5 text-muted-foreground" />
+              Work Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="john.doe@company.com"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="company">Company/Organisation</Label>
-            <Input id="company" placeholder="Acme Inc." required />
+            <Input
+              id="company"
+              placeholder="Acme Inc."
+              required
+              value={formData.company}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="role">Your Role</Label>
-            <Input id="role" placeholder="CTO, IT Director, etc." required />
+            <Input
+              id="role"
+              placeholder="CTO, IT Director, etc."
+              required
+              value={formData.role}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="size">Organisation Size</Label>
-            <Select>
+            <Select value={formData.size} onValueChange={handleSizeChange} disabled={isSubmitting}>
               <SelectTrigger id="size">
                 <SelectValue placeholder="Select organisation size" />
               </SelectTrigger>
@@ -92,14 +186,32 @@ export default function ContactForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">How can we help?</Label>
-            <Textarea id="message" placeholder="Tell us about your specific requirements and use cases..." rows={4} />
+            <Textarea
+              id="message"
+              placeholder="Tell us about your specific requirements and use cases..."
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
           </div>
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Request Information"}
+          <div className="flex items-start space-x-3">
+            <Checkbox
+              id="terms"
+              checked={agreedToTerms}
+              onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
+              disabled={isSubmitting}
+            />
+            <label
+              htmlFor="terms"
+              className="text-sm text-muted-foreground leading-tight cursor-pointer"
+            >
+              I agree to the <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a> and consent to receiving communications from Culture Crunch
+            </label>
+          </div>
+          <Button type="submit" className="w-full" disabled={isSubmitting || !agreedToTerms}>
+            {isSubmitting ? "Booking Your Demo..." : "Book My Personalised Demo"}
           </Button>
-          <p className="text-xs text-muted-foreground text-center">
-            By submitting this form, you agree to our privacy policy and terms of service.
-          </p>
         </form>
       </CardContent>
     </Card>

@@ -159,8 +159,8 @@ export default function Navbar() {
             <Link href="/#contact">
               <Zap className="h-4 w-4 text-white" />
               <div className="flex flex-col items-start">
-                <span className="text-sm font-medium">Get Started</span>
-                <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install your OS</span>
+                <span className="text-sm font-medium">See It in Action</span>
+                <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Book your demo</span>
               </div>
             </Link>
           </Button>
@@ -279,8 +279,8 @@ export default function Navbar() {
                     <Link href="/#contact" onClick={() => setIsOpen(false)}>
                       <Zap className="h-4 w-4 text-white" />
                       <div className="flex flex-col items-start">
-                        <span className="text-sm font-medium">Get Started</span>
-                        <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install your OS</span>
+                        <span className="text-sm font-medium">See It in Action</span>
+                        <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Book your demo</span>
                       </div>
                     </Link>
                   </Button>

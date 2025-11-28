@@ -1,7 +1,53 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
+import { FileText, ArrowRight, CheckCircle2, Mail, Building2 } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [email, setEmail] = useState("")
+  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
+
+  const [error, setError] = useState("")
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'newsletter',
+          email
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Newsletter API Error:', response.status, errorData)
+        throw new Error(errorData.error || 'Failed to subscribe')
+      }
+
+      const result = await response.json()
+      console.log('Newsletter subscription success:', result)
+      setIsSubscribed(true)
+    } catch (err) {
+      console.error('Newsletter subscription error:', err)
+      setError(err instanceof Error ? err.message : "Failed to subscribe. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <footer className="border-t py-12 md:py-16 relative overflow-hidden">
@@ -11,6 +57,76 @@ export default function Footer() {
       <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-500/8 rounded-full blur-3xl"></div>
 
       <div className="container px-4 md:px-6 relative z-10">
+        {/* Newsletter Section */}
+        <div className="mb-12 pb-12 border-b">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border border-purple-200/50 dark:border-purple-800/30 rounded-2xl p-6 md:p-8">
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="flex-shrink-0">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-lg font-bold text-foreground mb-1">Weekly Leadership Insights</h3>
+                  <p className="text-sm text-muted-foreground">Evidence-based culture tips delivered every Tuesday. No fluff, just actionable insights.</p>
+                </div>
+                {isSubscribed ? (
+                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span className="font-medium">You're subscribed!</span>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                      <div className="relative">
+                        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                          <Building2 className="h-4 w-4" />
+                        </div>
+                        <Input
+                          type="email"
+                          placeholder="you@company.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full sm:w-56 h-11 pl-10"
+                          required
+                          disabled={isSubmitting}
+                        />
+                        {error && (
+                          <p className="absolute -bottom-5 left-0 text-xs text-red-500 whitespace-nowrap">
+                            {error}
+                          </p>
+                        )}
+                      </div>
+                      <Button
+                        type="submit"
+                        className="h-11 px-5"
+                        disabled={isSubmitting || !agreedToTerms}
+                      >
+                        {isSubmitting ? "Subscribing..." : "Subscribe"}
+                      </Button>
+                    </form>
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="newsletter-terms"
+                        checked={agreedToTerms}
+                        onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
+                        disabled={isSubmitting}
+                      />
+                      <label
+                        htmlFor="newsletter-terms"
+                        className="text-xs text-muted-foreground cursor-pointer"
+                      >
+                        I agree to the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+                      </label>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Culture Crunch</h3>
@@ -56,7 +172,7 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
-                    Demo
+                    Book a Demo
                   </Link>
                 </li>
                 <li>
@@ -65,8 +181,15 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/white-paper" className="text-muted-foreground hover:text-foreground">
-                    White Paper
+                  <Link href="/white-paper" className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 group">
+                    <FileText className="h-3.5 w-3.5 text-purple-500" />
+                    <span>White Paper</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/lead-magnet-guide" className="text-muted-foreground hover:text-foreground flex items-center gap-1.5">
+                    <FileText className="h-3.5 w-3.5 text-indigo-500" />
+                    <span>Free Guide</span>
                   </Link>
                 </li>
               </ul>

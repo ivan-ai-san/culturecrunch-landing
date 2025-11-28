@@ -103,6 +103,44 @@ export default function LoopsVisualization() {
         .connector-arrow {
           animation: arrowPulse 2s ease-in-out infinite;
         }
+
+        @keyframes outerGlowPulse {
+          0%, 100% { opacity: 0.15; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(1.02); }
+        }
+
+        .outer-glow-1 {
+          animation: outerGlowPulse 3s ease-in-out infinite;
+          transform-origin: 150px 180px;
+        }
+        .outer-glow-2 {
+          animation: outerGlowPulse 3s ease-in-out infinite;
+          animation-delay: -1s;
+          transform-origin: 400px 180px;
+        }
+        .outer-glow-3 {
+          animation: outerGlowPulse 3s ease-in-out infinite;
+          animation-delay: -2s;
+          transform-origin: 650px 180px;
+        }
+
+        @keyframes innerRingRotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .inner-ring-1 {
+          animation: innerRingRotate 20s linear infinite reverse;
+          transform-origin: 150px 180px;
+        }
+        .inner-ring-2 {
+          animation: innerRingRotate 25s linear infinite;
+          transform-origin: 400px 180px;
+        }
+        .inner-ring-3 {
+          animation: innerRingRotate 22s linear infinite reverse;
+          transform-origin: 650px 180px;
+        }
       `}</style>
 
       <div
@@ -127,6 +165,22 @@ export default function LoopsVisualization() {
               <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="1" />
               <stop offset="100%" stopColor="rgb(168, 85, 247)" stopOpacity="1" />
             </linearGradient>
+            {/* Radial gradients for orb glow effect */}
+            <radialGradient id="orb-glow-1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgb(168, 85, 247)" stopOpacity="0.15" />
+              <stop offset="70%" stopColor="rgb(168, 85, 247)" stopOpacity="0.05" />
+              <stop offset="100%" stopColor="rgb(168, 85, 247)" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="orb-glow-2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgb(99, 102, 241)" stopOpacity="0.15" />
+              <stop offset="70%" stopColor="rgb(99, 102, 241)" stopOpacity="0.05" />
+              <stop offset="100%" stopColor="rgb(99, 102, 241)" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="orb-glow-3" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.15" />
+              <stop offset="70%" stopColor="rgb(59, 130, 246)" stopOpacity="0.05" />
+              <stop offset="100%" stopColor="rgb(59, 130, 246)" stopOpacity="0" />
+            </radialGradient>
             <marker id="arrowhead" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto">
               <polygon points="0 0, 12 4.5, 0 9" fill="currentColor" className="text-foreground/60"/>
             </marker>
@@ -146,6 +200,25 @@ export default function LoopsVisualization() {
             className="loop-group cursor-pointer"
             onMouseEnter={() => handleMouseEnter("tooltip-1")}
           >
+            {/* Outer glow - pulsing ambient glow */}
+            <circle
+              cx="150"
+              cy="180"
+              r="115"
+              fill="url(#orb-glow-1)"
+              className="outer-glow-1"
+            />
+            {/* Inner rotating decorative ring */}
+            <circle
+              cx="150"
+              cy="180"
+              r="85"
+              className="inner-ring-1 fill-none"
+              stroke="rgb(168, 85, 247)"
+              strokeWidth="1"
+              strokeOpacity="0.2"
+              strokeDasharray="8 12"
+            />
             {/* Track - the dim background circle */}
             <circle
               cx="150"
@@ -153,6 +226,16 @@ export default function LoopsVisualization() {
               r="100"
               className="fill-none stroke-foreground/5 dark:stroke-white/10"
               strokeWidth="2"
+            />
+            {/* Secondary outer ring for depth */}
+            <circle
+              cx="150"
+              cy="180"
+              r="100"
+              className="fill-none"
+              stroke="rgb(168, 85, 247)"
+              strokeWidth="1"
+              strokeOpacity="0.15"
             />
             {/* Animated flow - rendered on top */}
             <circle
@@ -194,6 +277,25 @@ export default function LoopsVisualization() {
             className="loop-group cursor-pointer"
             onMouseEnter={() => handleMouseEnter("tooltip-2")}
           >
+            {/* Outer glow - pulsing ambient glow */}
+            <circle
+              cx="400"
+              cy="180"
+              r="115"
+              fill="url(#orb-glow-2)"
+              className="outer-glow-2"
+            />
+            {/* Inner rotating decorative ring */}
+            <circle
+              cx="400"
+              cy="180"
+              r="85"
+              className="inner-ring-2 fill-none"
+              stroke="rgb(99, 102, 241)"
+              strokeWidth="1"
+              strokeOpacity="0.2"
+              strokeDasharray="8 12"
+            />
             {/* Track - the dim background circle */}
             <circle
               cx="400"
@@ -201,6 +303,16 @@ export default function LoopsVisualization() {
               r="100"
               className="fill-none stroke-foreground/5 dark:stroke-white/10"
               strokeWidth="2"
+            />
+            {/* Secondary outer ring for depth */}
+            <circle
+              cx="400"
+              cy="180"
+              r="100"
+              className="fill-none"
+              stroke="rgb(99, 102, 241)"
+              strokeWidth="1"
+              strokeOpacity="0.15"
             />
             {/* Animated flow - rendered on top */}
             <circle
@@ -242,6 +354,25 @@ export default function LoopsVisualization() {
             className="loop-group cursor-pointer"
             onMouseEnter={() => handleMouseEnter("tooltip-3")}
           >
+            {/* Outer glow - pulsing ambient glow */}
+            <circle
+              cx="650"
+              cy="180"
+              r="115"
+              fill="url(#orb-glow-3)"
+              className="outer-glow-3"
+            />
+            {/* Inner rotating decorative ring */}
+            <circle
+              cx="650"
+              cy="180"
+              r="85"
+              className="inner-ring-3 fill-none"
+              stroke="rgb(59, 130, 246)"
+              strokeWidth="1"
+              strokeOpacity="0.2"
+              strokeDasharray="8 12"
+            />
             {/* Track - the dim background circle */}
             <circle
               cx="650"
@@ -249,6 +380,16 @@ export default function LoopsVisualization() {
               r="100"
               className="fill-none stroke-foreground/5 dark:stroke-white/10"
               strokeWidth="2"
+            />
+            {/* Secondary outer ring for depth */}
+            <circle
+              cx="650"
+              cy="180"
+              r="100"
+              className="fill-none"
+              stroke="rgb(59, 130, 246)"
+              strokeWidth="1"
+              strokeOpacity="0.15"
             />
             {/* Animated flow - rendered on top */}
             <circle

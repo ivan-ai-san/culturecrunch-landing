@@ -23,7 +23,7 @@ Starting his career as an Australian Army officer, Campbell learned early that l
 
 Campbell's unique perspective? He's tired of watching organisations spend millions on training events that produce temporary enthusiasm but zero lasting behaviour change. At CultureCrunch, he's building what he wished existed in every boardroom conversation about culture: an operating system that makes leadership development inseparable from how work actually gets done.`,
     linkedin: "https://linkedin.com/in/yourprofile",
-    email: "campbell@culturecrunch.com"
+    email: "campbell@culturecrunch.io"
   },
   {
     name: "Ivan Sanchez",
@@ -35,7 +35,7 @@ With an MBA from UNSW and graduation from both Founder Institute and WSU Launch 
 
 Ivan's unique perspective? He's seen billion-dollar companies drown in engagement surveys while their culture rots from lack of execution. He understands that culture transformation isn't a data problem - it's a behaviour change problem disguised as an analytics opportunity. At CultureCrunch, he's building the infrastructure that turns research into repeatable systems, making evidence-based leadership as accessible as checking email.`,
     linkedin: "https://linkedin.com/in/theirprofile",
-    email: "ivan@culturecrunch.com"
+    email: "ivan@culturecrunch.io"
   }
 ]
 

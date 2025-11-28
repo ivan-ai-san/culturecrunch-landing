@@ -1,14 +1,66 @@
 "use client"
 
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
-import { FileText, Lock } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { FileText, Lock, Building2, AlertCircle, CheckCircle2, User, ArrowLeft } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import Link from "next/link"
+
+// Personal email domains to block - require business email
+const PERSONAL_EMAIL_DOMAINS = [
+  'gmail.com', 'googlemail.com',
+  'yahoo.com', 'yahoo.co.uk', 'yahoo.com.au', 'yahoo.co.nz',
+  'hotmail.com', 'hotmail.co.uk', 'hotmail.com.au',
+  'outlook.com', 'live.com', 'live.com.au', 'msn.com',
+  'aol.com', 'aol.co.uk',
+  'icloud.com', 'me.com', 'mac.com',
+  'protonmail.com', 'proton.me',
+  'mail.com', 'email.com',
+  'zoho.com', 'yandex.com', 'gmx.com', 'gmx.net',
+  'fastmail.com', 'tutanota.com',
+  'inbox.com', 'mail.ru', 'qq.com',
+  'naver.com', 'daum.net',
+  'rediffmail.com', 'libero.it',
+  'web.de', 't-online.de', 'freenet.de',
+  'orange.fr', 'wanadoo.fr', 'laposte.net',
+  'seznam.cz', 'wp.pl', 'o2.pl',
+  'mailinator.com', 'guerrillamail.com', 'tempmail.com'
+]
+
+function isBusinessEmail(email: string): boolean {
+  const domain = email.split('@')[1]?.toLowerCase()
+  if (!domain) return false
+  return !PERSONAL_EMAIL_DOMAINS.includes(domain)
+}
+
+const STORAGE_KEY = 'cc_whitepaper_access'
 
 export default function WhitePaperPage() {
+  const [hasAccess, setHasAccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState("")
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
+
+  // Check for existing access
+  useEffect(() => {
+    const access = localStorage.getItem(STORAGE_KEY)
+    if (access) {
+      setHasAccess(true)
+    }
+    setIsLoading(false)
+  }, [])
+
   // Copy protection
   useEffect(() => {
+    if (!hasAccess) return
     // Disable right-click
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault()
@@ -47,8 +99,227 @@ export default function WhitePaperPage() {
       document.removeEventListener('copy', (e) => e.preventDefault())
       document.removeEventListener('cut', (e) => e.preventDefault())
     }
-  }, [])
+  }, [hasAccess])
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError("")
+
+    if (!firstName.trim() || !lastName.trim()) {
+      setError("Please enter your full name")
+      return
+    }
+
+    if (!email || !email.includes("@")) {
+      setError("Please enter a valid email address")
+      return
+    }
+
+    if (!isBusinessEmail(email)) {
+      setError("Please use your work email address")
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'white-paper',
+          firstName,
+          lastName,
+          email
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || 'Failed to submit')
+      }
+
+      // Grant access
+      localStorage.setItem(STORAGE_KEY, 'true')
+      setHasAccess(true)
+    } catch (err) {
+      console.error('White paper submission error:', err)
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center">
+          <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
+      </div>
+    )
+  }
+
+  // Show gate if no access
+  if (!hasAccess) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+
+        <section className="flex-1 relative py-16 md:py-24 bg-gradient-to-b from-purple-50 via-indigo-50 to-white dark:from-purple-950/30 dark:via-indigo-950/20 dark:to-background">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            <div className="max-w-2xl mx-auto">
+              {/* Gate Card */}
+              <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-purple-200/50 dark:border-purple-800/30 shadow-2xl overflow-hidden">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-10 text-center text-white">
+                  <div className="h-16 w-16 mx-auto rounded-2xl bg-white/20 flex items-center justify-center mb-6">
+                    <FileText className="h-8 w-8" />
+                  </div>
+                  <h1 className="text-2xl md:text-3xl font-bold mb-3">
+                    From Training Events to Operating Systems
+                  </h1>
+                  <p className="text-purple-100">
+                    Academic White Paper with 100+ Peer-Reviewed Citations
+                  </p>
+                </div>
+
+                {/* Form */}
+                <div className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                      <Lock className="h-4 w-4" />
+                      Access Full Research
+                    </div>
+                    <p className="text-muted-foreground">
+                      Enter your details to access the comprehensive 20,000-word white paper
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="relative">
+                        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                          <User className="h-5 w-5" />
+                        </div>
+                        <Input
+                          type="text"
+                          placeholder="First name"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                          className="h-14 pl-12 text-lg"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div>
+                        <Input
+                          type="text"
+                          placeholder="Last name"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                          className="h-14 text-lg"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="relative">
+                        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                          <Building2 className="h-5 w-5" />
+                        </div>
+                        <Input
+                          type="email"
+                          placeholder="your.name@company.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="h-14 pl-12 text-lg"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <p className="text-xs text-muted-foreground flex items-center gap-1 justify-center">
+                        <Building2 className="h-3 w-3" /> Business email required
+                      </p>
+                      {error && (
+                        <p className="text-sm text-red-500 flex items-center gap-1 justify-center">
+                          <AlertCircle className="h-4 w-4" /> {error}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <Checkbox
+                        id="whitepaper-terms"
+                        checked={agreedToTerms}
+                        onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
+                        disabled={isSubmitting}
+                        className="mt-0.5"
+                      />
+                      <label
+                        htmlFor="whitepaper-terms"
+                        className="text-sm text-muted-foreground leading-tight cursor-pointer"
+                      >
+                        I agree to the <Link href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</Link> and consent to receiving communications from Culture Crunch
+                      </label>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full h-14 text-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg shadow-purple-500/25"
+                      disabled={isSubmitting || !agreedToTerms}
+                    >
+                      <FileText className="h-5 w-5 mr-2" />
+                      {isSubmitting ? "Unlocking..." : "Access White Paper"}
+                    </Button>
+                  </form>
+
+                  {/* What's inside */}
+                  <div className="mt-8 pt-8 border-t border-purple-200/50 dark:border-purple-800/30">
+                    <p className="text-sm font-medium text-foreground mb-4 text-center">What you'll discover:</p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {[
+                        "Why 81% of training knowledge never transfers to workplace behaviour",
+                        "The four failure patterns that doom culture transformation efforts",
+                        "Evidence from 100+ peer-reviewed sources across 10 research domains",
+                        "The operating system model for sustainable leadership development",
+                        "ROI data showing $7:$1 average returns on systematic approaches"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-purple-500 flex-shrink-0 mt-0.5" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Back link */}
+              <div className="text-center mt-8">
+                <Button variant="ghost" asChild>
+                  <Link href="/">
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    Back to Home
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+      </div>
+    )
+  }
+
+  // Show full content if has access
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />

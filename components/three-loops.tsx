@@ -234,6 +234,8 @@ const colorClasses = {
 
 function LoopCard({ loop, isExpanded, onToggle }: { loop: LoopData; isExpanded: boolean; onToggle: () => void }) {
   const colors = colorClasses[loop.color]
+  // Get first 3 steps for preview
+  const previewSteps = loop.steps.slice(0, 3)
 
   return (
     <div className="relative group">
@@ -244,19 +246,46 @@ function LoopCard({ loop, isExpanded, onToggle }: { loop: LoopData; isExpanded: 
         {/* Header - Always visible */}
         <button
           onClick={onToggle}
-          className="w-full p-6 md:p-8 flex items-center justify-between text-left hover:bg-white/5 dark:hover:bg-black/5 transition-colors"
+          className="w-full p-6 md:p-8 text-left hover:bg-white/5 dark:hover:bg-black/5 transition-colors"
         >
-          <div className="flex items-center gap-4">
-            <div className={`flex items-center justify-center h-12 w-12 rounded-2xl ${colors.numberBg} ${colors.text} font-bold text-xl`}>
-              {loop.id}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className={`flex items-center justify-center h-12 w-12 rounded-2xl ${colors.numberBg} ${colors.text} font-bold text-xl`}>
+                {loop.id}
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">{loop.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{loop.subtitle}</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground">{loop.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{loop.subtitle}</p>
+            <div className={`${colors.text} transition-transform duration-300 flex-shrink-0 ml-4 ${isExpanded ? 'rotate-180' : ''}`}>
+              <ChevronDown className="h-6 w-6" />
             </div>
           </div>
-          <div className={`${colors.text} transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
-            <ChevronDown className="h-6 w-6" />
+
+          {/* Preview - Only visible when collapsed */}
+          <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-0 opacity-0 mt-0' : 'max-h-48 opacity-100 mt-6'}`}>
+            <div className="flex flex-wrap gap-2 mb-3">
+              {previewSteps.map((step, index) => {
+                const Icon = step.icon
+                return (
+                  <div
+                    key={index}
+                    className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full ${colors.numberBg} ${colors.text} text-xs font-medium`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    <span className="truncate max-w-[150px]">{step.title}</span>
+                  </div>
+                )
+              })}
+              <div className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-background/50 text-muted-foreground text-xs`}>
+                +{loop.steps.length - 3} more steps
+              </div>
+            </div>
+            <p className={`text-xs ${colors.text} flex items-center gap-1`}>
+              <span className="animate-pulse">Click to explore</span>
+              <span className="text-muted-foreground">- {loop.demoFeatures.length} features & {loop.benefits.length} benefits inside</span>
+            </p>
           </div>
         </button>
 

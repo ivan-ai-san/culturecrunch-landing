@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp, Mail, Smartphone, Send, ClipboardCheck, Calendar, Globe, LayoutDashboard, Database, TrendingUp, Scale } from "lucide-react"
+import { ArrowRight, TrendingDown, Users, Zap, Target, Clock, BarChart3, Brain, Heart, Lightbulb, MessageSquare, RefreshCw, LineChart, Sparkles, Activity, Rocket, Award, CheckCircle, ChevronDown, ChevronUp, Mail, Smartphone, Send, ClipboardCheck, Calendar, Globe, LayoutDashboard, Database, TrendingUp, Scale, Building } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
@@ -13,6 +13,9 @@ import CircularLoop from "@/components/circular-loop"
 import WeekByWeekTimeline from "@/components/week-by-week-timeline"
 import ThreeLoops from "@/components/three-loops"
 import NetworkValueChart from "@/components/network-value-chart"
+import StickyMobileCTA from "@/components/sticky-mobile-cta"
+import AnimatedCounter from "@/components/animated-counter"
+import LeadMagnet from "@/components/lead-magnet"
 import { useState } from "react"
 import Link from "next/link"
 
@@ -32,15 +35,44 @@ export default function Home() {
           <FramerSpotlight />
           <div className="container px-4 md:px-6 py-16 md:py-20">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-              <div className="inline-block rounded-lg bg-gradient-to-r from-primary/20 to-primary/10 px-4 py-2 text-sm font-medium mb-6 border border-primary/20">
-                The Fastest-Learning Culture System
+              <div className="inline-block rounded-full bg-gradient-to-r from-primary/20 to-purple-500/20 px-5 py-2 text-sm font-medium mb-8 border border-primary/20 backdrop-blur-sm">
+                <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">The Leadership &amp; Culture Operating System</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-8 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text">
-                The Culture OS That Learns Faster Than You Do
-              </h1>
-              <p className="text-lg text-muted-foreground md:text-xl lg:text-2xl/relaxed max-w-3xl mb-12">
-                Measurement platforms tell organisations what culture feels like. Culture Crunch installs the leadership operating system that changes it.
-              </p>
+
+              {/* Hero Headline - Redesigned for visual impact */}
+              <div className="space-y-4 mb-10">
+                {/* Line 1 - The contrast statement */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground tracking-tight">
+                    Measurement tells you how culture
+                  </span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground italic">
+                    feels
+                  </span>
+                </div>
+
+                {/* Line 2 - The differentiator */}
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight">
+                  <span className="text-foreground">We install the system that </span>
+                  <span className="relative inline-block">
+                    <span className="bg-gradient-to-r from-primary via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                      changes it
+                    </span>
+                    {/* Animated underline */}
+                    <span className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-purple-500 to-indigo-500 rounded-full opacity-80"></span>
+                  </span>
+                </h1>
+              </div>
+
+              {/* Subheadline - with visual separation */}
+              <div className="relative max-w-3xl mb-12">
+                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 via-purple-500/50 to-transparent rounded-full hidden md:block"></div>
+                <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed md:pl-6">
+                  The <span className="font-semibold text-foreground">Culture OS</span> that learns faster than you do —
+                  <br className="hidden md:block" />
+                  turning <span className="text-primary font-medium">weekly rhythms</span> into <span className="text-purple-500 dark:text-purple-400 font-medium">compound leadership capability</span>
+                </p>
+              </div>
 
               <TypingPromptInput />
 
@@ -50,14 +82,14 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 dark:opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-[-100%] group-hover:translate-x-[100%]"></div>
                     <Zap className="h-5 w-5 text-white relative z-10" />
                     <div className="flex flex-col items-start relative z-10">
-                      <span className="text-base font-semibold">Start Your 6-Week Transformation</span>
-                      <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Install the OS that learns</span>
+                      <span className="text-base font-semibold">See Culture Crunch in Action</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-300 -mt-0.5">Book your personalised demo</span>
                     </div>
                   </Link>
                 </Button>
                 <Button asChild className="px-6 py-7 h-auto rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-base font-semibold text-foreground">
-                  <Link href="#problem">
-                    See How It Works
+                  <Link href="/roi-calculator">
+                    Calculate Your Culture ROI
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -67,91 +99,143 @@ export default function Home() {
         </section>
 
         {/* The Problem Section */}
-        <section className="py-24 bg-muted/30 dark:bg-muted/5" id="problem" aria-labelledby="problem-heading">
-          <div className="container px-4 md:px-6">
+        <section className="py-24 md:py-32 relative overflow-hidden" id="problem" aria-labelledby="problem-heading">
+          {/* Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-slate-50/50 to-background dark:via-slate-950/50"></div>
+          <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            {/* Header */}
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-              <div className="inline-block rounded-lg bg-destructive/10 px-4 py-2 text-sm font-medium border border-destructive/20">
+              <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-2 text-sm font-medium border border-red-500/20 text-red-600 dark:text-red-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
                 The Problem
               </div>
-              <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                The $60 Billion Culture Development Failure
+              <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-4xl bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text">
+                The $60 Billion Leadership Development Failure
               </h2>
-              <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Organisations spend billions on leadership programs that don't stick. Here's why:
-              </p>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-              {/* Card 1: Knowledge-Behavior Chasm */}
+            {/* Hero Stat Card */}
+            <div className="max-w-4xl mx-auto mb-16">
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-destructive/20 to-destructive/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-destructive/20 rounded-2xl p-8 space-y-4 h-full hover:border-destructive/40 transition-colors">
-                  <Brain className="h-10 w-10 text-destructive" />
-                  <div className="text-2xl font-bold text-foreground">Knowledge-Behaviour Chasm</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Only 19% of training transfers to workplace behaviour. Leaders know what to do but don't do it.
-                  </p>
-                  <p className="text-xs text-muted-foreground/70 italic">
-                    Source: Blume et al. (2010) meta-analysis
-                  </p>
-                </div>
-              </div>
+                {/* Animated gradient border */}
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-3xl opacity-20 group-hover:opacity-40 blur-sm transition-all duration-500"></div>
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-3xl opacity-10 animate-pulse"></div>
 
-              {/* Card 2: First-Order Changes */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500/20 to-orange-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-orange-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-orange-500/40 transition-colors">
-                  <Target className="h-10 w-10 text-orange-500" />
-                  <div className="text-2xl font-bold text-foreground">First-Order Changes</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    70% of initiatives treat symptoms, not systems. They tinker with behaviours without changing underlying structures.
-                  </p>
-                  <p className="text-xs text-muted-foreground/70 italic">
-                    Source: McKinsey (2021) transformation study
-                  </p>
-                </div>
-              </div>
+                <div className="relative bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 rounded-3xl p-8 md:p-14 border border-red-500/10">
+                  {/* Icon badge */}
+                  <div className="flex justify-center mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-red-500/20 rounded-2xl blur-xl animate-pulse"></div>
+                      <div className="relative flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-lg shadow-red-500/25">
+                        <Brain className="h-8 w-8 text-white" />
+                      </div>
+                    </div>
+                  </div>
 
-              {/* Card 3: Event-Based Training */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-yellow-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-yellow-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-yellow-500/40 transition-colors">
-                  <Clock className="h-10 w-10 text-yellow-500" />
-                  <div className="text-2xl font-bold text-foreground">Event-Based Training</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Annual workshops create temporary spikes. Without weekly practice, you forget 70% within 24 hours.
+                  {/* Label */}
+                  <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-red-500 dark:text-red-400 mb-4">
+                    The Knowledge-Behaviour Chasm
                   </p>
-                  <p className="text-xs text-muted-foreground/70 italic">
-                    Source: Ebbinghaus forgetting curve
-                  </p>
-                </div>
-              </div>
 
-              {/* Card 4: Top-Down Mandates */}
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500/20 to-blue-500/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-background border border-blue-500/20 rounded-2xl p-8 space-y-4 h-full hover:border-blue-500/40 transition-colors">
-                  <BarChart3 className="h-10 w-10 text-blue-500" />
-                  <div className="text-2xl font-bold text-foreground">Top-Down Mandates</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Programs imposed without frontline ownership have 70% failure rates vs 21% when staff feel ownership.
+                  {/* Big Number */}
+                  <div className="text-center mb-6">
+                    <span className="text-7xl md:text-9xl font-black bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                      <AnimatedCounter end={81} duration={2000} suffix="%" />
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-center text-xl md:text-2xl text-foreground/80 mb-3 max-w-2xl mx-auto leading-relaxed">
+                    of leadership training <span className="font-bold text-red-500 dark:text-red-400">never transfers</span> to workplace behaviour
                   </p>
-                  <p className="text-xs text-muted-foreground/70 italic">
-                    Source: McKinsey organisational change research
+                  <p className="text-center text-base text-muted-foreground mb-6">
+                    Leaders know what to do. They just don't do it.
                   </p>
+
+                  {/* Source */}
+                  <div className="flex justify-center">
+                    <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 bg-muted/50 px-3 py-1.5 rounded-full">
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      Blume et al. (2010) meta-analysis
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Tagline */}
-            <div className="max-w-4xl mx-auto mt-12">
-              <div className="bg-gradient-to-br from-destructive/5 to-destructive/10 dark:from-destructive/10 dark:to-destructive/5 rounded-3xl p-8 md:p-12 border border-destructive/20">
-                <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 font-medium text-center">
-                  The real problem? Leaders are "saturated with frameworks" but lack repeatable practices embedded in their weekly work.
+            {/* Supporting Stats */}
+            <div className="grid gap-4 md:gap-6 md:grid-cols-3 max-w-4xl mx-auto mb-16">
+              {/* Stat 1 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:border-orange-500/30 transition-colors duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors">
+                      <Target className="h-6 w-6 text-orange-500" />
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-1">
+                    <AnimatedCounter end={70} duration={1800} suffix="%" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">treat symptoms, not systems</p>
+                </div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:border-yellow-500/30 transition-colors duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-500/10 group-hover:bg-yellow-500/20 transition-colors">
+                      <Clock className="h-6 w-6 text-yellow-500" />
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-1">24 hrs</div>
+                  <p className="text-sm text-muted-foreground">to forget 70% without practice</p>
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-colors duration-300">
+                  <div className="flex justify-center mb-3">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
+                      <BarChart3 className="h-6 w-6 text-blue-500" />
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-1">
+                    <AnimatedCounter end={70} duration={1800} suffix="%" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">fail without frontline ownership</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Insight */}
+            <div className="max-w-3xl mx-auto">
+              <div className="relative">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-3 w-12 h-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-full"></div>
+                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground text-center pt-4">
+                  The real problem? Leaders are <span className="font-semibold text-foreground">"saturated with frameworks"</span> but lack repeatable practices embedded in their weekly work.
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Lead Magnet Section */}
+        <section className="py-16 bg-background">
+          <div className="container px-4 md:px-6">
+            <LeadMagnet />
           </div>
         </section>
 
@@ -459,6 +543,130 @@ export default function Home() {
               </div>
             </div>
 
+            {/* White Paper CTA */}
+            <div className="max-w-4xl mx-auto mt-16">
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/30 dark:to-indigo-950/30 border border-purple-200/50 dark:border-purple-800/30 rounded-2xl p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="flex-shrink-0">
+                      <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/25">
+                        <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1 text-center md:text-left">
+                      <h3 className="text-xl font-bold text-foreground mb-2">Deep Dive: The Science Behind Culture Crunch</h3>
+                      <p className="text-muted-foreground">Read our comprehensive white paper exploring the 100+ peer-reviewed studies that inform our methodology and learn why traditional approaches fail.</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <Button asChild variant="outline" className="h-12 px-6 rounded-xl border-purple-300 dark:border-purple-700 hover:bg-purple-100 dark:hover:bg-purple-900/30">
+                        <Link href="/white-paper">
+                          Read White Paper
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Who This Is For Section */}
+        <section className="py-24 relative overflow-hidden" id="who-its-for">
+          {/* Background Effects */}
+          <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-teal-500/5 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 max-w-4xl mx-auto">
+              <div className="inline-block rounded-full bg-emerald-500/10 px-5 py-2 text-sm font-medium border border-emerald-500/20 text-emerald-700 dark:text-emerald-400">
+                Is This You?
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-foreground">
+                Who Culture Crunch Is Built For
+              </h2>
+              <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
+                Culture Crunch is designed for <span className="font-semibold text-foreground">mid-size organisations (200-2,000 employees)</span> where leaders are too busy to lead and culture is left to chance.
+              </p>
+            </div>
+
+            {/* Ideal Customer Profiles */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              {/* Profile 1 */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-emerald-50/90 to-teal-50/90 dark:from-emerald-950/30 dark:to-teal-950/30 border border-emerald-200/50 dark:border-emerald-800/50 rounded-2xl p-6 h-full">
+                  <div className="h-12 w-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/50 flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Growing Organisations</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Scaling from startup culture to structured leadership without losing what made you special.
+                  </p>
+                </div>
+              </div>
+
+              {/* Profile 2 */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-teal-50/90 to-cyan-50/90 dark:from-teal-950/30 dark:to-cyan-950/30 border border-teal-200/50 dark:border-teal-800/50 rounded-2xl p-6 h-full">
+                  <div className="h-12 w-12 rounded-xl bg-teal-100 dark:bg-teal-950/50 flex items-center justify-center mb-4">
+                    <Building className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Multi-Site Operations</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Aged care, healthcare, retail, or hospitality with distributed teams needing consistent leadership.
+                  </p>
+                </div>
+              </div>
+
+              {/* Profile 3 */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative bg-gradient-to-br from-cyan-50/90 to-blue-50/90 dark:from-cyan-950/30 dark:to-blue-950/30 border border-cyan-200/50 dark:border-cyan-800/50 rounded-2xl p-6 h-full">
+                  <div className="h-12 w-12 rounded-xl bg-cyan-100 dark:bg-cyan-950/50 flex items-center justify-center mb-4">
+                    <TrendingUp className="h-6 w-6 text-cyan-600 dark:text-cyan-400" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Transformation-Ready</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Leaders who know surveys aren't enough and want systems that actually change behaviour.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Signs You Need This */}
+            <div className="max-w-4xl mx-auto">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 rounded-2xl blur-lg"></div>
+                <div className="relative bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 backdrop-blur-sm">
+                  <h3 className="text-xl font-bold text-foreground mb-6 text-center">You'll Know Culture Crunch Is Right If...</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      "Your leaders are promoted for technical skills, not people skills",
+                      "Engagement surveys reveal problems but nothing changes",
+                      "HR runs training events that feel disconnected from daily work",
+                      "You've tried coaching but can't scale it across all leaders",
+                      "Team issues simmer until they become HR crises",
+                      "Good people leave because of bad managers"
+                    ].map((sign, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                        </div>
+                        <span className="text-sm text-muted-foreground">{sign}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -933,6 +1141,59 @@ export default function Home() {
 
             {/* Network Value Growth Chart */}
             <NetworkValueChart />
+
+            {/* Urgency/Scarcity Banner */}
+            <div className="mt-16 max-w-4xl mx-auto">
+              <div className="relative group">
+                {/* Animated border glow */}
+                <div className="absolute -inset-[2px] bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-3xl opacity-30 group-hover:opacity-50 blur-sm transition-all duration-500 animate-pulse"></div>
+
+                <div className="relative bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-500/30 rounded-3xl p-8 md:p-10 overflow-hidden">
+                  {/* Background pattern */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl"></div>
+
+                  <div className="relative z-10 text-center space-y-6">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 bg-amber-500/20 px-4 py-2 rounded-full border border-amber-500/30">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                      </span>
+                      <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Limited Availability</span>
+                    </div>
+
+                    {/* Headline */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                      Only 5 Pilot Partner Spots Remaining
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+                      We're selecting a small group of founding partners to shape Culture Crunch with us. Pilot partners receive <span className="font-semibold text-foreground">priority pricing locked for life</span> plus direct input into our product roadmap.
+                    </p>
+
+                    {/* Offer */}
+                    <div className="bg-white/60 dark:bg-slate-900/60 rounded-2xl p-6 border border-amber-200/50 dark:border-amber-800/30 max-w-xl mx-auto">
+                      <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-2">DECEMBER BONUS</p>
+                      <p className="text-foreground font-semibold text-lg">
+                        Free Leadership Culture Assessment ($2,500 value) for organisations that book a demo this month
+                      </p>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="pt-2">
+                      <Button asChild className="px-8 py-6 h-auto text-base bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl shadow-lg shadow-amber-500/25">
+                        <Link href="#contact">
+                          <Zap className="h-5 w-5 mr-2" />
+                          Claim Your Pilot Partner Spot
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1004,6 +1265,7 @@ export default function Home() {
         </section>
 
         <Footer />
+        <StickyMobileCTA />
       </div>
     </>
   )

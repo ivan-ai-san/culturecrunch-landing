@@ -41,19 +41,19 @@ const sections = [
     content: [
       {
         label: "Ownership",
-        text: "Take responsibility for your part and acknowledge unmet needs in others. Start with your part. Lead from integrity, not blame."
+        text: "Taking responsibility through \"What's My Part?\" thinking. Start with your part. Lead from integrity, not blame."
       },
       {
-        label: "Observation + Impact",
-        text: "Name what you've noticed and why it matters."
+        label: "Observation",
+        text: "Separating facts from interpretations to create shared reality. Name what you've noticed without judgment."
       },
       {
         label: "Request",
-        text: "Be clear and specific. Be sure of understanding."
+        text: "Making genuine requests, not demands that threaten relationships. Be clear and specific."
       },
       {
         label: "Agreement",
-        text: "Align on clear next steps, outcomes, and shared responsibility."
+        text: "Co-creating mutual commitments with clear follow-up. Align on outcomes and shared responsibility."
       }
     ],
     footer: "It's not a script - it's a backbone for honest, human dialogue.",
