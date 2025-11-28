@@ -1162,10 +1162,10 @@ export default function Home() {
 
                     {/* CTA */}
                     <div className="pt-1 md:pt-2">
-                      <Button asChild className="w-full sm:w-auto px-6 md:px-8 py-4 md:py-6 h-auto text-base bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 active:from-amber-700 active:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 touch-manipulation">
+                      <Button asChild className="w-full sm:w-auto px-6 md:px-8 py-4 md:py-6 h-auto text-base whitespace-normal text-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 active:from-amber-700 active:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 touch-manipulation">
                         <Link href="#contact">
-                          <Zap className="h-5 w-5 mr-2" />
-                          Claim Your Pilot Partner Spot
+                          <Zap className="h-5 w-5 mr-2 flex-shrink-0" />
+                          <span>Claim Your Pilot Partner Spot</span>
                         </Link>
                       </Button>
                     </div>

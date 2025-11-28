@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { FileText, Download, CheckCircle2, AlertCircle, Building2 } from "lucide-react"
+import Link from "next/link"
+
+// Storage key must match the one in /lead-magnet-guide/page.tsx
+const GUIDE_ACCESS_STORAGE_KEY = 'cc_guide_access'
 
 // Personal email domains to block - require business email
 const PERSONAL_EMAIL_DOMAINS = [
@@ -79,6 +83,9 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
         throw new Error(errorData.error || 'Failed to submit')
       }
 
+      // Grant access to the guide (same key used by /lead-magnet-guide page)
+      localStorage.setItem(GUIDE_ACCESS_STORAGE_KEY, 'true')
+
       setIsSubmitted(true)
       onSuccess?.()
     } catch (err) {
@@ -91,28 +98,27 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
 
   if (isSubmitted) {
     return (
-      <div className={variant === "card" ? "relative group" : ""}>
+      <div className={variant === "card" ? "relative group overflow-hidden" : ""}>
         {variant === "card" && (
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-3xl blur opacity-75"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-2xl md:rounded-3xl blur opacity-75"></div>
         )}
-        <div className={`relative ${variant === "card" ? "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/40 dark:to-emerald-950/40 border border-green-500/30 rounded-3xl p-8 md:p-10" : "bg-green-50 dark:bg-green-950/30 border border-green-500/30 rounded-2xl p-6"}`}>
+        <div className={`relative ${variant === "card" ? "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/40 dark:to-emerald-950/40 border border-green-500/30 rounded-2xl md:rounded-3xl p-5 md:p-10" : "bg-green-50 dark:bg-green-950/30 border border-green-500/30 rounded-2xl p-6"}`}>
           <div className="flex flex-col items-center text-center space-y-4">
             <div className="h-16 w-16 rounded-full bg-green-500/20 flex items-center justify-center">
               <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
             </div>
-            <h3 className="text-xl font-bold text-foreground">Check Your Inbox!</h3>
+            <h3 className="text-xl font-bold text-foreground">Your Guide is Ready!</h3>
             <p className="text-muted-foreground">
-              We've sent the guide to your email. If you don't see it, check your spam folder.
+              Click below to read the full guide. We've also sent a copy to your email.
             </p>
             <Button
-              variant="outline"
-              className="mt-4"
+              className="mt-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
               asChild
             >
-              <a href="/lead-magnet-guide" target="_blank" rel="noopener noreferrer">
+              <Link href="/lead-magnet-guide">
                 <Download className="h-4 w-4 mr-2" />
-                View Guide
-              </a>
+                Read Full Guide Now
+              </Link>
             </Button>
           </div>
         </div>
@@ -135,7 +141,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <div className="relative">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
                 <Building2 className="h-4 w-4" />
               </div>
               <Input
@@ -143,7 +149,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                 placeholder="your.name@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full sm:w-64 h-12 pl-10"
+                className="w-full sm:w-64 h-12 pl-12"
                 disabled={isSubmitting}
               />
               {error && (
@@ -180,31 +186,31 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
   }
 
   return (
-    <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 via-indigo-500/30 to-blue-500/30 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+    <div className="relative group overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-indigo-500/30 to-blue-500/30 rounded-2xl md:rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
 
-      <div className="relative bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 border border-purple-500/30 rounded-3xl p-8 md:p-10 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/40 dark:to-indigo-950/40 border border-purple-500/30 rounded-2xl md:rounded-3xl p-5 md:p-10 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl"></div>
 
-        <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+        <div className="relative z-10 grid md:grid-cols-2 gap-6 md:gap-8 items-center">
           {/* Left side - Content */}
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full border border-purple-500/30">
+          <div className="space-y-4 md:space-y-6">
+            <div className="inline-flex items-center gap-2 bg-purple-500/20 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-purple-500/30">
               <FileText className="h-4 w-4 text-purple-600 dark:text-purple-400" />
-              <span className="text-sm font-semibold text-purple-700 dark:text-purple-300">Free Download</span>
+              <span className="text-xs md:text-sm font-semibold text-purple-700 dark:text-purple-300">Free Download</span>
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+            <h3 className="text-xl md:text-3xl font-bold text-foreground">
               5 Warning Signs Your Culture is Costing You Talent
             </h3>
 
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               Learn to spot the hidden patterns that drive your best people away - before it's too late.
             </p>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {[
                 "The 'quiet quitting' signals most leaders miss",
                 "Why exit interviews lie (and what to track instead)",
@@ -212,23 +218,23 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                 "How to measure psychological safety in 60 seconds",
                 "The leadership behaviour that costs $50K per departure"
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <li key={i} className="flex items-start gap-2 md:gap-3 text-sm text-muted-foreground">
                   <div className="h-5 w-5 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-xs font-bold text-purple-600 dark:text-purple-400">{i + 1}</span>
                   </div>
-                  {item}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Right side - Form */}
-          <div className="bg-white/60 dark:bg-slate-900/60 rounded-2xl p-6 md:p-8 border border-purple-200/50 dark:border-purple-800/30">
-            <div className="text-center mb-6">
-              <div className="h-20 w-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/25 mb-4">
-                <FileText className="h-10 w-10 text-white" />
+          <div className="bg-white/60 dark:bg-slate-900/60 rounded-xl md:rounded-2xl p-5 md:p-8 border border-purple-200/50 dark:border-purple-800/30">
+            <div className="text-center mb-4 md:mb-6">
+              <div className="h-16 w-16 md:h-20 md:w-20 mx-auto rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/25 mb-3 md:mb-4">
+                <FileText className="h-8 w-8 md:h-10 md:w-10 text-white" />
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs md:text-sm text-muted-foreground">
                 Instant access - no spam, unsubscribe anytime
               </p>
             </div>
@@ -236,7 +242,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <div className="relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
                     <Building2 className="h-4 w-4" />
                   </div>
                   <Input
@@ -244,7 +250,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                     placeholder="your.name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 pl-10"
+                    className="h-12 pl-12"
                     disabled={isSubmitting}
                   />
                 </div>
