@@ -253,7 +253,7 @@ export default function LeadMagnetGuidePage() {
           />
           <div>
             <span className="text-xl font-bold">Culture Crunch</span>
-            <p className="text-xs text-gray-500">The Leadership and Culture Operating System</p>
+            <p className="text-xs text-gray-500">The Culture Operating System</p>
           </div>
         </div>
         <p className="text-sm text-gray-500">www.culturecrunch.io</p>
@@ -738,7 +738,7 @@ export default function LeadMagnetGuidePage() {
               />
               <div>
                 <h3 className="text-lg font-bold text-foreground">About Culture Crunch</h3>
-                <p className="text-sm text-muted-foreground">The Leadership and Culture Operating System</p>
+                <p className="text-sm text-muted-foreground">The Culture Operating System</p>
               </div>
             </div>
             <p className="text-muted-foreground mb-4">

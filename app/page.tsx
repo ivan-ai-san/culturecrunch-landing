@@ -400,7 +400,7 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto">
               <h2 id="solution-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                A 6-Week Program That Installs The Leadership & Culture Operating System
+                A 6-Week Program That Installs The Culture Operating System
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-3xl">
                 Transform teams with accountable conversations, clear decisions, and repeatable leadership habits that lift performance and embed culture.

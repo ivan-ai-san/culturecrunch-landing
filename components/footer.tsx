@@ -131,7 +131,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Culture Crunch</h3>
             <p className="text-sm text-muted-foreground">
-              The Leadership and Culture Operating System that embeds accountable leadership at scale
+              The Culture Operating System that embeds accountable leadership at scale
             </p>
           </div>
           <div className="space-y-4">

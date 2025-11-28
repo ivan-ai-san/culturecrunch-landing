@@ -379,7 +379,7 @@ function generateContactConfirmation(data: { firstName: string }) {
         <div class="container">
           <div class="header">
             <div class="logo">Culture Crunch</div>
-            <p style="margin: 0; opacity: 0.9;">The Leadership & Culture Operating System</p>
+            <p style="margin: 0; opacity: 0.9;">The Culture Operating System</p>
           </div>
           <div class="content">
             <h1>Thanks for reaching out, ${data.firstName}!</h1>

@@ -34,7 +34,7 @@ export default function Navbar() {
             />
             <div className="flex flex-col">
               <span className="text-xl font-bold leading-tight">Culture Crunch</span>
-              <span className="text-[10px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
+              <span className="text-[10px] text-muted-foreground leading-tight">The Culture Operating System</span>
             </div>
           </Link>
         </div>
@@ -184,7 +184,7 @@ export default function Navbar() {
                 />
                 <div className="flex flex-col">
                   <span className="text-lg font-bold leading-tight">Culture Crunch</span>
-                  <span className="text-[9px] text-muted-foreground leading-tight">The Leadership and Culture Operating System</span>
+                  <span className="text-[9px] text-muted-foreground leading-tight">The Culture Operating System</span>
                 </div>
               </div>
               <nav className="flex flex-col gap-4 mt-4" aria-label="Mobile Navigation">

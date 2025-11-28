@@ -21,7 +21,7 @@ export const cpbConfig: IndustryConfig = {
   // ===========================================================================
 
   metaTitle: 'Construction Engineering Leadership ROI: Evidence-Based Solutions for Australia\'s Triple Crisis | Culture Crunch',
-  metaDescription: 'The Leadership and Culture Operating System',
+  metaDescription: 'The Culture Operating System',
   keywords: [
     'construction engineering leadership development',
     'construction engineering project management',
