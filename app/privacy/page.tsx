@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="text-lg text-muted-foreground mb-6 select-none">
-              Last Updated: November 11, 2025
+              Last Updated: November 28, 2025
             </p>
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Lock className="w-4 h-4" />
@@ -79,10 +79,23 @@ export default function PrivacyPage() {
       <section className="py-16">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto select-none">
 
+          {/* Company Identification */}
+          <div className="mb-8 p-6 bg-muted/50 rounded-xl border">
+            <p className="font-semibold text-foreground mb-2">Culture Crunch Pty Ltd</p>
+            <div className="text-sm text-muted-foreground space-y-1">
+              <p>ACN: 693 217 971</p>
+              <p>ABN: 67 693 217 971</p>
+              <p>Registered Address: 91C Shepherd Street, Bowral, NSW 2576, Australia</p>
+            </div>
+          </div>
+
           {/* Introduction */}
           <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
             <p className="text-muted-foreground leading-relaxed text-justify">
               At Culture Crunch, we believe privacy starts with minimalism. This Privacy Policy explains how we collect, use, and protect your information when you use our leadership development platform at https://culturecrunch.io. We've designed our system around a core principle: collect only what matters, at the team level, to power leadership transformation without compromising individual privacy.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-justify mt-4">
+              Your use of Culture Crunch is also governed by our <a href="/terms" className="text-primary hover:underline">Terms of Use</a>, which explain your rights and responsibilities when using the Platform.
             </p>
             <p className="text-muted-foreground leading-relaxed text-justify mt-4">
               Please read this privacy policy carefully. If you do not agree with these terms, please do not access our platform or use our services.
@@ -202,6 +215,35 @@ export default function PrivacyPage() {
             </div>
           </div>
 
+          {/* AI-Powered Insights */}
+          <div className="mb-12 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl border border-blue-200 dark:border-blue-800">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">AI-Powered Insights</h2>
+            <p className="text-muted-foreground mb-4">
+              Our AI Coach Companion analyses team-level data to provide leadership recommendations. These insights are:
+            </p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                <span><strong className="text-foreground">Advisory only</strong> - not automated decisions affecting employment</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                <span><strong className="text-foreground">Team-level</strong> - based on aggregated signals, not individual metrics</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                <span><strong className="text-foreground">Human-reviewable</strong> - significant recommendations reviewed by coaches</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                <span><strong className="text-foreground">Context-dependent</strong> - always subject to leadership judgement</span>
+              </li>
+            </ul>
+            <p className="text-sm text-muted-foreground mt-4">
+              You have the right to understand how AI recommendations are generated and to request human review of any AI-generated insight.
+            </p>
+          </div>
+
           {/* Data Security */}
           <div className="mb-12 p-8 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20 rounded-2xl border border-purple-200 dark:border-purple-800">
             <h2 className="text-2xl font-bold mb-6 text-foreground">Data Storage and Security</h2>
@@ -260,6 +302,34 @@ export default function PrivacyPage() {
             </p>
           </div>
 
+          {/* Data Breach Notification */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-foreground">Data Breach Notification</h2>
+
+            <div className="p-6 bg-background rounded-xl border">
+              <p className="text-muted-foreground mb-4">
+                If we experience a data breach likely to result in serious harm, we will:
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground ml-4">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Notify affected individuals as soon as practicable</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Notify the Office of the Australian Information Commissioner (OAIC)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Provide details of the breach, likely consequences, and remedial steps being taken</span>
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-4 italic">
+                We maintain an incident response plan in accordance with the Notifiable Data Breaches (NDB) scheme under the Privacy Act 1988.
+              </p>
+            </div>
+          </div>
+
           {/* Data Retention */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 text-foreground">Data Retention</h2>
@@ -308,6 +378,41 @@ export default function PrivacyPage() {
               <div className="p-5 bg-muted/50 rounded-xl">
                 <h4 className="font-semibold text-foreground mb-2">With Your Consent</h4>
                 <p className="text-sm text-muted-foreground">For purposes not listed, with explicit consent</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Workplace Privacy Notice */}
+          <div className="mb-12 p-8 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 rounded-2xl border border-amber-200 dark:border-amber-800">
+            <h2 className="text-2xl font-bold mb-4 text-foreground">Workplace Privacy Notice</h2>
+            <p className="text-muted-foreground mb-4">
+              Culture Crunch is designed for workplace use. If you are an employee whose organisation uses Culture Crunch:
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Your Privacy</h4>
+                <ul className="space-y-1 text-sm text-muted-foreground ml-4">
+                  <li>• We do NOT share individual responses, scores, or behavioural data with your employer</li>
+                  <li>• Your team leader may access team-level insights that include signals from your participation</li>
+                  <li>• All data is collected at the team level to protect individual privacy</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Your Rights</h4>
+                <ul className="space-y-1 text-sm text-muted-foreground ml-4">
+                  <li>• Consult your organisation's policies regarding participation expectations</li>
+                  <li>• Raise concerns with us at privacy@culturecrunch.io or your organisation's privacy officer</li>
+                  <li>• Access, correct, or request deletion of your personal information</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">Employer Obligations</h4>
+                <p className="text-sm text-muted-foreground">
+                  Organisational customers must notify employees about Culture Crunch use in accordance with APP 5 (notification of collection) and workplace privacy laws.
+                </p>
               </div>
             </div>
           </div>
@@ -496,6 +601,16 @@ export default function PrivacyPage() {
               </div>
 
               <div className="pt-4 border-t border-border">
+                <p className="text-sm font-semibold text-foreground mb-2">Mailing Address:</p>
+                <div className="text-sm text-muted-foreground">
+                  <p>Culture Crunch Pty Ltd</p>
+                  <p>91C Shepherd Street</p>
+                  <p>Bowral, NSW 2576</p>
+                  <p>Australia</p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
                   <strong className="text-foreground">Response Time:</strong> We aim to respond to all privacy inquiries within 5 business days, with full resolution within 30 days (or as required by applicable law).
                 </p>
@@ -516,7 +631,7 @@ export default function PrivacyPage() {
 
           {/* Effective Date */}
           <div className="mt-8 text-center text-sm text-muted-foreground italic">
-            <p>This Privacy Policy is effective as of November 11, 2025, and applies to all users of the Culture Crunch platform.</p>
+            <p>This Privacy Policy is effective as of November 28, 2025, and applies to all users of the Culture Crunch platform.</p>
           </div>
 
         </div>

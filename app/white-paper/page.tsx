@@ -265,7 +265,7 @@ export default function WhitePaperPage() {
                         htmlFor="whitepaper-terms"
                         className="text-sm text-muted-foreground leading-tight cursor-pointer"
                       >
-                        I agree to the <Link href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</Link> and consent to receiving communications from Culture Crunch
+                        I agree to the <Link href="/terms" className="text-primary hover:underline" target="_blank">Terms of Use</Link> and <Link href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</Link> and consent to receiving communications from Culture Crunch
                       </label>
                     </div>
 

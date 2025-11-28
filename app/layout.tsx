@@ -7,15 +7,15 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "The Culture & Leadership OS",
+  title: "The Culture Operating System",
   description:
     "Transform workplace culture with embedded leadership rhythms. 6-week program for accountable conversations and measurable performance lift.",
-  keywords: "leadership operating system, workplace culture, accountable conversations, team engagement, leadership development",
+  keywords: "culture operating system, workplace culture, accountable conversations, team engagement, leadership development",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://culturecrunch.io",
-    title: "Culture Crunch | Leadership Operating System",
+    title: "Culture Crunch | The Culture Operating System",
     description:
       "Transform workplace culture with embedded leadership rhythms.",
     siteName: "Culture Crunch",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Culture Crunch | Leadership Operating System",
+    title: "Culture Crunch | The Culture Operating System",
     description: "Transform workplace culture with embedded leadership rhythms. 6-week program for accountable conversations.",
     images: ["https://culturecrunch.io/twitter-image.jpg"],
   },

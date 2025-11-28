@@ -117,7 +117,7 @@ export default function Footer() {
                         htmlFor="newsletter-terms"
                         className="text-xs text-muted-foreground cursor-pointer"
                       >
-                        I agree to the <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+                        I agree to the <Link href="/terms" className="text-primary hover:underline">Terms of Use</Link> and <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
                       </label>
                     </div>
                   </div>
@@ -212,6 +212,11 @@ export default function Footer() {
                 <li>
                   <Link href="/privacy" className="text-muted-foreground hover:text-foreground">
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-muted-foreground hover:text-foreground">
+                    Terms of Use
                   </Link>
                 </li>
               </ul>

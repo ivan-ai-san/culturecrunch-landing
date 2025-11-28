@@ -172,7 +172,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
             htmlFor="inline-terms"
             className="text-xs text-muted-foreground cursor-pointer"
           >
-            I agree to the <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a>
+            I agree to the <a href="/terms" className="text-primary hover:underline" target="_blank">Terms of Use</a> and <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a>
           </label>
         </div>
       </div>
@@ -270,7 +270,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                   htmlFor="lead-terms"
                   className="text-xs text-muted-foreground leading-tight cursor-pointer"
                 >
-                  I agree to the <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a>
+                  I agree to the <a href="/terms" className="text-primary hover:underline" target="_blank">Terms of Use</a> and <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a>
                 </label>
               </div>
 

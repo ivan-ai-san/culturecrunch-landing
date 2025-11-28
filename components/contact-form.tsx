@@ -206,7 +206,7 @@ export default function ContactForm() {
               htmlFor="terms"
               className="text-sm text-muted-foreground leading-tight cursor-pointer"
             >
-              I agree to the <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a> and consent to receiving communications from Culture Crunch
+              I agree to the <a href="/terms" className="text-primary hover:underline" target="_blank">Terms of Use</a> and <a href="/privacy" className="text-primary hover:underline" target="_blank">Privacy Policy</a> and consent to receiving communications from Culture Crunch
             </label>
           </div>
           <Button type="submit" className="w-full" disabled={isSubmitting || !agreedToTerms}>

@@ -36,18 +36,15 @@ export default function Home() {
           <div className="container px-4 md:px-6 py-16 md:py-20">
             <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
               <div className="inline-block rounded-full bg-gradient-to-r from-primary/20 to-purple-500/20 px-5 py-2 text-sm font-medium mb-8 border border-primary/20 backdrop-blur-sm">
-                <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">The Leadership &amp; Culture Operating System</span>
+                <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">The Culture Operating System</span>
               </div>
 
               {/* Hero Headline - Redesigned for visual impact */}
               <div className="space-y-4 mb-10">
                 {/* Line 1 - The contrast statement */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+                <div className="flex flex-col items-center justify-center">
                   <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground tracking-tight">
-                    Measurement tells you how culture
-                  </span>
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground italic">
-                    feels
+                    Most HR platforms measure culture
                   </span>
                 </div>
 
@@ -56,7 +53,7 @@ export default function Home() {
                   <span className="text-foreground">We install the system that </span>
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-primary via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                      changes it
+                      transforms it every week
                     </span>
                     {/* Animated underline */}
                     <span className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-purple-500 to-indigo-500 rounded-full opacity-80"></span>
@@ -68,9 +65,9 @@ export default function Home() {
               <div className="relative max-w-3xl mb-12">
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 via-purple-500/50 to-transparent rounded-full hidden md:block"></div>
                 <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed md:pl-6">
-                  The <span className="font-semibold text-foreground">Culture OS</span> that learns faster than you do —
+                  The <span className="font-semibold text-foreground">Culture OS</span> that improves itself -
                   <br className="hidden md:block" />
-                  turning <span className="text-primary font-medium">weekly rhythms</span> into <span className="text-purple-500 dark:text-purple-400 font-medium">compound leadership capability</span>
+                  and your <span className="text-purple-500 dark:text-purple-400 font-medium">leaders</span>, <span className="text-primary font-medium">every week</span>
                 </p>
               </div>
 
@@ -592,7 +589,7 @@ export default function Home() {
                 Who Culture Crunch Is Built For
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Culture Crunch is designed for <span className="font-semibold text-foreground">mid-size organisations (200-2,000 employees)</span> where leaders are too busy to lead and culture is left to chance.
+                Culture Crunch is built for <span className="font-semibold text-foreground">mid and enterprise size organisations (200 - 10,000+)</span> where leaders are too busy to lead and culture is left to chance.
               </p>
             </div>
 
