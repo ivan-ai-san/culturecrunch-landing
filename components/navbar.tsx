@@ -20,7 +20,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 safe-area-top">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 safe-area-top">
       <div className="container flex h-16 md:h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2 md:gap-3">
           <Link href="/" className="flex items-center gap-2 md:gap-3 min-h-[44px]" aria-label="Culture Crunch Homepage">
@@ -39,12 +39,12 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex gap-6 items-center" aria-label="Main Navigation">
+        <nav className="hidden md:flex items-center" aria-label="Main Navigation">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex items-center gap-1">
               {/* Home Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-sm font-medium h-9 px-3 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Home
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
               {/* Offering Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger className="text-sm font-medium h-9 px-3 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Offering
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -104,19 +104,18 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-            </NavigationMenuList>
-          </NavigationMenu>
-
-          {/* Methodology Link */}
-          <Link href="/methodology" className="text-sm font-medium transition-colors hover:text-primary">
-            Methodology
-          </Link>
-
-          {/* Why Now Dropdown - Separate NavigationMenu for proper positioning */}
-          <NavigationMenu>
-            <NavigationMenuList>
+              {/* Methodology Link */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuLink asChild>
+                  <Link href="/methodology" className="text-sm font-medium h-9 px-3 inline-flex items-center justify-center transition-colors hover:text-primary">
+                    Methodology
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              {/* Why Now Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium h-9 px-3 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Why Now
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -140,13 +139,17 @@ export default function Navbar() {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              {/* Contact Link */}
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/#contact" className="text-sm font-medium h-9 px-3 inline-flex items-center justify-center transition-colors hover:text-primary">
+                    Contact
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-
-          {/* Contact Link */}
-          <Link href="/#contact" className="text-sm font-medium transition-colors hover:text-primary">
-            Contact
-          </Link>
         </nav>
 
         <div className="flex items-center gap-4">

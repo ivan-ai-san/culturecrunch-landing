@@ -16,12 +16,34 @@ import NetworkValueChart from "@/components/network-value-chart"
 import StickyMobileCTA from "@/components/sticky-mobile-cta"
 import AnimatedCounter from "@/components/animated-counter"
 import LeadMagnet from "@/components/lead-magnet"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 
 export default function Home() {
   const [showWeekly, setShowWeekly] = useState(false)
   const [showFullComparison, setShowFullComparison] = useState(false)
+  const [socialProofVisible, setSocialProofVisible] = useState(false)
+  const socialProofRef = useRef<HTMLDivElement>(null)
+
+  // Intersection observer for social proof animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !socialProofVisible) {
+            setSocialProofVisible(true)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (socialProofRef.current) {
+      observer.observe(socialProofRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [socialProofVisible])
 
   return (
     <>
@@ -90,6 +112,30 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
+              </div>
+
+              {/* Social Proof */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mt-10 text-center">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">4 organisations</span> onboarded in 10 weeks
+                  </span>
+                </div>
+                <div className="hidden md:block h-4 w-px bg-border/50"></div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">100% paid</span> engagements
+                  </span>
+                </div>
+                <div className="hidden md:block h-4 w-px bg-border/50"></div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span className="text-sm text-muted-foreground">
+                    Strong early adoption from <span className="font-semibold text-foreground">frontline to C-suite</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1147,17 +1193,20 @@ export default function Home() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                       </span>
-                      <span className="text-xs md:text-sm font-semibold text-amber-700 dark:text-amber-300">Limited Availability</span>
+                      <span className="text-xs md:text-sm font-semibold text-amber-700 dark:text-amber-300">Founding Partner Program</span>
                     </div>
 
                     {/* Headline */}
                     <h3 className="text-xl md:text-3xl font-bold text-foreground">
-                      Only 5 Pilot Partner Spots Remaining
+                      Become a Founding Partner
                     </h3>
 
                     {/* Description */}
                     <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                      We're selecting a small group of founding partners to shape Culture Crunch with us. Pilot partners receive <span className="font-semibold text-foreground">priority pricing locked for life</span> plus direct input into our product roadmap.
+                      Join a small group of organisations shaping the future of leadership and culture.
+                    </p>
+                    <p className="text-sm md:text-base font-semibold text-foreground">
+                      Limited Spots. Preferred Pricing. Direct founder access.
                     </p>
 
                     {/* CTA */}
@@ -1165,11 +1214,33 @@ export default function Home() {
                       <Button asChild className="w-full sm:w-auto px-6 md:px-8 py-4 md:py-6 h-auto text-base whitespace-normal text-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 active:from-amber-700 active:to-orange-700 text-white rounded-xl shadow-lg shadow-amber-500/25 touch-manipulation">
                         <Link href="#contact">
                           <Zap className="h-5 w-5 mr-2 flex-shrink-0" />
-                          <span>Claim Your Pilot Partner Spot</span>
+                          <span>Become a Founding Partner</span>
                         </Link>
                       </Button>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Proof - Outside the card */}
+              <div ref={socialProofRef} className="grid grid-cols-3 gap-4 md:gap-8 mt-6 md:mt-8 w-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once' : ''}`}></div>
+                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+                    <span className="font-semibold text-foreground">4 organisations</span> onboarded in 10 weeks
+                  </span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once-delay-1' : ''}`}></div>
+                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+                    <span className="font-semibold text-foreground">100% paid</span> engagements
+                  </span>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once-delay-2' : ''}`}></div>
+                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+                    <span className="font-semibold text-foreground">Frontline to C-suite</span> early adoption
+                  </span>
                 </div>
               </div>
             </div>

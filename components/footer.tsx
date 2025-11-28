@@ -80,7 +80,7 @@ export default function Footer() {
                   <div className="space-y-3">
                     <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                       <div className="relative">
-                        <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
                           <Building2 className="h-4 w-4" />
                         </div>
                         <Input
@@ -88,7 +88,7 @@ export default function Footer() {
                           placeholder="you@company.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full sm:w-56 h-11 pl-10"
+                          className="w-full sm:w-64 h-12 pl-12"
                           required
                           disabled={isSubmitting}
                         />
@@ -100,7 +100,7 @@ export default function Footer() {
                       </div>
                       <Button
                         type="submit"
-                        className="h-11 px-5"
+                        className="h-12 px-6"
                         disabled={isSubmitting || !agreedToTerms}
                       >
                         {isSubmitting ? "Subscribing..." : "Subscribe"}
