@@ -733,7 +733,7 @@ export default function Home() {
                 <div className="text-center mb-12">
                   <h3 className="text-2xl md:text-3xl font-bold mb-3">Week-by-Week Install</h3>
                   <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Six weeks to go from zero to a fully embedded Leadership Operating System.
+                    Six weeks to go from zero to a fully embedded Culture Operating System.
                   </p>
                 </div>
                 <WeekByWeekTimeline />

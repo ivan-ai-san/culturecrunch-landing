@@ -258,7 +258,7 @@ export const cpbConfig: IndustryConfig = {
   // ===========================================================================
 
   solution: {
-    headline: 'A 6-Week Program That Installs The Accountable Leadership Operating System',
+    headline: 'A 6-Week Program That Installs The Culture Operating System',
     tagline: '',
     description: 'Transform CPB teams with accountable conversations, clear decisions, and repeatable leadership habits that lift performance, reduce turnover, and protect project margin.',
 

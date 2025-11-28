@@ -745,7 +745,7 @@ export default function LeadMagnetGuidePage() {
               Culture Crunch replaces the broken $60 billion leadership development industry with research-backed operating systems that create lasting behavioural change. We target industrial sectors - manufacturing, construction, and healthcare - where leadership failures have measurable safety and operational consequences.
             </p>
             <p className="text-muted-foreground">
-              Our 6-week Leadership Operating System program embeds accountable conversations into weekly rhythms, supported by AI-powered guidance and cross-organisation pattern recognition. Because culture isn't built through events. It's built through systems.
+              Our 6-week Culture Operating System program embeds accountable conversations into weekly rhythms, supported by AI-powered guidance and cross-organisation pattern recognition. Because culture isn't built through events. It's built through systems.
             </p>
             <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mt-4 print:hidden">
               <Link href="/" className="hover:underline">www.culturecrunch.io</Link>
