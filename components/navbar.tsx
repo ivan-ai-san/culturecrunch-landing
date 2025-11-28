@@ -93,15 +93,7 @@ export default function Navbar() {
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <Link href="/#methodology" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Methodology</div>
-                        <p className="text-xs leading-snug text-muted-foreground mt-1">
-                          Research-backed framework
-                        </p>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link href="/differentiation" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <Link href="/#differentiation" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Differentiation</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
                           What makes us different
@@ -112,7 +104,17 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Why Now Dropdown */}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Methodology Link */}
+          <Link href="/methodology" className="text-sm font-medium transition-colors hover:text-primary">
+            Methodology
+          </Link>
+
+          {/* Why Now Dropdown - Separate NavigationMenu for proper positioning */}
+          <NavigationMenu>
+            <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-sm font-medium h-auto px-4 py-2 hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
                   Why Now
@@ -123,7 +125,7 @@ export default function Navbar() {
                       <Link href="/#why-now" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">Why Now</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
-                          The urgency of leadership development
+                          The urgency of culture development
                         </p>
                       </Link>
                     </NavigationMenuLink>
@@ -131,7 +133,7 @@ export default function Navbar() {
                       <Link href="/roi-calculator" className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         <div className="text-sm font-medium leading-none">ROI Calculator</div>
                         <p className="text-xs leading-snug text-muted-foreground mt-1">
-                          Calculate your leadership investment returns
+                          Calculate your investment returns
                         </p>
                       </Link>
                     </NavigationMenuLink>
@@ -223,20 +225,22 @@ export default function Navbar() {
                     How It Works
                   </Link>
                   <Link
-                    href="/#methodology"
-                    className="text-base font-medium transition-colors hover:text-primary pl-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Methodology
-                  </Link>
-                  <Link
-                    href="/differentiation"
+                    href="/#differentiation"
                     className="text-base font-medium transition-colors hover:text-primary pl-2"
                     onClick={() => setIsOpen(false)}
                   >
                     Differentiation
                   </Link>
                 </div>
+
+                {/* Methodology */}
+                <Link
+                  href="/methodology"
+                  className="text-lg font-medium transition-colors hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Methodology
+                </Link>
 
                 {/* Why Now Section */}
                 <div className="flex flex-col gap-2">

@@ -80,7 +80,7 @@ const loopsData: LoopData[] = [
       }
     ],
     demoFeatures: [
-      "CEO/EGM/FM Dashboards (multi-level visibility)",
+      "Executives & Senior Manager Dashboards (multi-level visibility)",
       "Weekly check-ins with structured prompts",
       "Action Tracker with completion rates",
       "Team Pulse Surveys (12-question culture)",
@@ -89,7 +89,7 @@ const loopsData: LoopData[] = [
     ],
     benefits: [
       "Leadership becomes predictable, not random",
-      "Teams see change happens (accountability visible)",
+      "Team see improvements (accountability visible and trust increases)",
       "Friction gets fixed weekly (not quarterly)",
       "Culture becomes 'how we work' (not HR's job)",
       "Evidence links behaviour → outcomes"

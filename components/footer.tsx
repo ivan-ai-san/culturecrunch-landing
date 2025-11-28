@@ -42,6 +42,11 @@ export default function Footer() {
                     How it Works
                   </Link>
                 </li>
+                <li>
+                  <Link href="/methodology" className="text-muted-foreground hover:text-foreground">
+                    Methodology
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -49,6 +54,11 @@ export default function Footer() {
             <h3 className="text-sm font-bold">Resources</h3>
             <nav aria-label="Resources Navigation">
               <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/#contact" className="text-muted-foreground hover:text-foreground">
+                    Demo
+                  </Link>
+                </li>
                 <li>
                   <Link href="/roi-calculator" className="text-muted-foreground hover:text-foreground">
                     ROI Calculator
@@ -110,7 +120,7 @@ export default function Footer() {
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </Link>
-            <Link href="https://github.com" className="text-muted-foreground hover:text-foreground" aria-label="GitHub">
+            <Link href="https://github.com/ivan-ai-san/DEMO_CultureCrunch" className="text-muted-foreground hover:text-foreground" aria-label="GitHub">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

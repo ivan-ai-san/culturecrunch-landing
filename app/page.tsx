@@ -11,7 +11,6 @@ import CssGridBackground from "@/components/css-grid-background"
 import StructuredData from "@/components/structured-data"
 import CircularLoop from "@/components/circular-loop"
 import WeekByWeekTimeline from "@/components/week-by-week-timeline"
-import AccountableConversations from "@/components/accountable-conversations"
 import ThreeLoops from "@/components/three-loops"
 import NetworkValueChart from "@/components/network-value-chart"
 import { useState } from "react"
@@ -19,6 +18,7 @@ import Link from "next/link"
 
 export default function Home() {
   const [showWeekly, setShowWeekly] = useState(false)
+  const [showFullComparison, setShowFullComparison] = useState(false)
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function Home() {
                 The Problem
               </div>
               <h2 id="problem-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-                The $60 Billion Leadership Development Failure
+                The $60 Billion Culture Development Failure
               </h2>
               <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
                 Organisations spend billions on leadership programs that don't stick. Here's why:
@@ -703,10 +703,156 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Methodology Section */}
-        <section className="py-24 bg-gradient-to-b from-background via-muted/30 to-background dark:from-background dark:via-muted/5 dark:to-background" id="methodology">
-          <div className="container px-4 md:px-6">
-            <AccountableConversations />
+        {/* Differentiation Section */}
+        <section className="py-24 bg-gradient-to-b from-slate-50 via-slate-100 to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden" id="differentiation">
+          {/* Background Effects */}
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+
+          <div className="container px-4 md:px-6 relative z-10">
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto">
+              <div className="inline-block rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-500/20 dark:to-purple-500/20 px-5 py-2 text-sm font-medium border border-indigo-200 dark:border-indigo-500/30 text-indigo-700 dark:text-indigo-300">
+                Why We're Different
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-foreground">
+                Not Another Measurement Platform
+              </h2>
+              <p className="mx-auto max-w-[800px] text-muted-foreground text-lg md:text-xl leading-relaxed">
+                We're not competing with survey tools. We're in a different category entirely.
+              </p>
+            </div>
+
+            {/* Comparison Grid */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+              {/* Measurement Platforms */}
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+                <div className="relative rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700/50 p-8 h-full backdrop-blur-sm">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-red-100 to-red-50 dark:from-red-950/50 dark:to-red-900/30 flex items-center justify-center shadow-inner">
+                      <TrendingDown className="h-6 w-6 text-red-600 dark:text-red-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground">Measurement Platforms</h3>
+                      <p className="text-xs text-muted-foreground">CultureAmp, Peakon, etc.</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: BarChart3, text: "Measure how people feel" },
+                      { icon: Calendar, text: "Annual/quarterly surveys" },
+                      { icon: LayoutDashboard, text: "Static dashboards and benchmarks" },
+                      { icon: Clock, text: "3-6 months to value" },
+                      { icon: ClipboardCheck, text: "Recommended actions (hope they follow through)" }
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 group/item">
+                        <div className="h-8 w-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover/item:bg-slate-200 dark:group-hover/item:bg-slate-700 transition-colors">
+                          <item.icon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+                        </div>
+                        <span className="text-muted-foreground text-sm pt-1.5">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Culture Crunch */}
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+                <div className="relative rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/90 dark:to-purple-950/90 border border-indigo-200 dark:border-indigo-500/30 p-8 h-full backdrop-blur-sm">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-indigo-700 dark:text-indigo-300">Culture Crunch</h3>
+                      <p className="text-xs text-indigo-600/70 dark:text-indigo-400/70">The Culture Operating System</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: RefreshCw, text: "Install weekly leadership rhythm" },
+                      { icon: Clock, text: "30-minute weekly loops forever" },
+                      { icon: TrendingUp, text: "Three compounding learning loops" },
+                      { icon: Rocket, text: "Week 1 value (leaders running immediately)" },
+                      { icon: Target, text: "Tracked micro-actions with accountability" }
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 group/item">
+                        <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:shadow-md transition-shadow">
+                          <item.icon className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                        </div>
+                        <span className="text-slate-700 dark:text-slate-200 text-sm pt-1.5 font-medium">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* The Line We Own */}
+            <div className="max-w-4xl mx-auto mb-8">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-indigo-500/20 rounded-2xl blur-lg"></div>
+                <div className="relative rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-8 md:p-10 text-center backdrop-blur-sm">
+                  <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    "Measurement platforms tell organisations <span className="font-semibold text-foreground">what the culture feels like</span>.<br className="hidden md:block" />
+                    Culture Crunch installs <span className="font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">the leadership operating system that changes it</span>."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Expandable Full Comparison */}
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showFullComparison ? 'max-h-[2000px] opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
+              <div className="max-w-5xl mx-auto">
+                <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/50 bg-white dark:bg-slate-900/80 shadow-xl">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900">
+                        <th className="p-4 md:p-5 text-left font-semibold text-foreground border-b border-r border-slate-200 dark:border-slate-700 w-[140px] md:w-[160px]">Feature</th>
+                        <th className="p-4 md:p-5 text-left border-b border-r border-slate-200 dark:border-slate-700">
+                          <div className="font-semibold text-slate-600 dark:text-slate-300">Measurement Platforms</div>
+                        </th>
+                        <th className="p-4 md:p-5 text-left border-b border-slate-200 dark:border-slate-700 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/50 dark:to-purple-950/50">
+                          <div className="font-semibold text-indigo-700 dark:text-indigo-300">Culture Crunch</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { feature: "Job to be done", measurement: "Measure how people feel", cc: "Install weekly leadership rhythm that changes how teams operate" },
+                        { feature: "Primary users", measurement: "HR / People & Culture teams", cc: "Leaders and teams (HR as strategic partner)" },
+                        { feature: "Rhythm", measurement: "Annual/quarterly surveys → action planning", cc: "6-week OS installation → 30-min weekly loops forever" },
+                        { feature: "Output", measurement: "Dashboards, benchmarks, sentiment trends", cc: "Micro-actions, decisions, accountability, live evidence linking behaviour → outcomes" },
+                        { feature: "Learning", measurement: "Static insights (same reports every year)", cc: "Three compounding learning loops" },
+                        { feature: "Integration", measurement: "Required upfront (6-12 month sales cycles)", cc: "Optional - start in 1 week, integrate later" },
+                        { feature: "Time to value", measurement: "3-6 months (survey → analysis → action)", cc: "Week 1 (leaders running rhythm immediately)" },
+                        { feature: "Behaviour change", measurement: "Recommended actions (hope they follow through)", cc: "Tracked micro-actions with accountability loops" }
+                      ].map((row, i) => (
+                        <tr key={i} className="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                          <td className="p-4 md:p-5 border-b border-r border-slate-200 dark:border-slate-700 font-medium text-foreground text-sm">{row.feature}</td>
+                          <td className="p-4 md:p-5 border-b border-r border-slate-200 dark:border-slate-700 text-muted-foreground text-sm">{row.measurement}</td>
+                          <td className="p-4 md:p-5 border-b border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm bg-indigo-50/50 dark:bg-indigo-950/20 font-medium">{row.cc}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button
+                variant="outline"
+                className="px-6 py-6 h-auto rounded-xl text-base group"
+                onClick={() => setShowFullComparison(!showFullComparison)}
+              >
+                {showFullComparison ? 'Hide' : 'See'} Full Comparison
+                <ChevronDown className={`ml-2 h-5 w-5 transition-transform duration-300 ${showFullComparison ? 'rotate-180' : ''}`} />
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -805,7 +951,7 @@ export default function Home() {
                     Get Started
                   </div>
                   <h2 id="contact-heading" className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    Install Your Leadership Operating System
+                    Install Your Culture Operating System
                   </h2>
                   <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
                     Culture Crunch turns leadership into an operating system - one that continuously powers clarity, trust, and performance in an increasingly complex world.

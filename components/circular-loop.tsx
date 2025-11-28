@@ -15,7 +15,7 @@ export default function CircularLoop() {
     {
       icon: MessageSquare,
       title: "Team Check-In",
-      description: "20-minute pulse - clarity & trust",
+      description: "20-min team conversation - clarity & trust",
       color: "indigo",
       angle: 342 // top right (2 o'clock) - 270° + 72°
     },
