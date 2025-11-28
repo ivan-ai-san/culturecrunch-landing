@@ -894,16 +894,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Promise Section */}
-              <div className="bg-transparent border border-green-500/40 rounded-3xl p-8 text-center hover:border-green-500/60 transition-colors">
-                <p className="text-lg md:text-xl leading-relaxed">
-                  <span className="font-bold text-green-600 dark:text-green-400">Our Promise:</span>{" "}
-                  <span className="text-foreground/90">
-                    If your leaders aren't running the weekly rhythm by Week 3, we refund 100%.
-                    No excuses. No "you didn't integrate properly." The OS either works or it doesn't.
-                  </span>
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -1169,14 +1159,6 @@ export default function Home() {
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
                       We're selecting a small group of founding partners to shape Culture Crunch with us. Pilot partners receive <span className="font-semibold text-foreground">priority pricing locked for life</span> plus direct input into our product roadmap.
                     </p>
-
-                    {/* Offer */}
-                    <div className="bg-white/60 dark:bg-slate-900/60 rounded-2xl p-6 border border-amber-200/50 dark:border-amber-800/30 max-w-xl mx-auto">
-                      <p className="text-sm font-medium text-amber-700 dark:text-amber-400 mb-2">DECEMBER BONUS</p>
-                      <p className="text-foreground font-semibold text-lg">
-                        Free Leadership Culture Assessment ($2,500 value) for organisations that book a demo this month
-                      </p>
-                    </div>
 
                     {/* CTA */}
                     <div className="pt-2">
