@@ -141,7 +141,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <div className="relative">
-              <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
                 <Building2 className="h-4 w-4" />
               </div>
               <Input
@@ -149,7 +149,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                 placeholder="your.name@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full sm:w-64 h-12 pl-11"
+                className="w-full sm:w-64 h-12 pl-12"
                 disabled={isSubmitting}
               />
               {error && (
@@ -242,7 +242,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <div className="relative">
-                  <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
                     <Building2 className="h-4 w-4" />
                   </div>
                   <Input
@@ -250,7 +250,7 @@ export default function LeadMagnet({ variant = "card", onSuccess }: LeadMagnetPr
                     placeholder="your.name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 pl-11"
+                    className="h-12 pl-12"
                     disabled={isSubmitting}
                   />
                 </div>

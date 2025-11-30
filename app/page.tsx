@@ -61,21 +61,14 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">The Culture Operating System</span>
               </div>
 
-              {/* Hero Headline - Redesigned for visual impact */}
-              <div className="space-y-4 mb-10">
-                {/* Line 1 - The contrast statement */}
-                <div className="flex flex-col items-center justify-center">
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground tracking-tight">
-                    Most HR platforms measure culture
-                  </span>
-                </div>
-
-                {/* Line 2 - The differentiator */}
+              {/* Hero Headline - Benefit-driven */}
+              <div className="space-y-2 mb-10">
                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight">
-                  <span className="text-foreground">We install the system that </span>
+                  <span className="text-foreground">Build a consistent, high-performing culture</span>
+                  <br />
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-primary via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                      transforms it every week
+                      - every week.
                     </span>
                     {/* Animated underline */}
                     <span className="absolute -bottom-2 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-purple-500 to-indigo-500 rounded-full opacity-80"></span>
@@ -83,13 +76,10 @@ export default function Home() {
                 </h1>
               </div>
 
-              {/* Subheadline - with visual separation */}
+              {/* Subheadline - benefit statement */}
               <div className="relative max-w-3xl mb-12">
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 via-purple-500/50 to-transparent rounded-full hidden md:block"></div>
-                <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed md:pl-6">
-                  The <span className="font-semibold text-foreground">Culture OS</span> that improves itself -
-                  <br className="hidden md:block" />
-                  and your <span className="text-purple-500 dark:text-purple-400 font-medium">leaders</span>, <span className="text-primary font-medium">every week</span>
+                <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+                  A simple, sustainable rhythm that strengthens <span className="font-semibold text-foreground">leadership behaviour</span>, improves <span className="font-semibold text-foreground">team performance</span>, and embeds culture at scale - with <span className="text-primary font-medium">AI doing the heavy lifting</span>.
                 </p>
               </div>
 
@@ -115,25 +105,23 @@ export default function Home() {
               </div>
 
               {/* Social Proof */}
-              <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mt-10 text-center">
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10 w-full max-w-2xl mx-auto">
+                <div className="flex items-center justify-center sm:justify-start gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500 flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">
                     <span className="font-semibold text-foreground">4 organisations</span> onboarded in 10 weeks
                   </span>
                 </div>
-                <div className="hidden md:block h-4 w-px bg-border/50"></div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500 flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">
                     <span className="font-semibold text-foreground">100% paid</span> engagements
                   </span>
                 </div>
-                <div className="hidden md:block h-4 w-px bg-border/50"></div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                <div className="flex items-center justify-center sm:justify-end gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500 flex-shrink-0"></div>
                   <span className="text-sm text-muted-foreground">
-                    Strong early adoption from <span className="font-semibold text-foreground">frontline to C-suite</span>
+                    <span className="font-semibold text-foreground">Frontline to C-suite</span> early adoption
                   </span>
                 </div>
               </div>
@@ -786,14 +774,22 @@ export default function Home() {
               </div>
             )}
 
-            {/* Bottom CTA Card */}
+            {/* Bottom CTA Card - Cognitive Load Focus */}
             <div className="max-w-4xl mx-auto">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-indigo-500/30 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 md:p-12 text-center space-y-4">
+                <div className="relative bg-gradient-to-br from-purple-50/90 to-indigo-50/90 dark:from-purple-950/30 dark:to-indigo-950/30 backdrop-blur-sm border-2 border-purple-200/50 dark:border-purple-800/50 rounded-3xl p-8 md:p-12 text-center space-y-6">
                   <h3 className="text-2xl md:text-3xl font-bold">Simple. Sustainable. Measurable.</h3>
+
+                  {/* Crossed out negatives */}
+                  <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-muted-foreground/60">
+                    <span className="line-through decoration-2">Complex software</span>
+                    <span className="line-through decoration-2">Extensive training</span>
+                    <span className="line-through decoration-2">Added cognitive load</span>
+                  </div>
+
                   <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-                    No complex software. No extensive training. Just a proven rhythm that fits into the way your teams already work - with AI quietly tracking what matters so you can lead with confidence.
+                    A rhythm that fits naturally into the way your teams already work - <span className="font-semibold text-foreground">reducing cognitive load rather than adding to it</span> - with AI quietly tracking what matters so leaders can move with confidence.
                   </p>
                 </div>
               </div>
@@ -1223,22 +1219,22 @@ export default function Home() {
               </div>
 
               {/* Social Proof - Outside the card */}
-              <div ref={socialProofRef} className="grid grid-cols-3 gap-4 md:gap-8 mt-6 md:mt-8 w-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once' : ''}`}></div>
-                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+              <div ref={socialProofRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-8 mt-6 md:mt-8 w-full">
+                <div className="flex items-center sm:flex-col sm:items-center gap-2 sm:gap-0 sm:text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 flex-shrink-0 sm:mb-2 ${socialProofVisible ? 'animate-spin-once' : ''}`}></div>
+                  <span className="text-sm text-muted-foreground leading-tight">
                     <span className="font-semibold text-foreground">4 organisations</span> onboarded in 10 weeks
                   </span>
                 </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once-delay-1' : ''}`}></div>
-                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+                <div className="flex items-center sm:flex-col sm:items-center gap-2 sm:gap-0 sm:text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 flex-shrink-0 sm:mb-2 ${socialProofVisible ? 'animate-spin-once-delay-1' : ''}`}></div>
+                  <span className="text-sm text-muted-foreground leading-tight">
                     <span className="font-semibold text-foreground">100% paid</span> engagements
                   </span>
                 </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className={`h-2 w-2 rounded-full bg-green-500 mb-2 ${socialProofVisible ? 'animate-spin-once-delay-2' : ''}`}></div>
-                  <span className="text-xs md:text-sm text-muted-foreground leading-tight">
+                <div className="flex items-center sm:flex-col sm:items-center gap-2 sm:gap-0 sm:text-center">
+                  <div className={`h-2 w-2 rounded-full bg-green-500 flex-shrink-0 sm:mb-2 ${socialProofVisible ? 'animate-spin-once-delay-2' : ''}`}></div>
+                  <span className="text-sm text-muted-foreground leading-tight">
                     <span className="font-semibold text-foreground">Frontline to C-suite</span> early adoption
                   </span>
                 </div>
